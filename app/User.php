@@ -10,6 +10,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    const TYPE_USER = 'user';
+    const TYPE_ADMIN = 'admin';
     /**
      * The attributes that are mass assignable.
      *
@@ -27,4 +29,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function isAdmin()
+    {
+        return $this->type === self::TYPE_ADMIN;
+    }
 }
