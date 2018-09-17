@@ -13,6 +13,7 @@ class Form extends Model
 
     protected $fillable = [
         'title',
+        'header_html',
         'project_id',
         'referral_id',
         'pdf_url',

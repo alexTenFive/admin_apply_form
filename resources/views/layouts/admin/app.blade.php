@@ -16,7 +16,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -44,7 +44,7 @@
                             <a class="dropdown-item" href="#">Active Forms</a>
                             <a class="dropdown-item" href="#">Inactive Forms</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Add Form</a>
+                            <a class="dropdown-item" href="{{ route('admin.forms.add') }}">Add Form</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -93,5 +93,6 @@
             @yield('content')
         </main>
     </div>
+
 </body>
 </html>

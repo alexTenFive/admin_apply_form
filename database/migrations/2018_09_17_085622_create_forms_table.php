@@ -16,12 +16,13 @@ class CreateFormsTable extends Migration
         Schema::create('forms', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->mediumText('header_html');
             $table->unsignedInteger('project_id');
             $table->unsignedInteger('referral_id');
             $table->string('pdf_url');
             $table->string('thumbnail_url')->default('/public/uploads/thumbnails/default.jpg');
             $table->integer('status')->default(1);
-            $table->string('form_unique_part')->unique()->default(url(str_random(40)));
+            $table->string('form_unique_part')->default(url(str_random(40)));
             $table->timestamps();
         });
     }

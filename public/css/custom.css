@@ -23,3 +23,7 @@
     background: url("../images/gifs/loader.gif") 50% 50% no-repeat rgb(0,0,0);
     opacity: .8;
 }
+
+.bg-custom {
+    background-color: #fcf8e3;
+}

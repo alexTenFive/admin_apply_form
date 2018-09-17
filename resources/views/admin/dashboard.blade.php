@@ -1,5 +1,6 @@
 @extends('layouts.admin.app')
 
+@section('title', 'Overview')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -18,7 +19,7 @@
                         <div class="circle">
                             <img src="{{ asset('svg/forms.svg') }}">
                         </div>
-                        <p><a href="route('admin.forms')" class="btn btn-dark">Manage Forms</a></p>
+                        <p><a href="{{ route('admin.forms') }}" class="btn btn-dark">Manage Forms</a></p>
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12 text-center">
                         <div class="circle">
