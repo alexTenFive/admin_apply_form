@@ -11,6 +11,32 @@
 |
 */
 
+/**
+ * FRONTEND ROUTES
+ */
 Route::get('/', function () {
-    return view('welcome');
+    return 'not implemented yet';
 });
+
+/**
+ * FRONTEND ROUTES END
+ */
+
+
+/**
+ * BACKEND ROUTES
+ */
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+    Route::get('/dashboard', ['as' => 'admin.dashboard', 'uses' => 'Admin\DashboardController@index']);
+});
+
+
+/**
+ * BACKEND ROUTES END
+ */
+
+
+/**
+ * AUTH ROUTES
+ */
+Auth::routes();
