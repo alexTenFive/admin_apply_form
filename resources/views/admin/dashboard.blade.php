@@ -25,7 +25,7 @@
                         <div class="circle">
                             <img src="{{ asset('svg/person.svg') }}">
                         </div>
-                        <p><a href="route('admin.profiles')" class="btn btn-dark">
+                        <p><a href="{{ route('admin.profiles') }}" class="btn btn-dark">
                                 Manage Profiles
                             </a></p>
                     </div>

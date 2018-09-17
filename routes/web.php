@@ -35,6 +35,11 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::post('/dashboard/forms/store', ['as' => 'admin.forms.store', 'uses' => 'Admin\FormsController@store']);
 
     Route::get('/dashboard/forms/{type?}', ['as' => 'admin.forms', 'uses' => 'Admin\FormsController@index']);
+
+    /**
+     * PROFILES
+     */
+    Route::get('/dashboard/profiles/{type?}', ['as' => 'admin.profiles', 'uses' => 'Admin\ProfilesController@index']);
 });
 
 

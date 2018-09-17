@@ -14,9 +14,10 @@ class FormsController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index($type = null)
     {
-        return view('admin.forms.index');
+        $forms = Form::all();
+        return view('admin.forms.index', compact('forms', 'type'));
     }
 
     public function create()

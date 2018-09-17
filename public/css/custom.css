@@ -27,3 +27,10 @@
 .bg-custom {
     background-color: #fcf8e3;
 }
+
+.btn-group-xs > .btn, .btn-xs {
+    padding: .35rem .4rem;
+    font-size: .770rem;
+    line-height: 1;
+    border-radius: .2rem;
+}

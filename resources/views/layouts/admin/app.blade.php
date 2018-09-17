@@ -17,7 +17,11 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
+    {{--OPEN ICONS--}}
+    <!-- Bootstrap 4.0 Beta -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha256-m/h/cUDAhf6/iBRixTbuc8+Rg2cIETQtPcH9D3p2Kg0=" crossorigin="anonymous" />
+    <!-- open-iconic-bootstrap (icon set for bootstrap) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
@@ -40,9 +44,9 @@
                             Forms
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">All Forms</a>
-                            <a class="dropdown-item" href="#">Active Forms</a>
-                            <a class="dropdown-item" href="#">Inactive Forms</a>
+                            <a class="dropdown-item" href="{{ route('admin.forms') }}">All Forms</a>
+                            <a class="dropdown-item" href="{{ route('admin.forms', 'active') }}">Active Forms</a>
+                            <a class="dropdown-item" href="{{ route('admin.forms', 'inactive') }}">Inactive Forms</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('admin.forms.add') }}">Add Form</a>
                         </div>
@@ -52,10 +56,10 @@
                             Profiles
                         </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">All Profiles</a>
-                                <a class="dropdown-item" href="#">New Profiles</a>
-                                <a class="dropdown-item" href="#">Voided Profiles</a>
-                                <a class="dropdown-item" href="#">Transfered Profiles</a>
+                                <a class="dropdown-item" href="{{ route('admin.profiles') }}">All Profiles</a>
+                                <a class="dropdown-item" href="{{ route('admin.profiles', 'new') }}">New Profiles</a>
+                                <a class="dropdown-item" href="{{ route('admin.profiles', 'voided') }}">Voided Profiles</a>
+                                <a class="dropdown-item" href="{{ route('admin.profiles', 'transfered') }}">Transfered Profiles</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Transfer</a>
                             </div>
