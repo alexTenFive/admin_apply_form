@@ -17,12 +17,14 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('project_id');
             $table->unsignedInteger('remote_refferal_id');
+            $table->unsignedInteger('form_id');
             $table->integer('status_id')->default(1);
             $table->string('full_name');
             $table->string('email');
             $table->string('city');
-            $table->integer('state_id');
+            $table->unsignedInteger('state_id');
             $table->string('zip');
+            $table->string('photo_url')->default('/public/uploads/profiles/photos/default.jpg');
             $table->string('alias')->unique();
             $table->string('password')->default('tinyapply');
             $table->string('comments')->default('tinyapply');
@@ -32,7 +34,8 @@ class CreateProfilesTable extends Migration
             $table->string('was_contract')->default('n');
             $table->string('archived')->default('n');
             $table->string('interviewpreferred')->default('');
-            $table->timestamps();
+            $table->timestamp('date_added');
+            $table->timestamp('date_updated');
         });
     }
 

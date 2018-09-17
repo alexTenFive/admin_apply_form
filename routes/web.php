@@ -33,6 +33,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
      */
     Route::get('/dashboard/forms/add', ['as' => 'admin.forms.add', 'uses' => 'Admin\FormsController@create']);
     Route::post('/dashboard/forms/store', ['as' => 'admin.forms.store', 'uses' => 'Admin\FormsController@store']);
+    Route::get('/dashboard/forms/{form}/deactivate/{type?}', ['as' => 'admin.forms.onOff', 'uses' => 'Admin\FormsController@onOff']);
 
     Route::get('/dashboard/forms/{type?}', ['as' => 'admin.forms', 'uses' => 'Admin\FormsController@index']);
 
@@ -40,6 +41,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
      * PROFILES
      */
     Route::get('/dashboard/profiles/{type?}', ['as' => 'admin.profiles', 'uses' => 'Admin\ProfilesController@index']);
+    Route::get('/dashboard/profiles/{profile}/delete/{type?}', ['as' => 'admin.profiles.delete', 'uses' => 'Admin\ProfilesController@delete']);
 });
 
 

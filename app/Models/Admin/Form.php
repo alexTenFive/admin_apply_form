@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Form extends Model
 {
-    const FORM_STATUS = [
+    const FORM_STATUSES = [
         0 => 'Inactive',
         1 => 'Active'
     ];
@@ -22,11 +22,16 @@ class Form extends Model
 
     public function getFormStatus()
     {
-        return self::FORM_STATUS[$this->status];
+        return self::FORM_STATUSES[$this->status];
     }
 
     public function getFormStatuses()
     {
-        return self::FORM_STATUS;
+        return self::FORM_STATUSES;
+    }
+
+    public function profiles()
+    {
+        return $this->hasMany(Profile::class);
     }
 }

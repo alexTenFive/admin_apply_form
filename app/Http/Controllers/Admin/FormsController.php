@@ -16,7 +16,32 @@ class FormsController extends Controller
 
     public function index($type = null)
     {
-        $forms = Form::all();
+        $forms = Form::whereIn('status', array_keys(Form::FORM_STATUSES));
+
+        if (isset($type)) {
+            $forms = $forms->where('status', array_search(ucwords($type), Form::FORM_STATUSES));
+        }
+
+        $forms = $forms->get();
+
+        $forms = $forms->map(function ($item) {
+            $item->new_profiles = 0;
+            $item->voided_profiles = 0;
+            $item->transferred_profiles = 0;
+            foreach ($item->profiles as $profile) {
+                if ($profile->getNewProfile()) {
+                    $item->new_profiles++;
+                }
+                if ($profile->getVoidedProfile()) {
+                    $item->voided_profiles++;
+                }
+                if ($profile->getTransferedProfile()) {
+                    $item->transfered_profiles++;
+                }
+            }
+
+            return $item;
+        });
         return view('admin.forms.index', compact('forms', 'type'));
     }
 
@@ -61,5 +86,13 @@ class FormsController extends Controller
 
         return redirect('/admin/dashboard')->with('status', 'Form succesfully created!');
 
+    }
+
+    public function onOff(Form $form, $type = null)
+    {
+        $form->status = $form->status ? 0 : 1;
+        $form->save();
+
+        return redirect()->route('admin.forms', ['type' => $type])->with('status', 'Form with title - '. $form->title . ( $form->status ? ' deactivated' : ' activated'));
     }
 }
