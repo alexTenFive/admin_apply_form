@@ -20,6 +20,7 @@ class CreateProfilesTable extends Migration
             $table->unsignedInteger('form_id');
             $table->integer('status_id')->default(1);
             $table->string('full_name');
+            $table->string('address');
             $table->string('email');
             $table->string('city');
             $table->unsignedInteger('state_id');

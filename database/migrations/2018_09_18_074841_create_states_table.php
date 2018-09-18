@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateForeignKeyProfilesForms extends Migration
+class CreateStatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateForeignKeyProfilesForms extends Migration
      */
     public function up()
     {
-        Schema::table('profiles', function (Blueprint $table) {
-            $table->foreign('form_id')->references('id')->on('forms');
+        Schema::create('states', function (Blueprint $table) {
+            $table->unsignedInteger('id');
+            $table->string('state');
         });
     }
 
@@ -25,8 +26,6 @@ class CreateForeignKeyProfilesForms extends Migration
      */
     public function down()
     {
-        Schema::table('profiles', function (Blueprint $table) {
-            $table->dropForeign(['form_id']);
-        });
+        Schema::dropIfExists('states');
     }
 }

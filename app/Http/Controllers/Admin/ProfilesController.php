@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Profile;
+use App\Models\Admin\State;
 
 class ProfilesController extends Controller
 {
@@ -24,6 +25,21 @@ class ProfilesController extends Controller
         $profiles = $profiles->get();
 
         return view('admin.profiles.index', compact('profiles', 'type'));
+    }
+
+    public function edit(Profile $profile, $type = null)
+    {
+        $states = State::all();
+        $profile = $profile->map(function ($item) {
+
+        });
+        
+        return view('admin.profiles.edit', compact('profile', 'type', 'states'));
+    }
+
+    public function update()
+    {
+
     }
 
     public function delete(Profile $profile, $type = null)

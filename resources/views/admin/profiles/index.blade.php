@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('title', 'List Forms')
+@section('title', 'List Profiles')
 @section('content')
     <div class="form-panel border  col-md-10 offset-md-1 bg-custom">
         <a class="btn btn-dark btn-sm mt-3" href="dashboard/profiles/transfer?form-id=">Transfer New Profiles</a>
@@ -40,7 +40,7 @@
                         <td>{{ $profile->getProfileStatus() }}</td>
                         <td>
                             <div class="row">
-                                <div class="col-md-6"><a href="" class="btn btn-dark btn-xs"><i class="oi oi-pencil text-white" title="Edit Profile" aria-hidden="true"></i></a></div>
+                                <div class="col-md-6"><a href="{{ route('admin.profiles.edit', ['profile' => $profile, 'type' => $type]) }}" class="btn btn-dark btn-xs"><i class="oi oi-pencil text-white" title="Edit Profile" aria-hidden="true"></i></a></div>
                                 <div class="col-md-6"><a href="{{ route('admin.profiles.delete', ['profile' => $profile, 'type' => $type]) }}" class="btn btn-dark btn-xs"><i class="oi oi-x text-white" title="Remove Profile" aria-hidden="true"></i></a></div>
                             </div>
                         </td>

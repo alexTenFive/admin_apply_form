@@ -88,6 +88,47 @@ class FormsController extends Controller
 
     }
 
+    public function edit(Form $form, $type = null)
+    {
+        return view('admin.forms.edit', compact('form', 'type'));
+    }
+
+    public function update(Request $request, Form $form, $type = null)
+    {
+        $rules = [
+            'name' => 'required|string',
+            'header' => 'required|string',
+            'pdf_url' => 'required|url',
+            'id_project' => 'required|integer',
+            'id_referral' => 'required|integer',
+            'thumbnail' => 'image|mimes:jpg,png,jpeg,gif,svg'
+        ];
+
+        $this->validate($request, $rules);
+
+        if($file = $request->hasFile('thumbnail')) {
+            $file = $request->file('thumbnail');
+            $extension = $file->getClientOriginalName();
+            $thumb = Image::make($file->getRealPath())->resize(300, 300, function ($constraint) {
+                $constraint->aspectRatio(); //maintain image ratio
+            });
+            $destinationPath = public_path('/uploads/thumbnails/');
+            $thumb->save($destinationPath.'/thumb_'.$extension);
+            $thumb_link = '/uploads/thumbnails/thumb_' . $extension;
+        }
+
+
+            $form->title = $request->name;
+            $form->header_html = e($request->header);
+            $form->pdf_url = $request->pdf_url;
+            $form->project_id = $request->id_project;
+            $form->referral_id = $request->id_referral;
+            $form->thumbnail_url = $thumb_link ?? '/uploads/thumbnails/default.jpg';
+            $form->save();
+
+        return redirect()->route('admin.forms', ['type' => $type])->with('status', 'Form with title ' . $form->title . 'succesfully edited!');
+    }
+
     public function onOff(Form $form, $type = null)
     {
         $form->status = $form->status ? 0 : 1;
