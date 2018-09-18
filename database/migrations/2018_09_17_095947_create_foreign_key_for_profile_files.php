@@ -14,7 +14,7 @@ class CreateForeignKeyForProfileFiles extends Migration
     public function up()
     {
         Schema::table('profile_files', function (Blueprint $table) {
-            $table->foreign('profile_id')->references('id')->on('profiles');
+            $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
         });
     }
 

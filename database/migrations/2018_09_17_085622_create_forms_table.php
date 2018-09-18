@@ -22,7 +22,7 @@ class CreateFormsTable extends Migration
             $table->string('pdf_url');
             $table->string('thumbnail_url')->default('/uploads/thumbnails/default.jpg');
             $table->integer('status')->default(1);
-            $table->string('form_unique_part')->default(url(str_random(40)));
+            $table->string('form_unique_part')->unique();
             $table->timestamps();
         });
     }

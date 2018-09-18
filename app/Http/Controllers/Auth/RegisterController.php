@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin/dashboard';
 
     /**
      * Create a new controller instance.
@@ -72,6 +72,6 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        return redirect('login');
+        return redirect('admin/login');
     }
 }

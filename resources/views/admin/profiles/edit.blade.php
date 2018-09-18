@@ -26,7 +26,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-group has-error has-danger">
                         <label for="form-name">Full Legal Name *</label>
-                        <input id="form-name" class="form-control" type="text" name="fullname" value="{{ $profile->fullname }}" required="required">
+                        <input id="form-name" class="form-control" type="text" name="fullname" value="{{ $profile->full_name }}" required="required">
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -86,9 +86,17 @@
                     <h4>Uploaded Files</h4>
                     <hr>
                 </div>
-                <div class="form-group mb-3 px-3">
-                    <link rel="stylesheet" href="" class="btn btn-link">
-                </div>
+                @if ($profile->profile_files)
+                    @foreach($profile->profile_files as $file)
+                    <div class="form-group mb-3 px-3">
+                        <a href="{{ $file->host_name . $file->file_path }}" target="_blank" class="btn btn-outline-dark">{{ $file->file_name }}</a>
+                    </div>
+                    @endforeach
+                @else
+                    <div class="form-group mb-3 px-3">
+                        <p>No additional files were added.</p>
+                    </div>
+                @endif
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <br>
                     <button type="submit" class="btn btn-dark btn-block">Edit</button>

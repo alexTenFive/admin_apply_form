@@ -11,6 +11,11 @@ class Form extends Model
         1 => 'Active'
     ];
 
+    const FORM_STATUSES_KEYS = [
+        'Inactive' => 0,
+        'Active' => 1
+    ];
+
     protected $fillable = [
         'title',
         'header_html',
@@ -33,5 +38,12 @@ class Form extends Model
     public function profiles()
     {
         return $this->hasMany(Profile::class);
+    }
+
+    public function save(array $options = [])
+    {
+        $this->form_unique_part = sha1(str_random(60));
+
+        return parent::save($options);
     }
 }

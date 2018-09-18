@@ -25,11 +25,13 @@ class Profile extends Model
     ];
 
     protected $fillable = [
+        'form_id',
         'project_id',
         'remote_referral_id',
         'full_name',
         'alias',
         'email',
+        'address',
         'city',
         'state_id',
         'zip',

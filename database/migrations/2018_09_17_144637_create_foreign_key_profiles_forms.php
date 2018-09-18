@@ -14,7 +14,7 @@ class CreateForeignKeyProfilesForms extends Migration
     public function up()
     {
         Schema::table('profiles', function (Blueprint $table) {
-            $table->foreign('form_id')->references('id')->on('forms');
+            $table->foreign('form_id')->references('id')->on('forms')->onDelete('cascade');
         });
     }
 

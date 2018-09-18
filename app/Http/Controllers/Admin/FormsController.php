@@ -134,6 +134,6 @@ class FormsController extends Controller
         $form->status = $form->status ? 0 : 1;
         $form->save();
 
-        return redirect()->route('admin.forms', ['type' => $type])->with('status', 'Form with title - '. $form->title . ( $form->status ? ' deactivated' : ' activated'));
+        return redirect()->route('admin.forms', ['type' => $type])->with('status', 'Form with title - '. $form->title . ( $form->status ? ' activated' : ' deactivated'));
     }
 }

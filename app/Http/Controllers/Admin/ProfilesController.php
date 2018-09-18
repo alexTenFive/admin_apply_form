@@ -30,10 +30,7 @@ class ProfilesController extends Controller
     public function edit(Profile $profile, $type = null)
     {
         $states = State::all();
-        $profile = $profile->map(function ($item) {
 
-        });
-        
         return view('admin.profiles.edit', compact('profile', 'type', 'states'));
     }
 

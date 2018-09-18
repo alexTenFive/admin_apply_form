@@ -15,7 +15,7 @@ class ProfilesTableSeeder extends Seeder
         for ($i = 0; $i < 4; $i++) {
             Profile::create([
                 'project_id' => 100,
-                'remote_refferal_id' => 14,
+                'remote_referral_id' => 14,
                 'form_id' => 1,
                 'full_name' => 'Alexandr Dukhno ' . $i,
                 'email' => 'flash.alex32' . $i . '@gmail.com',
@@ -31,7 +31,7 @@ class ProfilesTableSeeder extends Seeder
         for ($i = 0; $i < 4; $i++) {
             Profile::create([
                 'project_id' => 111,
-                'remote_refferal_id' => 17,
+                'remote_referral_id' => 17,
                 'form_id' => 2,
                 'full_name' => 'Yuriy Repka ' . $i,
                 'email' => 'yuriy.repka32' . $i . '@gmail.com',
@@ -48,7 +48,7 @@ class ProfilesTableSeeder extends Seeder
         for ($i = 0; $i < 4; $i++) {
             Profile::create([
                 'project_id' => 113,
-                'remote_refferal_id' => 15,
+                'remote_referral_id' => 15,
                 'form_id' => 3,
                 'full_name' => 'Vasya Skovoroda ' . $i,
                 'email' => 'vasya.skovoroda32' . $i . '@gmail.com',
