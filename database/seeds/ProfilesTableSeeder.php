@@ -12,7 +12,7 @@ class ProfilesTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 4; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             Profile::create([
                 'project_id' => 100,
                 'remote_referral_id' => 14,
@@ -37,7 +37,7 @@ class ProfilesTableSeeder extends Seeder
                 'email' => 'yuriy.repka32' . $i . '@gmail.com',
                 'city' => 'Kiyv',
                 'address' => 'Sadovaya, 2' . $i,
-                'status_id' => 2,
+                'status_id' => 1,
                 'state_id' => $i,
                 'zip' => 63100,
                 'alias' => 'YuriyRepka' . str_random(5),
@@ -54,7 +54,7 @@ class ProfilesTableSeeder extends Seeder
                 'email' => 'vasya.skovoroda32' . $i . '@gmail.com',
                 'city' => 'Dnepr',
                 'address' => 'Tverskaya, 2' . $i,
-                'status_id' => 3,
+                'status_id' => 1,
                 'state_id' => $i,
                 'zip' => 65100,
                 'alias' => 'VasyaSkovoroda' . str_random(5),

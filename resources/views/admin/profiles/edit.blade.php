@@ -7,6 +7,11 @@
         <h1 class="text-center py-3">
             Edit Profile #{{ $profile->id }}
         </h1>
+        @if (session('status'))
+            <div class="alert alert-success mt-3" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
         @if($errors->all())
             <ul>
                 @foreach ($errors->all() as $error)
@@ -15,7 +20,7 @@
             </ul>
         @endif
         <div class="row">
-            <form action="{{ route('admin.profiles.update', ['form' => $profile, 'type' => $type]) }}" method="post" data-toggle="validator" novalidate="true" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3" enctype="multipart/form-data">
+            <form action="{{ route('admin.profiles.update', ['profile' => $profile, 'type' => $type]) }}" method="post" data-toggle="validator" novalidate="true" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3" enctype="multipart/form-data">
                 @csrf
                 {{ method_field('patch') }}
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -26,7 +31,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-group has-error has-danger">
                         <label for="form-name">Full Legal Name *</label>
-                        <input id="form-name" class="form-control" type="text" name="fullname" value="{{ $profile->full_name }}" required="required">
+                        <input id="form-name" class="form-control" type="text" name="full_name" value="{{ $profile->full_name }}" required="required">
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -77,7 +82,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
                         <div class="form-group">
                             <label for="referral-id">Primary Phone Number *</label>
-                            <input id="referral-id" class="form-control" type="tel" name="phone" value="{{ $profile->cell_phone }}" required="required">
+                            <input id="referral-id" class="form-control" type="tel" name="cell_phone" value="{{ $profile->cell_phone }}" required="required">
                         </div>
                     </div>
                 </div>

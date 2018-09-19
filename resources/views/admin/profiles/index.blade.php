@@ -3,7 +3,7 @@
 @section('title', 'List Profiles')
 @section('content')
     <div class="form-panel border  col-md-10 offset-md-1 bg-custom">
-        <a class="btn btn-dark btn-sm mt-3" href="dashboard/profiles/transfer?form-id=">Transfer New Profiles</a>
+        <a class="btn btn-dark btn-sm mt-3" href="{{ route('admin.profiles.transfer') }}">Transfer New Profiles</a>
         <hr>
         <h1 class="text-center py-3">
             List Profiles{{ ' - ' . ucwords($type) }} ({{ count($profiles) }})
@@ -13,7 +13,15 @@
                 {{ session('status') }}
             </div>
         @endif
-        <p class="notice text-center small">Here will be filter and search. Soon...</p>
+        <form action="{{ route('admin.profiles', ['type' => $type]) }}">
+            <div class="form-group row m-2">
+                <label for="search-input" class="col-1 col-form-label">Search</label>
+                <div class="col-9">
+                    <input class="form-control" type="search" placeholder="Search profiles by name or email" name="search_phrase" id="search-input">
+                </div>
+                <button class="btn btn-dark col-2" type="submit">Search</button>
+            </div>
+        </form>
         @if (count($profiles))
             <table class="table table-bordered px-6 bg-white">
                 <thead>
@@ -48,6 +56,8 @@
                 @endforeach
                 </tbody>
             </table>
+        @else
+            <p class="text-center m-3">No profiles available.</p>
         @endif
     </div>
 @endsection

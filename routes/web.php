@@ -39,14 +39,20 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::get('/dashboard/forms/{type?}', ['as' => 'admin.forms', 'uses' => 'Admin\FormsController@index']);
 
     /**
+     * TRANSFERS
+     */
+    Route::get('/dashboard/profiles/transfer/{form_id?}', ['as' => 'admin.profiles.transfer', 'uses' => 'Admin\TransferController@index']);
+    Route::post('/dashboard/profiles/transfer/{form?}', ['as' => 'admin.profiles.transfer', 'uses' => 'Admin\TransferController@transfer']);
+
+    /**
      * PROFILES
      */
-    Route::get('/dashboard/profiles/{type?}', ['as' => 'admin.profiles', 'uses' => 'Admin\ProfilesController@index']);
+    Route::get('/dashboard/profiles/{type?}/{search_phrase?}', ['as' => 'admin.profiles', 'uses' => 'Admin\ProfilesController@index']);
     Route::get('/dashboard/profiles/{profile}/delete/{type?}', ['as' => 'admin.profiles.delete', 'uses' => 'Admin\ProfilesController@delete']);
     Route::get('/dashboard/profiles/{profile}/edit/{type?}', ['as' => 'admin.profiles.edit', 'uses' => 'Admin\ProfilesController@edit']);
     Route::patch('/dashboard/profiles/{profile}/update/{type?}', ['as' => 'admin.profiles.update', 'uses' => 'Admin\ProfilesController@update']);
 
-});
+    });
 
 Route::get('/form/{link}', ['as' => 'forms.link', 'uses' => 'Front\FormsController@link']);
 Route::post('/form/{link}', ['as' => 'profiles.store', 'uses' => 'Front\FormsController@store']);

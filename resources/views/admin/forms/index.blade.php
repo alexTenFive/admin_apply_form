@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col-md-3"><a href="{{ route('admin.forms.edit', ['form' => $form, 'type' => $type]) }}" class="btn btn-dark btn-xs"><i class="oi oi-pencil text-white" title="Edit" aria-hidden="true"></i></a></div>
                             <div class="col-md-3"><a href="{{ route('admin.forms.onOff', ['form' => $form, 'type' => $type]) }}" class="btn @if ($form->status) btn-dark @else btn-danger @endif btn-xs"><i class="oi oi-power-standby text-white" title="@if ($form->status) Deactivate @else Activate @endif" aria-hidden="true"></i></a></div>
-                            <div class="col-md-3"><a href="" class="btn btn-dark btn-xs"><i class="oi oi-cloud-download text-white" title="Transfer New Profiles" aria-hidden="true"></i></a></div>
+                            <div class="col-md-3"><a href="{{ route('admin.profiles.transfer', ['form_id' => $form->id]) }}" class="btn btn-dark btn-xs"><i class="oi oi-cloud-download text-white" title="Transfer New Profiles" aria-hidden="true"></i></a></div>
                             <div class="col-md-3"><a href="{{ route('forms.link', $form->form_unique_part) }}" class="btn btn-dark btn-xs"><i class="oi oi-external-link text-white" title="Form Link" aria-hidden="true"></i></a></div>
                         </div>
                     </td>
