@@ -15,7 +15,79 @@
  * FRONTEND ROUTES
  */
 Route::get('/', function () {
-    return 'not implemented yet';
+    return view('front.front');
+});
+Route::get('/mail-forwarding-at-a-glance', function () {
+    return view('front.mail-forwarding-at-a-glance');
+});
+Route::get('/how-mail-forwarding-works', function () {
+    return view('front.how-mail-forwarding-works');
+});
+Route::get('/options-that-fit-your-needs', function () {
+    return view('front.options-that-fit-your-needs');
+});
+Route::get('/privacy-and-security', function () {
+    return view('front.privacy-and-security');
+});
+Route::get('/mail-forwarding-faq', function () {
+    return view('front.mail-forwarding-faq');
+});
+Route::get('/shipping', function () {
+    return view('front.shipping');
+});
+Route::get('/receiving', function () {
+    return view('front.receiving');
+});
+Route::get('/transportation-management-systems', function () {
+    return view('front.transportation-management-systems');
+});
+Route::get('/logistics-for-business-customers', function () {
+    return view('front.logistics-for-business-customers');
+});
+Route::get('/services-overview', function () {
+    return view('front.services-overview');
+});
+Route::get('/order-fulfillment', function () {
+    return view('front.order-fulfillment');
+});
+Route::get('/amazon-fulfillment', function () {
+    return view('front.amazon-fulfillment');
+});
+Route::get('/quality-control', function () {
+    return view('front.quality-control');
+});
+Route::get('/customization', function () {
+    return view('front.customization');
+});
+Route::get('/consultation-services', function () {
+    return view('front.consultation-services');
+});
+Route::get('/about-us', function () {
+    return view('front.about-us');
+});
+Route::get('/customer-satisfaction', function () {
+    return view('front.customer-satisfaction');
+});
+Route::get('/why-parsendo', function () {
+    return view('front.why-parsendo');
+});
+Route::get('/customer-relations', function () {
+    return view('front.customer-relations');
+});
+Route::get('/protecting-the-enviroment', function () {
+    return view('front.protecting-the-enviroment');
+});
+Route::get('/contact-us', function () {
+    return view('front.contact-us');
+});
+Route::get('/customer-relations', function () {
+    return view('front.customer-relations');
+});
+Route::get('/customer-relations', function () {
+    return view('front.customer-relations');
+});
+Route::get('/customer-relations', function () {
+    return view('front.customer-relations');
 });
 
 /**

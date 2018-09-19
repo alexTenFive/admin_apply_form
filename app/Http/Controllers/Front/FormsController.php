@@ -15,6 +15,12 @@ class FormsController extends Controller
     public function link($link)
     {
         $form = Form::where('form_unique_part', $link)->first();
+
+        if (! isset($form))
+        {
+            return redirect('/');
+        }
+
         $states = State::all();
 
         if ($form->status === Form::FORM_STATUSES_KEYS['Inactive'])

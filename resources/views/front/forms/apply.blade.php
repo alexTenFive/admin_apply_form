@@ -1,4 +1,11 @@
 @extends('layouts.app')
+@section('title', 'Job Application')
+@section('body', 'apply')
+
+@section('img')
+    <img src="{{ asset('images/front/apply.png') }}" alt="Always Ahead'">
+@endsection
+
 @section('content')
 <div class="job-description">
     <div class="container">
@@ -7,16 +14,16 @@
                 <div class="text-block">
                     <div class="row">
                         <div class="col-lg-6 col-sm-12">
-                            <img src="/img/photo.jpg" alt="Job Description">
+                            <img src="{{ $form->thumbnail_url }}" alt="Job Description">
                         </div>
                         <div class="col-lg-6 col-sm-12">
                             <h3 class="title">Job Description</h3>
                             <p class="text">
-                                <img src="/assets/img/ico-17.png" alt="">&nbsp; Position Summary<br>
-                                <img src="/assets/img/ico-17.png" alt="">&nbsp; Salary and Requirements<br>
-                                <img src="/assets/img/ico-17.png" alt="">&nbsp; Frequently Asked Questions
+                                <img src="{{ asset('front/img/ico-17.png') }}" alt="">&nbsp; Position Summary<br>
+                                <img src="{{ asset('front/img/ico-17.png') }}" alt="">&nbsp; Salary and Requirements<br>
+                                <img src="{{ asset('front/img/ico-17.png') }}" alt="">&nbsp; Frequently Asked Questions
                             </p>
-                            <a href="" class="btn download"><img src="/assets/img/ico-19.png" alt="">&nbsp; Download</a>
+                            <a href="" class="btn download"><img src="{{ asset('front/img/ico-19.png') }}" alt="">&nbsp; Download</a>
                         </div>
                     </div>
                 </div>
@@ -166,9 +173,9 @@
                                 <h3 class="title">Resume</h3>
                                 <p class="text">
                                     Upload your current resume in one of the following formats:<br>
-                                    <img src="/assets/img/ico-17.png" alt="">&nbsp; Doc or Docx (Microsoft Word)<br>
-                                    <img src="/assets/img/ico-17.png" alt="">&nbsp; PDF (Adobe Acrobat)<br>
-                                    <img src="/assets/img/ico-17.png" alt="">&nbsp; TXT (Notepad/Wordpad)<br>
+                                    <img src="{{ asset('front/img/ico-17.png') }}" alt="">&nbsp; Doc or Docx (Microsoft Word)<br>
+                                    <img src="{{ asset('front/img/ico-17.png') }}" alt="">&nbsp; PDF (Adobe Acrobat)<br>
+                                    <img src="{{ asset('front/img/ico-17.png') }}" alt="">&nbsp; TXT (Notepad/Wordpad)<br>
                                     File size should not exceed 5MB.
                                 </p>
                             </div>
