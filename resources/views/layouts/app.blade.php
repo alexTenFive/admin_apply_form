@@ -28,9 +28,8 @@
     <meta name="theme-color" content="#000">
 
     <title>@yield('title', 'Always Ahead') | {{ env('COMPANY_NAME', 'Dorneo' )}} </title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('libs/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/libs/bootstrap/css/bootstrap.min.css') }}">
 </head>
 <body class="@yield('body', 'front')">
 <div class="container-fluid">
@@ -76,7 +75,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-12">
                 <div class="img text-center">
-                    <img src="{{ asset('images/front/assets/ico-10.png') }}" alt="">
+                    <img src="{{ asset('images/front/front.png') }}" alt="">
                 </div>
                 <div class="text">
                     Our highly trained staff of customer service representatives are always on hand to help you out.
@@ -90,7 +89,7 @@
                 <hr class="divider">
                 <div class="row">
                     <div class="col-2">
-                        <img class="ico-inline" src="{{ asset('images/front/assets/ico-12.png') }}" alt="">
+                        <img class="ico-inline" src="{{ asset('front/img/ico-12.png') }}" alt="">
                     </div>
                     <div class="col-10 block-info">
                         <div class="row">
@@ -114,7 +113,7 @@
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="img text-center">
-                    <img src="{{ asset('images/front/assets/ico-11.png') }}" alt="">
+                    <img src="{{ asset('front/img/ico-11.png') }}" alt="">
                 </div>
                 <div class="text">
                     Logistics is an evolving industry and some of our clients are genuinely interested to learn what’s
@@ -135,7 +134,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-2">
-                        <img class="ico-inline" src="{{ asset('images/front/assets/ico-13.png') }}" alt="">
+                        <img class="ico-inline" src="{{ asset('front/img/ico-13.png') }}" alt="">
                     </div>
                     <div class="col-10 block-info menu">
                         <a href="">Form 1583 Instruction</a><br>
@@ -199,11 +198,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-12 payments">
-                <img src="{{ asset('images/front/assets/ico-visa.png') }}" alt="">
-                <img src="{{ asset('images/front/assets/ico-mc.png') }}" alt="">
-                <img src="{{ asset('images/front/assets/ico-gw.png') }}" alt="">
-                <img src="{{ asset('images/front/assets/ico-ae.png') }}" alt="">
-                <img src="{{ asset('images/front/assets/ico-amazon.png') }}" alt="">
+                <img src="{{ asset('front/img/ico-visa.png') }}" alt="">
+                <img src="{{ asset('front/img/ico-mc.png') }}" alt="">
+                <img src="{{ asset('front/img/ico-gw.png') }}" alt="">
+                <img src="{{ asset('front/img/ico-ae.png') }}" alt="">
+                <img src="{{ asset('front') }}" alt="">
             </div>
             <div class="col-lg-4 col-md-12 text-center">
                 © 2018 Powerteam International. All rights reserved.<br>
@@ -217,11 +216,11 @@
 </div>
 
 <!--End Footer-->
-<script src="{{ asset('libs/jquery-3.3.1.slim.min.js') }}"></script>
-<script src="{{ asset('libs/popper.min.js') }}"></script>
+<script src="{{ asset('front/libs/jquery-3.3.1.slim.min.js') }}"></script>
+<script src="{{ asset('front/libs/popper.min.js') }}"></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
-<script src="{{ asset('js/script.js') }}"></script>
+<script src="{{ asset('front/js/script.js') }}"></script>
 </body>
 </html>
 

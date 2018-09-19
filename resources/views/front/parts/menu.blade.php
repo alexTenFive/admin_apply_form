@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg main-nav">
     <a class="navbar-brand" href="/">
-        <img src="{{ asset('images/front/assets/logo.png') }}" class="d-inline-block align-top" alt="">
+        <img src="{{ asset('front/img/logo.png') }}" class="d-inline-block align-top" alt="">
         DORNEO.com
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"

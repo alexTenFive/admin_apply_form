@@ -4,6 +4,8 @@ body {
     font-size: 14px;
     color: #474747;
 }
+*,
+*:active,
 *:focus {
     outline: none !important;
 }
@@ -28,6 +30,13 @@ input[type=text],
 input[type=email],
 input[type=password] {
     border-radius: 5px;
+}
+.h1, h1,
+.h2, h2,
+.h3, h3,
+.h4, h4 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
 }
 .btn {
     background: #6078de;
@@ -121,14 +130,91 @@ input[type=password] {
 }
 .custom-file {
     height: auto;
-    padding: 20px;
+    border: dashed 2px #C4C4C4;
+    padding: 25px 25px 38px;
+    position: relative;
+    border-radius: 5px;
+}
+.custom-file:before {
+    content: '';
+    position: relative;
+    display: block;
+    background: url(../img/ico-18.png) no-repeat 0 0;
+    width: 34px;
+    height: 31px;
+    margin: 25px auto 39px;
+}
+.custom-file .file {
+    position: relative;
+}
+.custom-file .file .name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.custom-file-input {
+    height: 50px;
+}
+.custom-file-label {
+    top: 120px;
+    height: 50px;
+    bottom: auto;
+    left: 25px;
+    right: 25px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 36px;
+    max-width: 380px;
+    margin: auto;
+    border: none;
+}
+.custom-file-label:after {
+    background: #6078de;
+    border-color: #6078de;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    height: 50px;
+    line-height: 34px;
+    padding-left: 43px;
+    padding-right: 43px;
+    border-radius: 5px;
 }
 .custom-file img {
     max-width: 100%;
     height: auto;
 }
 .files-row > * {
-    margin-bottom: 15px;
+    margin-top: 20px;
+}
+textarea.textarea.form-control {
+    height: 150px;
+}
+.g-recaptcha > * {
+    margin: 0 auto;
+}
+.marked {
+    color: #6078de;
+}
+.h4, h4 {
+    font-size: 18px;
+}
+.navbar-toggler-icon {
+    position: relative;
+}
+.navbar-toggler-icon:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    left: 2px;
+    right: 2px;
+    top: 50%;
+    background: #fff;
+    box-shadow: 0 7px 0 #fff, 0 -7px 0 #fff;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
 }
 /*End Base styles*/
 
@@ -217,33 +303,37 @@ input[type=password] {
 .nav.main > li.account > a:after {
     display: none;
 }
+.nav.main > li:hover > span,
+.nav.main .active-trail>span {
+    color: #f64567;
+}
 .account .modal-content {
     font-size: 14px;
     padding: 25px 23px 10px;
     width: 292px;
 }
-.account .title {
+.modal-content .title {
     font-size: 18px;
     line-height: 25px;
     margin-bottom: 15px;
 }
-.account .pass {
+.modal-content .pass {
     padding-bottom: 3px;
 }
-.account .remember {
+.modal-content .remember {
     margin-bottom: 25px;
 }
-.account .form-btns {
+.modal-content .form-btns {
     margin-bottom: 20px;
 }
-.account .sign-in {
+.modal-content .sign-in {
     margin-bottom: 11px;
 }
-.account .btn {
+.modal-content .btn {
     font-size: 14px;
     font-weight: 600;
 }
-.account .create-acc {
+.modal-content .create-acc {
     width: 100%;
     text-align: center;
 }
@@ -313,7 +403,7 @@ input[type=password] {
 .block {
     padding: 100px 0;
 }
-.block-cells .title {
+.content .block-cells .title {
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
@@ -352,7 +442,8 @@ input[type=password] {
     transform: translate(-50%, 0);
 }
 .text-block {
-    padding: 40px 0 5px;
+    padding-top: 40px;
+    padding-bottom: 5px;
 }
 .text-block h2 {
     font-size: 48px;
@@ -361,6 +452,10 @@ input[type=password] {
     font-weight: bold;
     text-align: center;
     margin-bottom: 30px;
+}
+.text-block h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 .text-block p {
     margin-bottom: 27px;
@@ -372,25 +467,91 @@ div[class*="col-"] > .text-block:last-child {
     width: 100%;
     height: 600px;
 }
-.form-apply .custom-select,
-.form-apply .form-control {
+.content .custom-select,
+.content .form-control {
     height: 50px;
 }
-.form-apply .form-row {
+.content .form-row {
     margin-bottom: 30px;
 }
-.form-apply .title {
+.page-account .form-group {
+    margin-bottom: 20px;
+}
+.content .title {
     font-size: 36px;
     line-height: 50px;
 }
-.form-apply .form-row > div[class*="col"] > p:last-child {
+.content .form-row > div[class*="col"] > p:last-child {
     margin-bottom: 0;
 }
 #image-preview > img {
     width: 20%;
     height: auto;
 }
+.req-text {
+    display: none;
+}
+.alert {
+    width: 100%;
+    text-align: center;
+}
+.alert.empty,
+.alert.not-empty {
+    background-color: red;
+    border-color: red;
+    color: #fff;
+    border-radius: 5px;
+    display: none;
+}
+.success.success {
+    background-color: #5ca947;
+    border-color: #4f913d;
+}
+.contact-info h3 {
+    margin-bottom: 11px;
+}
+.contact-info h4 {
+    margin-bottom: 35px;
+}
+.contact-info p {
+    line-height: 30px;
+}
+.contact-info .phone {
+    position: relative;
+}
+.contact-info .phone:before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    margin: 0 8px 0 0;
+    background: url(../img/ico-15.png) no-repeat 0 0;
+    width: 11px;
+    height: 11px;
+}
+.page-account .title {
+    text-transform: uppercase;
+}
+.job-description{
+    background: #f1f1f1;
+}
+.job-description .text-block {
+    padding-top: 90px;
+    padding-bottom: 75px !important;
+}
+.job-description .title {
+    font-weight: normal;
+    line-height: 36px;
+}
+.form-apply .text,
+.job-description .text {
+    line-height: 38px;
+}
+.download img {
+    margin-top: -2px;
+}
 /*Content End*/
+
+/*Reviews*/
 
 .reviews {
     background: rgba(246, 69, 103, .08);
@@ -427,6 +588,9 @@ div[class*="col-"] > .text-block:last-child {
 .reviews .carousel-indicators li.active {
     background: #f64567;
 }
+
+/*Reviews End*/
+
 /*Bottom*/
 
 .bottom {
@@ -443,7 +607,7 @@ div[class*="col-"] > .text-block:last-child {
 .subscribe {
     position: relative;
     margin-top: 21px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .subscribe input[type=email],
 .subscribe button {
@@ -461,11 +625,16 @@ div[class*="col-"] > .text-block:last-child {
     padding-left: 62px;
     padding-right: 62px;
 }
-.bottom hr {
-    background: rgba(255, 255, 255, 0.3);
+.subscribe .alert {
+    margin-top: 15px;
+    text-align: center;
+}
+.pad-top {
+    padding-top: 15px;
 }
 .bottom .divider {
-    margin-top: 32px;
+    height: 1px;
+    background: rgba(255, 255, 255, .30);
 }
 .block-info {
     line-height: 42px;
@@ -534,6 +703,19 @@ div[class*="col-"] > .text-block:last-child {
 .payments img {
     margin-right: 6px;
 }
+.footer .phone {
+    position: relative;
+    font-weight: 600;
+}
+.footer .phone:before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    margin: 0 8px 0 0;
+    background: url(../img/ico-16.png) no-repeat 0 0;
+    width: 11px;
+    height: 11px;
+}
 /*End Footer*/
 @media screen and (min-width: 992px) {
     .navbar-brand {
@@ -555,9 +737,95 @@ div[class*="col-"] > .text-block:last-child {
     .main-nav {
         padding: 14px 0 0;
     }
+    .br-right {
+        border-right: 1px solid rgba(255, 255, 255, .3);
+    }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 993px) {
     .dropdown:hover > span + .dropdown-menu {
         display: block;
+    }
+}
+@media screen and (max-width: 1025px) {
+    .img-wrap .title {
+        font-size: 52px;
+        line-height: normal;
+    }
+    .front .img-wrap .title {
+        font-size: 90px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .block-cells .row > * {
+        margin-bottom: 80px;
+    }
+    .block-cells .row > *:last-child {
+        margin-bottom: 0;
+    }
+    .nav.main {
+        background: #474747;
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .dropdown-toggle:after {
+        float: right;
+        margin-top: 15px;
+    }
+    .account .modal-content {
+        width: 100%;
+    }
+    .navbar.main-nav .dropdown-menu {
+        border-radius: 0;
+        margin-left: -15px;
+        margin-right: -15px;
+        padding: 0;
+    }
+    .main-nav .navbar-collapse {
+        max-width: 100%;
+    }
+    .main-nav .dropdown-item {
+        padding: .532rem 1rem;
+        white-space: inherit;
+    }
+    .block-newsletter,
+    .block-login {
+        padding-top: 40px;
+    }
+}
+@media screen and (max-width: 769px) {
+    .img-wrap .title {
+        font-size: 52px;
+    }
+    .front .img-wrap .title {
+        font-size: 70px;
+    }
+    .content .title {
+        font-size: 26px;
+        line-height: 40px;
+    }
+    .contact-info {
+        text-align: center;
+        padding-top: 40px;
+    }
+    .text-block h2 {
+        font-size: 38px;
+        line-height: 46px;
+    }
+    .navbar.main-nav {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+@media screen and (max-width: 500px) {
+    .img-wrap .title {
+        font-size: 32px;
+    }
+    .front .img-wrap .title {
+        font-size: 42px;
+    }
+    .text-block h2 {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 20px;
     }
 }
