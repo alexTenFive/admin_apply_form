@@ -66,7 +66,7 @@ class FormsController extends Controller
         if($file = $request->hasFile('thumbnail')) {
             $file = $request->file('thumbnail');
             $extension = $file->getClientOriginalName();
-            $thumb = Image::make($file->getRealPath())->resize(120, 120, function ($constraint) {
+            $thumb = Image::make($file->getRealPath())->resize(204, 236, function ($constraint) {
                 $constraint->aspectRatio(); //maintain image ratio
             });
             $destinationPath = public_path('/uploads/thumbnails/');

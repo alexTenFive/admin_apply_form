@@ -36,7 +36,6 @@ input[type=password] {
 .h3, h3,
 .h4, h4 {
     font-family: Arial, sans-serif;
-    font-weight: bold;
 }
 .btn {
     background: #6078de;
@@ -143,6 +142,8 @@ input[type=password] {
     width: 34px;
     height: 31px;
     margin: 25px auto 39px;
+    z-index: 2;
+    pointer-events: none;
 }
 .custom-file .file {
     position: relative;
@@ -156,19 +157,37 @@ input[type=password] {
     height: 50px;
 }
 .custom-file-label {
-    top: 120px;
-    height: 50px;
-    bottom: auto;
-    left: 25px;
-    right: 25px;
+    top: 0;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
     font-size: 18px;
     font-weight: 300;
-    line-height: 36px;
-    max-width: 380px;
+    line-height: 50px;
     margin: auto;
     border: none;
+    box-shadow: none !important;
+    padding: 120px 0 0;
+}
+.custom-file-label .inner {
+    max-width: 380px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
 }
 .custom-file-label:after {
+    display: none;
+}
+.custom-file-label .inner:after {
+    content: "Browse";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: block;
+    padding: .375rem .75rem;
     background: #6078de;
     border-color: #6078de;
     color: #fff;
@@ -183,6 +202,10 @@ input[type=password] {
 .custom-file img {
     max-width: 100%;
     height: auto;
+}
+.files-row {
+    position: relative;
+    z-index: 3;
 }
 .files-row > * {
     margin-top: 20px;
@@ -530,6 +553,7 @@ div[class*="col-"] > .text-block:last-child {
 }
 .page-account .title {
     text-transform: uppercase;
+    font-weight: bold;
 }
 .job-description{
     background: #f1f1f1;
@@ -827,5 +851,20 @@ div[class*="col-"] > .text-block:last-child {
         font-size: 24px;
         line-height: 30px;
         margin-bottom: 20px;
+    }
+    .custom-file-label .inner {
+        margin: 0 15px;
+        width: auto;
+        max-width: 100%;
+        text-align: center;
+    }
+    .custom-file-label {
+        padding: 90px 0 0;
+    }
+    .custom-file-label .inner:after {
+        position: relative;
+    }
+    .custom-file:before {
+        margin-bottom: 59px;
     }
 }
