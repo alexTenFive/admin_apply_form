@@ -41,7 +41,7 @@
         @endif
         <div class="title">
 
-            <div id="content" class="content">
+            <div class="container">
                 @yield('title', 'Always Ahead')
                 @hasSection('page_id')
                 <div class="btn-wrap">
@@ -65,9 +65,9 @@
     </div>
 </div>
 @endif
-
+<div id="content" class="content">
 @yield('content')
-
+</div>
 <!--Bottom-->
 
 <div class="bottom block">
