@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
     {
         User::create([
             'name' => 'admin',
-            'email' => 'flash.alex322@gmail.com',
+            'email' => 'admin@dorneo.wibe.pro',
             'type' => User::TYPE_ADMIN,
             'password' => bcrypt('secret'),
         ]);
