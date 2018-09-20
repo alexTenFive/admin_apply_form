@@ -16,6 +16,8 @@
                         <div class="col-lg-6 col-sm-12">
                             <img src="{{ $form->thumbnail_url }}" alt="Job Description">
                         </div>
+                        {{ 'HEADER html:' . $form->header_html }}
+                        {{ 'Form title:' . $form->title }}
                         <div class="col-lg-6 col-sm-12">
                             <h3 class="title">Job Description</h3>
                             <p class="text">
@@ -23,7 +25,7 @@
                                 <img src="{{ asset('front/img/ico-17.png') }}" alt="">&nbsp; Salary and Requirements<br>
                                 <img src="{{ asset('front/img/ico-17.png') }}" alt="">&nbsp; Frequently Asked Questions
                             </p>
-                            <a href="" class="btn download"><img src="{{ asset('front/img/ico-19.png') }}" alt="">&nbsp; Download</a>
+                            <a href="{{ $form->pdf_url }}" class="btn download"><img src="{{ asset('front/img/ico-19.png') }}" alt="">&nbsp; Download</a>
                         </div>
                     </div>
                 </div>
@@ -35,97 +37,49 @@
     <div class="row justify-content-center">
         <div class="col-lg-8 col-md-12">
             <div class="text-block">
-                <form id="form-apply" class="form-apply" action="../parts/apply-form-action.php">
+                <form id="form-apply" class="form-apply" action="{{ route('profiles.store', $form->form_unique_part) }}">
                     <div class="form-hide">
                         <div class="form-row form-group">
                             <div class="col-lg-6 col-md-12">
-                                <input class="form-control req" type="text" placeholder="First Name*">
+                                <input class="form-control req" name="first_name" type="text" placeholder="First Name*">
                                 <div class="req-text">First Name field is required.</div>
                             </div>
                             <div class="col-lg-6 col-md-12">
-                                <input class="form-control req" type="text" placeholder="Larst Name*">
+                                <input class="form-control req" name="last_name"type="text" placeholder="Larst Name*">
                                 <div class="req-text">Last Name field is required.</div>
                             </div>
                         </div>
                         <div class="form-row form-group">
                             <div class="col-12">
-                                <input class="form-control req" type="text"
+                                <input class="form-control req" name="address" type="text"
                                        placeholder="Current Mailindg Adress*">
                                 <div class="req-text">Current Mailing Address field is required.</div>
                             </div>
                         </div>
                         <div class="form-row form-group">
                             <div class="col-12">
-                                <input class="form-control req" type="text" placeholder="City*">
+                                <input class="form-control req" type="text" name="city" placeholder="City*">
                                 <div class="req-text">City field is required.</div>
                             </div>
                         </div>
                         <div class="form-row form-group">
                             <div class="col-lg-6 col-md-12">
                                 <select name="state" id="state" class="form-control custom-select req">
-                                    <option value="">State*</option>
-                                    <option value="1">Alabama</option>
-                                    <option value="2">Alaska</option>
-                                    <option value="4">Arizona</option>
-                                    <option value="5">Arkansas</option>
-                                    <option value="6">California</option>
-                                    <option value="7">Colorado</option>
-                                    <option value="8">Connecticut</option>
-                                    <option value="9">Delaware</option>
-                                    <option value="10">Florida</option>
-                                    <option value="11">Georgia</option>
-                                    <option value="13">Hawaii</option>
-                                    <option value="14">Idaho</option>
-                                    <option value="15">Illinois</option>
-                                    <option value="16">Indiana</option>
-                                    <option value="17">Iowa</option>
-                                    <option value="18">Kansas</option>
-                                    <option value="19">Kentucky</option>
-                                    <option value="20">Louisiana</option>
-                                    <option value="21">Maine</option>
-                                    <option value="22">Maryland</option>
-                                    <option value="23">Massachusetts</option>
-                                    <option value="24">Michigan</option>
-                                    <option value="25">Minnesota</option>
-                                    <option value="26">Mississippi</option>
-                                    <option value="27">Missouri</option>
-                                    <option value="28">Montana</option>
-                                    <option value="29">Nebraska</option>
-                                    <option value="30">Nevada</option>
-                                    <option value="31">New Hampshire</option>
-                                    <option value="32">New Jersey</option>
-                                    <option value="33">New Mexico</option>
-                                    <option value="34">New York</option>
-                                    <option value="35">North Carolina</option>
-                                    <option value="36">North Dakota</option>
-                                    <option value="38">Ohio</option>
-                                    <option value="39">Oklahoma</option>
-                                    <option value="40">Oregon</option>
-                                    <option value="41">Pennsylvania</option>
-                                    <option value="43">Rhode Island</option>
-                                    <option value="44">South Carolina</option>
-                                    <option value="45">South Dakota</option>
-                                    <option value="46">Tennessee</option>
-                                    <option value="47">Texas</option>
-                                    <option value="48">Utah</option>
-                                    <option value="49">Vermont</option>
-                                    <option value="50">Virginia</option>
-                                    <option value="52">Washington</option>
-                                    <option value="54">West Virginia</option>
-                                    <option value="55">Wisconsin</option>
-                                    <option value="56">Wyoming</option>
+                                    @foreach ($states as $state)
+                                    <option value="{{ $state->id }}">@if ($state->id == 0)State*@else {{ $state->state }}@endif</option>
+                                    @endforeach
                                 </select>
                                 <div class="req-text">State field is required.</div>
                             </div>
                             <div class="col-lg-6 col-md-12">
-                                <input class="form-control req" type="text" placeholder="ZIP Code*">
+                                <input class="form-control req" type="text" name="zip" placeholder="ZIP Code*">
                                 <div class="req-text">ZIP Code field is required. It must be exact 5 characters long.
                                 </div>
                             </div>
                         </div>
                         <div class="form-row form-group">
                             <div class="col-12">
-                                <input class="form-control req" type="email" placeholder="E-mail*">
+                                <input class="form-control req" type="email" name="email" placeholder="E-mail*">
                                 <div class="req-text">Email Address field is required.</div>
                             </div>
                         </div>
@@ -134,7 +88,7 @@
                                 <input class="form-control" disabled="disabled" type="text" placeholder="+1">
                             </div>
                             <div class="col-10">
-                                <input class="form-control req" type="text"
+                                <input class="form-control req" name="cell_phone" type="text"
                                        placeholder="Primary Phone*">
                                 <div class="req-text">Primary Phone field is required.</div>
                             </div>
@@ -144,7 +98,7 @@
                                 <input class="form-control" disabled="disabled" type="text" placeholder="+1">
                             </div>
                             <div class="col-10">
-                                <input class="form-control" type="text" placeholder="Alternative Phone">
+                                <input class="form-control" type="text" name="other_phone" placeholder="Alternative Phone">
                             </div>
                         </div>
                         <div class="form-row form-group">
@@ -161,7 +115,7 @@
                         <div class="form-row form-group">
                             <div class="col-12">
                                 <div class="custom-file">
-                                    <input id="upload-img" type="file" class="form-control custom-file-input" multiple>
+                                    <input id="upload-img" type="file" name="photos[]" class="form-control custom-file-input" multiple>
                                     <label class="custom-file-label" for="validatedCustomFile">Drop files to upload
                                         or</label>
                                     <div class="row files-row" id="image-preview"></div>
@@ -183,7 +137,7 @@
                         <div class="form-row form-group">
                             <div class="col-12">
                                 <div class="custom-file">
-                                    <input id="upload-file" type="file" class="form-control custom-file-input req"
+                                    <input id="upload-file" type="file" name="files[]" class="form-control custom-file-input req"
                                            multiple>
                                     <label class="custom-file-label" for="validatedCustomFile">Drop files to upload
                                         or</label>
