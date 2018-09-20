@@ -16,7 +16,7 @@
                         <div class="col-lg-6 col-sm-12">
                             <img src="{{ $form->thumbnail_url }}" alt="Job Description">
                         </div>
-                        {{ 'HEADER html:' . $form->header_html }}
+                        HEADER html: {!! htmlspecialchars_decode($form->header_html) !!}
                         {{ 'Form title:' . $form->title }}
                         <div class="col-lg-6 col-sm-12">
                             <h3 class="title">Job Description</h3>
