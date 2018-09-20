@@ -133,10 +133,10 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     /**
      * PROFILES
      */
-    Route::get('/dashboard/profiles/{type?}/{search_phrase?}', ['as' => 'admin.profiles', 'uses' => 'Admin\ProfilesController@index']);
     Route::get('/dashboard/profiles/{profile}/delete/{type?}', ['as' => 'admin.profiles.delete', 'uses' => 'Admin\ProfilesController@delete']);
     Route::get('/dashboard/profiles/{profile}/edit/{type?}', ['as' => 'admin.profiles.edit', 'uses' => 'Admin\ProfilesController@edit']);
     Route::patch('/dashboard/profiles/{profile}/update/{type?}', ['as' => 'admin.profiles.update', 'uses' => 'Admin\ProfilesController@update']);
+    Route::get('/dashboard/profiles/{type?}/{search_phrase?}', ['as' => 'admin.profiles', 'uses' => 'Admin\ProfilesController@index']);
 
     });
 
