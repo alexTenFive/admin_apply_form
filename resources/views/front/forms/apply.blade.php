@@ -13,11 +13,12 @@
             <div class="col-lg-6 col-md-12">
                 <div class="text-block">
                     <div class="row">
+                        <span>HEADER html:</span> {!! htmlspecialchars_decode($form->header_html) !!}
+                        {{ 'Form title:' . $form->title }}
                         <div class="col-lg-6 col-sm-12">
                             <img src="{{ $form->thumbnail_url }}" alt="Job Description">
                         </div>
-                        HEADER html: {!! htmlspecialchars_decode($form->header_html) !!}
-                        {{ 'Form title:' . $form->title }}
+
                         <div class="col-lg-6 col-sm-12">
                             <h3 class="title">Job Description</h3>
                             <p class="text">
