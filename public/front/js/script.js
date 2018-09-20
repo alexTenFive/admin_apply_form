@@ -4,7 +4,7 @@ jQuery(function ($) {
 
     menuWrap.find('a[href="' + url + '"]').addClass('active').closest('.nav-item.dropdown').addClass('active-trail');
 
-    var submenu = menuWrap.find('a.nav-link.active').siblings('a').closest('.dropdown-menu').html();
+    var submenu = menuWrap.find('a.dropdown-item.active').siblings('a').closest('.dropdown-menu').html();
 
     $('#submenu-wrap').append(submenu);
 
@@ -67,12 +67,12 @@ jQuery(function ($) {
 function previewImage() {
     var totalFile = document.getElementById("upload-img").files.length;
     for (var i = 0; i < totalFile; i++) {
-        $('#image-preview').append("<div class='col-lg-3 col-sm-3'><img src='" + URL.createObjectURL(event.target.files[i]) + "'></div>");
+        $('#image-preview').append("<div class='col-lg-3 col-sm-3 col-4'><img src='" + URL.createObjectURL(event.target.files[i]) + "'></div>");
     }
 }
 function previewFile() {
     var totalFile = document.getElementById("upload-file").files.length;
     for (var i = 0; i < totalFile; i++) {
-        $('#file-preview').append("<div class='col-lg-3 col-sm-3'><div class='file'><img src='/assets/img/cv.png' alt=''><div class='name'>"+event.target.files[i].name+"</div></div></div>");
+        $('#file-preview').append("<div class='col-lg-3 col-sm-3 col-4'><div class='file'><img src='/assets/img/cv.png' alt=''><div class='name'>"+event.target.files[i].name+"</div></div></div>");
     }
 }

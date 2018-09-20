@@ -327,7 +327,7 @@ textarea.textarea.form-control {
     display: none;
 }
 .nav.main > li:hover > span,
-.nav.main .active-trail>span {
+.nav.main .active-trail > span {
     color: #f64567;
 }
 .account .modal-content {
@@ -424,7 +424,8 @@ textarea.textarea.form-control {
     padding-top: 35px;
 }
 .block {
-    padding: 100px 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 .content .block-cells .title {
     font-weight: 700;
@@ -555,7 +556,7 @@ div[class*="col-"] > .text-block:last-child {
     text-transform: uppercase;
     font-weight: bold;
 }
-.job-description{
+.job-description {
     background: #f1f1f1;
 }
 .job-description .text-block {
@@ -612,7 +613,6 @@ div[class*="col-"] > .text-block:last-child {
 .reviews .carousel-indicators li.active {
     background: #f64567;
 }
-
 /*Reviews End*/
 
 /*Bottom*/
@@ -770,6 +770,17 @@ div[class*="col-"] > .text-block:last-child {
         display: block;
     }
 }
+@media screen and (max-width: 1200px) {
+    .submenu-wrap {
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .submenu-wrap a {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
 @media screen and (max-width: 1025px) {
     .img-wrap .title {
         font-size: 52px;
@@ -780,9 +791,6 @@ div[class*="col-"] > .text-block:last-child {
     }
 }
 @media screen and (max-width: 992px) {
-    .block-cells .row > * {
-        margin-bottom: 80px;
-    }
     .block-cells .row > *:last-child {
         margin-bottom: 0;
     }
@@ -815,6 +823,14 @@ div[class*="col-"] > .text-block:last-child {
     .block-login {
         padding-top: 40px;
     }
+    .tab-btn {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .card-body {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 @media screen and (max-width: 769px) {
     .img-wrap .title {
@@ -838,6 +854,11 @@ div[class*="col-"] > .text-block:last-child {
     .navbar.main-nav {
         padding-left: 0;
         padding-right: 0;
+    }
+}
+@media screen and (max-width: 767px) {
+    .block-cells .row > * {
+        margin-bottom: 80px;
     }
 }
 @media screen and (max-width: 500px) {

@@ -7,7 +7,7 @@
 @section('content')
     <div class="container block block-cells">
         <div class="row text-center">
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
                     <img src="{{ asset('front/img/ico-1.png') }}" alt="LOGISTICS FOR BUSINESS CUSTOMERS">
                 </div>
@@ -19,7 +19,7 @@
                 </p>
                 <a href="" class="btn more">Learn More</a>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
                     <img src="{{ asset('front/img/ico-2.png') }}" alt="MAIL FORWARDING">
                 </div>
@@ -31,7 +31,7 @@
                 </p>
                 <a href="" class="btn more">Learn More</a>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
                     <img src="{{ asset('front/img/ico-3.png') }}" alt="ADD-ON SERVICES">
                 </div>
@@ -102,7 +102,7 @@
 
     <div class="container block block-cells">
         <div class="row text-center">
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
                     <img src="{{ asset('front/img/ico-4.png') }}" alt="ORDER FULFILLMENT">
                 </div>
@@ -114,7 +114,7 @@
                 </p>
                 <a href="" class="btn more">Learn More</a>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
                     <img src="{{ asset('front/img/ico-5.png') }}" alt="QUALITY CONTROL">
                 </div>
@@ -126,7 +126,7 @@
                 </p>
                 <a href="" class="btn more">Learn More</a>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
                     <img src="{{ asset('front/img/ico-6.png') }}" alt="CUSTOMIZATION">
                 </div>
@@ -191,7 +191,7 @@
 
     <div class="container block block-cells">
         <div class="row text-center">
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
                     <img src="{{ asset('front/img/ico-7.png') }}" alt="CONSULTATION SERVICES">
                 </div>
@@ -202,7 +202,7 @@
                 </p>
                 <a href="" class="btn more">Learn More</a>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
                     <img src="{{ asset('front/img/ico-8.png') }}" alt="CUSTOMER SATISFACTION">
                 </div>
@@ -213,7 +213,7 @@
                 </p>
                 <a href="" class="btn more">Learn More</a>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
                     <img src="{{ asset('front/img/ico-9.png') }}" alt="PROTECTING THE ENVIRONMENT">
                 </div>
@@ -226,7 +226,6 @@
             </div>
         </div>
     </div>
-
     <!--Reviews-->
 
     @include('front.parts.reviews')
