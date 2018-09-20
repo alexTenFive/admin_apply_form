@@ -403,7 +403,7 @@ textarea.textarea.form-control {
     background: #6078de;
     opacity: .85;
 }
-.about-us {
+.block.about-us {
     background: url(../img/bg-about-us.png) no-repeat center center;
 }
 .why-us {
