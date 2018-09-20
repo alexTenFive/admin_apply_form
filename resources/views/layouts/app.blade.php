@@ -211,7 +211,7 @@
             <div class="col-lg-4 col-md-12 payments">
                 <img src="{{ asset('front/img/ico-visa.png') }}" alt="">
                 <img src="{{ asset('front/img/ico-mc.png') }}" alt="">
-                <img src="{{ asset('front/img/img/ico-gw.png') }}" alt="">
+                <img src="{{ asset('front/img/ico-gw.png') }}" alt="">
                 <img src="{{ asset('front/img/ico-ae.png') }}" alt="">
                 <img src="{{ asset('front/img/ico-amazon.png') }}" alt="">
             </div>

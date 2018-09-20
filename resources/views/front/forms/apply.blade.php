@@ -117,8 +117,11 @@
                             <div class="col-12">
                                 <div class="custom-file">
                                     <input id="upload-img" type="file" name="photos[]" class="form-control custom-file-input" multiple>
-                                    <label class="custom-file-label" for="validatedCustomFile">Drop files to upload
-                                        or</label>
+                                    <label class="custom-file-label" for="upload-img">
+                                        <span class="inner">
+                                            Drop files to upload or
+                                        </span>
+                                    </label>
                                     <div class="row files-row" id="image-preview"></div>
                                 </div>
                             </div>
@@ -140,8 +143,11 @@
                                 <div class="custom-file">
                                     <input id="upload-file" type="file" name="files[]" class="form-control custom-file-input req"
                                            multiple>
-                                    <label class="custom-file-label" for="validatedCustomFile">Drop files to upload
-                                        or</label>
+                                    <label class="custom-file-label" for="upload-file">
+                                        <span class="inner">
+                                            Drop files to upload or
+                                        </span>
+                                    </label>
                                     <div class="row files-row" id="file-preview"></div>
                                     <div class="req-text">Resume needs to be uploaded.</div>
                                 </div>
