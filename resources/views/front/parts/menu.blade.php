@@ -53,7 +53,7 @@
                 </div>
             </li>
             <li class="nav-item dropdown account">
-                <a class="btn btn-2 nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                <a class="btn btn-2 nav-link dropdown-toggle" href="#" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     My account
                 </a>

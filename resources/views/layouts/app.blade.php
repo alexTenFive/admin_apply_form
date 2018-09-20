@@ -218,7 +218,8 @@
 <!--End Footer-->
 <script src="{{ asset('front/libs/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('front/libs/popper.min.js') }}"></script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="{{ asset('front/libs/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
 <script src="{{ asset('front/js/script.js') }}"></script>
 </body>

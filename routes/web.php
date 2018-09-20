@@ -89,7 +89,21 @@ Route::get('/customer-relations', function () {
 Route::get('/customer-relations', function () {
     return view('front.customer-relations');
 });
-
+Route::get('/account', function () {
+    return view('front.account');
+});
+Route::get('/terms-of-service', function () {
+    return view('front.terms-of-service');
+});
+Route::get('/password-recovery', function () {
+    return view('front.password-recovery');
+});
+Route::get('/username-recovery', function () {
+    return view('front.username-recovery');
+});
+Route::get('/usubscribe', function () {
+    return view('front.usubscribe');
+});
 /**
  * FRONTEND ROUTES END
  */

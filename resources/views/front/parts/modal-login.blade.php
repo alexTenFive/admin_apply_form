@@ -1,19 +1,17 @@
 <h3 class="title">MY ACCOUNT</h3>
-<form name="login" action="" method="POST" class="form">
+<form id="login" name="login" action="" method="POST" class="form">
     <div class="form-group">
-        <input class="form-control" name="username" id="username" placeholder="Login" autocomplete="off">
+        <input class="form-control req" name="username" id="username" placeholder="Login" autocomplete="off">
+        <div class="req-text">The username field is required.</div>
     </div>
     <div class="form-group pass">
-        <input class="form-control" type="password" name="password" id="password" placeholder="Password" autocomplete="off">
+        <input class="form-control req" type="password" name="password" id="password" placeholder="Password" autocomplete="off">
+        <div class="req-text">The password field is required.</div>
     </div>
-    <div data-alert="" class="alert-box alert warning radius success_box-login account-box" style="display: none;">
+    <div class="alert not-empty">
         Incorrect Login/Password or this account is not verified yet.
-        <a href="#" class="close">×</a>
     </div>
-    <div data-alert="" class="alert-box alert radius error_box-login account-box" style="display: none;">
-        The username field is required.<br>
-        The password field is required.<br>
-    </div>
+    <div class="alert empty"></div>
     <div class="form-group sign-in">
         <input type="submit" name="submit" class="btn" value="Sign in">
     </div>
@@ -22,8 +20,8 @@
         <label class="form-check-label" for="remember">Remember me</label>
     </div>
     <div class="form-group form-btns">
-        Forgot your <a href="/password_recovery">Password?</a> or
-        <a href="/username_recovery">Username?</a>
+        Forgot your <a href="{{ url('/password-recovery') }}">Password?</a> or
+        <a href="{{ url('/username-recovery') }}">Username?</a>
     </div>
-    <a href="/account" class="btn create-acc">Open New Account</a>
+    <a href="{{ url('/account') }}" class="btn create-acc">Open New Account</a>
 </form>
