@@ -35,8 +35,8 @@ class CreateProfilesTable extends Migration
             $table->string('was_contract')->default('n');
             $table->string('archived')->default('n');
             $table->string('interviewpreferred')->default('');
-            $table->timestamp('date_added');
-            $table->timestamp('date_updated');
+            $table->timestamp('date_added')->nullable();
+            $table->timestamp('date_updated')->nullable();
         });
     }
 

@@ -19,7 +19,7 @@ class CreateProfileFilesTable extends Migration
             $table->string('host_name')->nullable();
             $table->string('file_path');
             $table->string('file_name');
-            $table->timestamps();
+            $table->nullableTimestamps();
         });
     }
 

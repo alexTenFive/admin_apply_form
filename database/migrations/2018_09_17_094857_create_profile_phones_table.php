@@ -19,8 +19,8 @@ class CreateProfilePhonesTable extends Migration
             $table->string('phone');
             $table->string('type')->default('other');
             $table->string('checked')->default('n');
-            $table->timestamp('date_added');
-            $table->timestamp('date_updated');
+            $table->timestamp('date_added')->nullable();
+            $table->timestamp('date_updated')->nullable();
         });
     }
 
