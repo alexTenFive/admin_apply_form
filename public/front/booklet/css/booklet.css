@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:800i|Roboto:400,400i,500,500i,700,700i');
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    background: #dedede;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    line-height: 16px;
+    color: #444;
+    padding-top: 30px;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+h3 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    line-height: 16px;
+}
+p {
+    margin-bottom: 17px;
+    line-height: 16px;
+}
+ul {
+    margin-bottom: 23px;
+    margin-top: -3px;
+    line-height: 18px;
+}
+li {
+    position: relative;
+}
+li:before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    background: url(../img/ico-20.png) no-repeat 0 0;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px -1px 0;
+}
+h3.title {
+    font-weight: 700;
+    color: #f64567;
+    margin-bottom: 18px;
+}
+.wrap {
+    width: 100%;
+    max-width: 595px;
+    margin: 0 auto;
+    background: #fff;
+    height: 842px;
+    position: relative;
+}
+.header {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    border-bottom: 2px solid #f64567;
+    height: 76px;
+    margin-bottom: 28px;
+}
+.logo,
+.info {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+.logo {
+    padding-left: 33px;
+}
+.logo img {
+    margin: 0 2px -2px 0;
+}
+.site-name {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 29px;
+}
+.info {
+    width: 310px;
+    position: relative;
+    background: #f64567;
+    height: 74px;
+    color: #fff;
+    padding-left: 30px;
+}
+.info:before {
+    content: '';
+    position: absolute;
+    display: block;
+    right: 100%;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 75px 44px;
+    border-color: transparent transparent #f64567 transparent;
+}
+.info img {
+    margin-right: 6px;
+}
+.info .row {
+    margin-bottom: 7px;
+}
+.info .phone {
+    margin-right: 29px;
+}
+.info .address img {
+    margin: 0 12px -2px 0;
+}
+.text-center {
+    text-align: center;
+}
+.content {
+    padding: 0 33px;
+}
+.footer {
+    font-size: 8px;
+    color: #8b8b8b;
+    padding: 0 33px 29px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

@@ -104,6 +104,18 @@ Route::get('/username-recovery', function () {
 Route::get('/usubscribe', function () {
     return view('front.usubscribe');
 });
+
+Route::group(['prefix' => 'booklet'], function () {
+    Route::get('/booklet1', function () {
+        return view('front.booklet.booklet1');
+    });
+    Route::get('/booklet2', function () {
+        return view('front.booklet.booklet2');
+    });
+    Route::get('/booklet3', function () {
+        return view('front.booklet.booklet3');
+    });
+});
 /**
  * FRONTEND ROUTES END
  */
