@@ -64,9 +64,9 @@
                         </div>
                         <div class="form-row form-group">
                             <div class="col-lg-6 col-md-12">
-                                <select name="state" id="state" class="form-control custom-select req">
+                                <select name="state_id" id="state" class="form-control custom-select req">
                                     @foreach ($states as $state)
-                                    <option value="{{ $state->id }}">@if ($state->id == 0)State*@else {{ $state->state }}@endif</option>
+                                    <option value="{{ $state->id }}">@if ($state->id == 0) State* @else {{ $state->state }} @endif</option>
                                     @endforeach
                                 </select>
                                 <div class="req-text">State field is required.</div>
