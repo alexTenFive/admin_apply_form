@@ -37,7 +37,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8 col-md-12">
             <div class="text-block">
-                <form id="form-apply" class="form-apply" action="{{ route('profiles.store', $form->form_unique_part) }}">
+                <form id="form-apply" class="form-apply" method="post" action="{{ route('profiles.store', $form->form_unique_part) }}" enctype="multipart/form-data">
                     <div class="form-hide">
                         <div class="form-row form-group">
                             <div class="col-lg-6 col-md-12">
