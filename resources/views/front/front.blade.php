@@ -2,7 +2,7 @@
 @section('title', 'Always Ahead')
 @section('body', 'front')
 @section('img')
-    <img src="{{ asset('images/front/front.png') }}" alt="Always Ahead">
+    <img src="{{ asset('images/front/front.jpg') }}" alt="Always Ahead">
 @endsection
 @section('content')
     <div class="container block block-cells">

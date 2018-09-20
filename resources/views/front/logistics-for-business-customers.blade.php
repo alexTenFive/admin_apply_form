@@ -2,7 +2,7 @@
 @section('title', 'Logistics Solutions For Business Customers')
 @section('body', 'logistics-for-business-customers')
 @section('img')
-    <img src="{{ asset('images/front/logistics-for-business-customers.png') }}" alt="Logistics Solutions For Business Customers">
+    <img src="{{ asset('images/front/logistics-for-business-customers.jpg') }}" alt="Logistics Solutions For Business Customers">
 @endsection
 @section('content')
     <div class="container">

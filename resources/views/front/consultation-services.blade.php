@@ -2,7 +2,7 @@
 @section('title', 'Consultation Services')
 @section('body', 'consultation-services')
 @section('img')
-    <img src="{{ asset('images/front/consultation-services.png') }}" alt="Consultation Services">
+    <img src="{{ asset('images/front/consultation-services.jpg') }}" alt="Consultation Services">
 @endsection
 @section('content')
     <div class="container">

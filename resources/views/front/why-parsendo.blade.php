@@ -2,7 +2,7 @@
 @section('title', 'Why Parsendo?')
 @section('body', 'why-parsendo')
 @section('img')
-    <img src="{{ asset('images/front/why-parsendo.png') }}" alt="Why Parsendo?">
+    <img src="{{ asset('images/front/why-parsendo.jpg') }}" alt="Why Parsendo?">
 @endsection
 @section('content')
     <div class="container">

@@ -2,7 +2,7 @@
 @section('title', 'Order Fulfillment')
 @section('body', 'order-fulfillment')
 @section('img')
-    <img src="{{ asset('images/front/order-fulfillment.png') }}" alt="Order Fulfillment">
+    <img src="{{ asset('images/front/order-fulfillment.jpg') }}" alt="Order Fulfillment">
 @endsection
 @section('content')
     <div class="container">

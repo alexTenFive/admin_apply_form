@@ -2,7 +2,7 @@
 @section('title', 'Quality Control')
 @section('body', 'quality-control')
 @section('img')
-    <img src="{{ asset('images/front/quality-control.png') }}" alt="Quality Control">
+    <img src="{{ asset('images/front/quality-control.jpg') }}" alt="Quality Control">
 @endsection
 @section('content')
     <div class="container">

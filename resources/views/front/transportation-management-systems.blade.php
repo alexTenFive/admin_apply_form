@@ -2,7 +2,7 @@
 @section('title', 'Transportation Management Systems')
 @section('body', 'transportation-management-systems')
 @section('img')
-    <img src="{{ asset('images/front/transportation-management-systems.png') }}" alt="Transportation Management Systems">
+    <img src="{{ asset('images/front/transportation-management-systems.jpg') }}" alt="Transportation Management Systems">
 @endsection
 @section('content')
     <div class="container">

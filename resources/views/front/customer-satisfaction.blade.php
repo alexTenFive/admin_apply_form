@@ -2,7 +2,7 @@
 @section('title', 'Customer Satisfaction')
 @section('body', 'customer-satisfaction')
 @section('img')
-    <img src="{{ asset('images/front/customer-satisfaction.png') }}" alt="Customer Satisfaction">
+    <img src="{{ asset('images/front/customer-satisfaction.jpg') }}" alt="Customer Satisfaction">
 @endsection
 @section('content')
     <div class="container">

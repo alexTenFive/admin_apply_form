@@ -2,7 +2,7 @@
 @section('title', 'Shipping')
 @section('body', 'shipping')
 @section('img')
-    <img src="{{ asset('images/front/shipping.png') }}" alt="Shipping">
+    <img src="{{ asset('images/front/shipping.jpg') }}" alt="Shipping">
 @endsection
 @section('content')
     <div class="container">

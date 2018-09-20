@@ -2,7 +2,7 @@
 @section('title', 'Options that Fit Your Needs')
 @section('body', 'options-that-fit-your-needs')
 @section('img')
-    <img src="{{ asset('images/front/options-that-fit-your-needs.png') }}" alt="Options that Fit Your Needs">
+    <img src="{{ asset('images/front/options-that-fit-your-needs.jpg') }}" alt="Options that Fit Your Needs">
 @endsection
 @section('content')
 <div class="container">

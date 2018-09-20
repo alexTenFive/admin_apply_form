@@ -2,7 +2,7 @@
 @section('title', 'Protecting the Environment')
 @section('body', 'protecting-the-enviroment')
 @section('img')
-    <img src="{{ asset('images/front/protecting-the-enviroment.png') }}" alt="Protecting the Environment">
+    <img src="{{ asset('images/front/protecting-the-enviroment.jpg') }}" alt="Protecting the Environment">
 @endsection
 @section('content')
     <div class="container">

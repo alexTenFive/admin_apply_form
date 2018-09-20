@@ -2,7 +2,7 @@
 @section('title', 'Privacy and Security')
 @section('body', 'privacy-and-security')
 @section('img')
-    <img src="{{ asset('images/front/privacy-and-security.png') }}" alt="Privacy and Security">
+    <img src="{{ asset('images/front/privacy-and-security.jpg') }}" alt="Privacy and Security">
 @endsection
 @section('content')
     <div class="container">

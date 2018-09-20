@@ -2,7 +2,7 @@
 @section('title', 'Mail Forwarding At a Glance')
 @section('body', 'mail-forwarding-at-a-glance')
 @section('img')
-    <img src="{{ asset('images/front/mail-forwarding.png') }}" alt="Mail Forwarding At a Glance">
+    <img src="{{ asset('images/front/mail-forwarding.jpg') }}" alt="Mail Forwarding At a Glance">
 @endsection
 @section('content')
 <div class="container">

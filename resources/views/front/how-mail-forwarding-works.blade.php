@@ -2,7 +2,7 @@
 @section('title', 'How Mail Forwarding Works')
 @section('body', 'how-mail-forwarding-works')
 @section('img')
-    <img src="{{ asset('images/front/how-mail-forwarding-works.png') }}" alt="How Mail Forwarding Works">
+    <img src="{{ asset('images/front/how-mail-forwarding-works.jpg') }}" alt="How Mail Forwarding Works">
 @endsection
 @section('content')
 <div class="container">

@@ -2,7 +2,7 @@
 @section('title', 'Contact Us')
 @section('body', 'contact-us')
 @section('img')
-    <img src="{{ asset('images/front/contact-us.png') }}" alt="Contact Us">
+    <img src="{{ asset('images/front/contact-us.jpg') }}" alt="Contact Us">
 @endsection
 @section('content')
     <iframe class="map-contact-us" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.773829208177!2d-117.48859578478896!3d33.895478280648895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcb76f3dc7e4d1%3A0xd69888fb38ebb746!2s11671+Sterling+Ave+Ste+G%2C+Riverside%2C+CA+92503%2C+%D0%A1%D0%A8%D0%90!5e0!3m2!1sru!2sua!4v1534893405299"

@@ -2,7 +2,7 @@
 @section('title', 'Terms of Service and Privacy Policy')
 @section('body', 'terms-of-service')
 @section('img')
-    <img src="{{ asset('images/front/terms-of-service.png') }}" alt="Terms of Service and Privacy Policy">
+    <img src="{{ asset('images/front/terms-of-service.jpg') }}" alt="Terms of Service and Privacy Policy">
 @endsection
 @section('content')
     <div class="container">

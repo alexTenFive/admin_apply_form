@@ -2,7 +2,7 @@
 @section('title', 'Amazon Fulfillment')
 @section('body', 'amazon-fulfillment')
 @section('img')
-    <img src="{{ asset('images/front/amazon-fulfillment.png') }}" alt="Amazon Fulfillment">
+    <img src="{{ asset('images/front/amazon-fulfillment.jpg') }}" alt="Amazon Fulfillment">
 @endsection
 @section('content')
     <div class="container">
