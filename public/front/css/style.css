@@ -559,6 +559,9 @@ div[class*="col-"] > .text-block:last-child {
 .job-description {
     background: #f1f1f1;
 }
+.job-description img {
+    max-width: 100%;
+}
 .job-description .text-block {
     padding-top: 90px;
     padding-bottom: 75px !important;
