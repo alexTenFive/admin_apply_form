@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Always Ahead')
 @section('body', 'front')
+@section('page_id')
 @section('img')
     <img src="{{ asset('images/front/front.jpg') }}" alt="Always Ahead">
 @endsection
