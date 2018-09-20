@@ -1,6 +1,6 @@
 jQuery(function ($) {
     var menuWrap = $('#main-nav');
-    var url = window.location.pathname;
+    var url = window.location.href;
 
     menuWrap.find('a[href="' + url + '"]').addClass('active').closest('.nav-item.dropdown').addClass('active-trail');
 
