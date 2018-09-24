@@ -106,6 +106,8 @@ class FormsController extends Controller
             ]);
         }
 
-        return true;
+        return json_encode([
+            'status' => 'success',
+        ]);
     }
 }
