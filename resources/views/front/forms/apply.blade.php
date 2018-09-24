@@ -121,7 +121,7 @@
                         <div class="form-row form-group">
                             <div class="col-12">
                                 <div class="custom-file">
-                                    <input id="upload-img" type="file" accept="image/*" name="photos[]" class="form-control custom-file-input" multiple>
+                                    <input id="upload-img" type="file" accept="image/*" name="photos[]" class="form-control custom-file-input">
                                     <label class="custom-file-label" for="upload-img">
                                         <span class="inner">
                                             Drop files to upload or
@@ -146,8 +146,7 @@
                         <div class="form-row form-group">
                             <div class="col-12">
                                 <div class="custom-file">
-                                    <input id="upload-file" type="file" name="files[]" accept=".doc,.docx,.pdf,.txt" class="form-control custom-file-input req"
-                                           multiple>
+                                    <input id="upload-file" type="file" name="files[]" accept=".doc,.docx,.pdf,.txt" class="form-control custom-file-input req">
                                     <label class="custom-file-label" for="upload-file">
                                         <span class="inner">
                                             Drop files to upload or
