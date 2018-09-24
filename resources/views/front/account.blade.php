@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-12">
                             <h3 class="title">Sign Up</h3>
-                            <form id="signup" class="form-recovery" method="post" action="">
+                            <form id="signup" class="form-recovery" method="post" action="{{ route('sign-up') }}">
                                 <div class="form-hide">
                                     <div class="form-group">
                                         <input class="form-control req" name="name" type="text" placeholder="Name*">
