@@ -12,8 +12,13 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="text-block">
+                        @if ($form->status === 1)
                         <div class="row">
-                            @if ($form->status === 1)
+                            <div class="col-md-12 col-sm-12 text-center">
+                                {{ $form->header_html }}
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6 col-sm-12 text-center text-md-right d-sm-none d-md-block">
                                 <img src="{{ $form->thumbnail_url }}" alt="Job Description">
                             </div>
