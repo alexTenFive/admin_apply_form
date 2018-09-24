@@ -88,15 +88,56 @@ jQuery(function ($) {
 
 function previewImage() {
     var totalFile = document.getElementById("upload-img").files.length;
-    for (var i = 0; i < totalFile; i++) {
-        $('#image-preview').append("<div class='col-lg-3 col-sm-3 col-4'><img src='" + URL.createObjectURL(event.target.files[i]) + "'></div>");
-    }
 
+    $('#image-preview').html('');
+    for (var i = 0; i < totalFile; i++) {
+
+        var numb = event.target.files[i].size/1024/1024;
+        numb = numb.toFixed(2);
+
+        if(numb > 1){
+            if($('#upload-img + .error').length > 0) {
+                $('#upload-img + .error').fadeIn();
+                setTimeout(function () {
+                    $('#upload-img + div').fadeOut();
+                },2000);
+                $('#upload-img').val('');
+            } else {
+                $('#upload-img').after('<div class="error" style="color: red;padding: 20px 0 5px;position: relative;z-index: 2;text-align: center;">Files, bigger than 1.00 MB is not allowed</div>');
+                setTimeout(function () {
+                    $('#upload-img + div').fadeOut();
+                },2000)
+            }
+        } else {
+            $('#image-preview').append("<div class='col-lg-3 col-sm-3 col-4'><img src='" + URL.createObjectURL(event.target.files[i]) + "'></div>");
+        }
+    }
 }
 
 function previewFile(event) {
     var totalFile = document.getElementById("upload-file").files.length;
+
+    $('#file-preview').html('');
+
+    var numb = event.target.files[i].size/1024/1024;
+    numb = numb.toFixed(2);
+
     for (var i = 0; i < totalFile; i++) {
-        $('#file-preview').append("<div class='col-lg-3 col-sm-3 col-4'><div class='file'><img src='/assets/img/cv.png' alt=''><div class='name'>" + event.target.files[i].name + "</div></div></div>");
+        if(numb > 5){
+            if($('#upload-file + .error').length > 0) {
+                $('#upload-file + .error').fadeIn();
+                setTimeout(function () {
+                    $('#upload-file + div').fadeOut();
+                },2000);
+                $('#upload-file').val('');
+            } else {
+                $('#upload-file').after('<div class="error" style="color: red;padding: 20px 0 5px;position: relative;z-index: 2;text-align: center;">Files, bigger than 1.00 MB is not allowed</div>');
+                setTimeout(function () {
+                    $('#upload-file + div').fadeOut();
+                },2000)
+            }
+        } else {
+            $('#file-preview').append("<div class='col-lg-3 col-sm-3 col-4'><div class='file'><img src='/assets/img/cv.png' alt=''><div class='name'>" + event.target.files[i].name + "</div></div></div>");
+        }
     }
 }
