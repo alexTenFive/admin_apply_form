@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Job Application')
+@section('title', $form->title)
 @section('body', 'apply')
 @section('apply', 'apply')
 @section('img')
