@@ -6,15 +6,12 @@ jQuery(function ($) {
     $('.phone').mask('(000) 000-0000');
     $('.zip').mask('00000');
 
+    var imgElement = document.getElementById("upload-img");
+    var fileElement = document.getElementById("upload-file");
+    imgElement.addEventListener("change", previewImage, false);
+    fileElement.addEventListener("change", previewFile, false);
+
     $('#submenu-wrap').append(submenu);
-
-    $('#upload-img').on('change',function () {
-        previewImage();
-    });
-
-    $('#upload-file').on('change',function () {
-        previewFile();
-    });
 
     $('form').on('submit',function (e) {
         var form = $(this);
@@ -35,6 +32,7 @@ jQuery(function ($) {
         }
         if((form.find('.err').length === 0 && form.find('.g-recaptcha').length < 1) || (form.find('.err').length === 0 && form.find('.g-recaptcha').length > 0 && grecaptcha.getResponse().length > 0)) {
             setTimeout(function () {
+                // return false;
                 if(form.find('.form-hide').length > 0){
                     form.find('.form-hide').hide();
                     $('body').animate({
@@ -57,15 +55,17 @@ jQuery(function ($) {
             }
             if(form.attr('id') === 'form-apply'){
                 var action = $(this).attr('action');
+                var form_data = new FormData(form[0]);
 
-                var form_data = form.serialize();
-                console.log(form_data);
                 $.ajax({
                     type: "POST",
                     url: action,
                     data: form_data,
+                    processData: false,
+                    cache: false,
+                    contentType: false,
                     success: function (data) {
-                        console.log(data);
+                        // console.log(data);
                     }
                 });
             }
@@ -76,6 +76,7 @@ jQuery(function ($) {
         e.preventDefault();
         return false;
     });
+
 }, jQuery);
 
 function previewImage() {
@@ -83,8 +84,9 @@ function previewImage() {
     for (var i = 0; i < totalFile; i++) {
         $('#image-preview').append("<div class='col-lg-3 col-sm-3 col-4'><img src='" + URL.createObjectURL(event.target.files[i]) + "'></div>");
     }
+
 }
-function previewFile() {
+function previewFile(event) {
     var totalFile = document.getElementById("upload-file").files.length;
     for (var i = 0; i < totalFile; i++) {
         $('#file-preview').append("<div class='col-lg-3 col-sm-3 col-4'><div class='file'><img src='/assets/img/cv.png' alt=''><div class='name'>"+event.target.files[i].name+"</div></div></div>");
