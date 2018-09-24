@@ -138,7 +138,7 @@ function previewFile(event) {
                 },2000)
             }
         } else {
-            $('#file-preview').append("<div class='col-lg-3 col-sm-3 col-4'><div class='file'><img src='front/img/cv.png' alt=''><div class='name'>" + event.target.files[i].name + "</div></div></div>");
+            $('#file-preview').append("<div class='col-lg-3 col-sm-3 col-4'><div class='file'><img src='/front/img/cv.png' alt=''><div class='name'>" + event.target.files[i].name + "</div></div></div>");
         }
     }
 }
