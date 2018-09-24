@@ -13,7 +13,7 @@
                 <div class="text-block">
                     <div class="row justify-content-between">
                         <div class="col-lg-6 col-md-8 col-12">
-                            <form id="contact-us" class="form" method="post" action="">
+                            <form id="contact-us" class="form" method="post" action="{{ route('contact-us') }}">
                                 <div class="form-hide">
                                     <div class="form-group">
                                         <input id="name" name="name" class="form-control req" type="text" placeholder="Name*">

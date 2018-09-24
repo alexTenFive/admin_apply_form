@@ -103,7 +103,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <form class="subscribe">
+                        <form class="subscribe" action>
                             <div class="form-group">
                                 <label for="subscribe" class="sr-only">subscribe</label>
                                 <input type="email" class="form-control req" id="subscribe" placeholder="Your E-mail">

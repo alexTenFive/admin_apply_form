@@ -101,13 +101,66 @@ Route::get('/password-recovery', function () {
 Route::get('/username-recovery', function () {
     return view('front.username-recovery');
 });
-Route::get('/usubscribe', function () {
-    return view('front.usubscribe');
+Route::get('/unsubscribe', function () {
+    return view('front.unsubscribe');
 });
 Route::get('/form-1583-instruction', function () {
     return view('front.form-1583-instruction');
 });
 
+Route::post('/contact-us', function (Request $request) {
+    $recipient = env('ADMIN_EMAIL');
+    if (isset($request->name) && isset($request->mes) && !empty($request->email)) {
+        $to = $recipient;
+        $subject = 'Contact request from '.env('COMPANY_NAME');
+        $message = '
+                <html>
+                    <head>
+                        <title>' . $subject . '</title>
+                    </head>
+                    <body>
+                        <p><b>Name:</b>      ' . $request->name . '</p>
+                        <p><b>E-mail:</b>  ' . $request->email . '</p>                        
+                        <p><b>Phone:</b>  ' . $request->phone . '</p>                        
+                        <p><b>Message:</b>  ' . $request->mes . '</p>                        
+                    </body>
+                </html>';
+        $headers = "Content-type: text/html; charset=utf-8 \r\n";
+        $headers .= "From: Contact ".env('COMPANY_NAME')." <".env('ADMIN_EMAIL').">\r\n";
+        mail($to, $subject, $message, $headers);
+    }
+})->name('contact-us');
+
+Route::post('/sign-up', function (Request $request) {
+    $recipient = env('ADMIN_EMAIL');
+    if (isset($request->name) && ($request->email != "")) {
+        $to = $recipient;
+        $subject = 'Contact request from '.env('COMPANY_NAME');
+        $message = '
+                <html>
+                    <head>
+                        <title>' . $request->subject . '</title>
+                    </head>
+                    <body>
+                        <p><b>Name:</b>         ' . $request->name . '</p>
+                        <p><b>Username:</b>     ' . $request->username . '</p>
+                        <p><b>Password:</b>     ' . $request->password . '</p>
+                        <p><b>E-mail:</b>       ' . $request->email . '</p>  
+                        <p><b>Adress 1:</b>     ' . $request->adress1 . '</p>
+                        <p><b>Adress 2:</b>     ' . $request->adress2 . '</p>
+                        <p><b>Country:</b>      ' . $request->country . '</p>
+                        <p><b>City:</b>         ' . $request->city . '</p>
+                        <p><b>State:</b>        ' . $request->state . '</p>
+                        <p><b>Zip:</b>          ' . $request->zip . '</p>
+                        <p><b>Phone:</b>        ' . $request->phone . '</p>                        
+                        <p><b>Website:</b>      ' . $request->website . '</p>                        
+                    </body>
+                </html>';
+        $headers = "Content-type: text/html; charset=utf-8 \r\n";
+        $headers .= "From: Contact ".env('COMPANY_NAME')." <".env('ADMIN_EMAIL').">\r\n";
+        mail($to, $subject, $message, $headers);
+    }
+})->name('sign-up');
 
 Route::group(['prefix' => 'booklet'], function () {
     Route::get('/booklet1', function () {

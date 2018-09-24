@@ -8,10 +8,10 @@ jQuery(function ($) {
 
     var imgElement = document.getElementById("upload-img");
     var fileElement = document.getElementById("upload-file");
-    if (imgElement.length > 0) {
+    if ($('#upload-img').length > 0){
         imgElement.addEventListener("change", previewImage, false);
     }
-    if (fileElement.length > 0) {
+    if ($('#upload-file').length > 0){
         fileElement.addEventListener("change", previewFile, false);
     }
 
