@@ -15,7 +15,7 @@
                         @if ($form->status === 1)
                         <div class="row">
                             <div class="col-md-12 col-sm-12 text-center">
-                                {!! $form->header_html !!}
+                                {!! htmlspecialchars_decode($form->header_html) !!}
                             </div>
                         </div>
                         <div class="row">
