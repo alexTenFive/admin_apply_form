@@ -119,10 +119,11 @@ function previewFile(event) {
 
     $('#file-preview').html('');
 
-    var numb = event.target.files[i].size/1024/1024;
-    numb = numb.toFixed(2);
-
     for (var i = 0; i < totalFile; i++) {
+
+        var numb = event.target.files[i].size/1024/1024;
+        numb = numb.toFixed(2);
+
         if(numb > 5){
             if($('#upload-file + .error').length > 0) {
                 $('#upload-file + .error').fadeIn();
