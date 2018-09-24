@@ -18,7 +18,7 @@
                     expertise
                     shines through when...
                 </p>
-                <a href="" class="btn more">Learn More</a>
+                <a href="{{ url('/logistics-for-business-customers') }}" class="btn more">Learn More</a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
@@ -30,7 +30,7 @@
                     service,
                     especially with our overseas...
                 </p>
-                <a href="" class="btn more">Learn More</a>
+                <a href="{{ url('/mail-forwarding-at-a-glance') }}" class="btn more">Learn More</a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
@@ -42,7 +42,7 @@
                     offer. Our
                     clients...
                 </p>
-                <a href="" class="btn more">Learn More</a>
+                <a href="{{ url('/services-overview') }}" class="btn more">Learn More</a>
             </div>
         </div>
     </div>
@@ -91,7 +91,7 @@
                             one else would be able to come close to what we offer.
                         </p>
                         <div class="btn-wrap text-center">
-                            <a href="" class="btn btn-2 more">Learn More</a>
+                            <a href="{{ url('/about-us') }}" class="btn btn-2 more">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                     expertise
                     shines through when...
                 </p>
-                <a href="" class="btn more">Learn More</a>
+                <a href="{{ url('/order-fulfillment') }}" class="btn more">Learn More</a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
@@ -125,7 +125,7 @@
                     service,
                     especially with our overseas...
                 </p>
-                <a href="" class="btn more">Learn More</a>
+                <a href="{{ url('/quality-control') }}" class="btn more">Learn More</a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
@@ -137,7 +137,7 @@
                     offer. Our
                     clients...
                 </p>
-                <a href="" class="btn more">Learn More</a>
+                <a href="{{ url('/customization') }}" class="btn more">Learn More</a>
             </div>
         </div>
     </div>
@@ -180,7 +180,7 @@
                             one else would be able to come close to what we offer.
                         </p>
                         <div class="btn-wrap text-center">
-                            <a href="" class="btn btn-2 more">Learn More</a>
+                            <a href="{{ url('/why-parsendo') }}" class="btn btn-2 more">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -201,7 +201,7 @@
                     Parsendo is one of the pioneers in the logistics industry. We take great pride in what we do and our
                     expertise shines through when...
                 </p>
-                <a href="" class="btn more">Learn More</a>
+                <a href="{{ url('/consultation-services') }}" class="btn more">Learn More</a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
@@ -212,7 +212,7 @@
                     Mail Forwarding is one of our cornerstones in the services that we offer. This has been a very popular
                     service, especially with our overseas...
                 </p>
-                <a href="" class="btn more">Learn More</a>
+                <a href="{{ url('/customer-satisfaction') }}" class="btn more">Learn More</a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">
@@ -223,7 +223,7 @@
                     We offer a plethora of services and our business customers find a lot of values in what we have to
                     offer. Our clients...
                 </p>
-                <a href="" class="btn more">Learn More</a>
+                <a href="{{ url('/protecting-the-enviroment') }}" class="btn more">Learn More</a>
             </div>
         </div>
     </div>

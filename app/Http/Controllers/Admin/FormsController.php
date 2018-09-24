@@ -84,7 +84,7 @@ class FormsController extends Controller
             'thumbnail_url' => $thumb_link ?? '/uploads/thumbnails/default.jpg'
         ]);
 
-        return redirect('/admin/dashboard')->with('status', 'Form succesfully created!');
+        return redirect('/apply-form-88/dashboard')->with('status', 'Form succesfully created!');
 
     }
 

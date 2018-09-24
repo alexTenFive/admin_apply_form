@@ -14,8 +14,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="" />
     <link rel="icon" type="img/png" href="" sizes="196x196" />
     <link rel="icon" type="img/png" href="" sizes="96x96" />
-    <link rel="icon" type="img/png" href="" sizes="32x32" />
-    <link rel="icon" type="img/png" href="" sizes="16x16" />
+    <link rel="icon" type="img/png" href="{{ asset('front/img/favicon-32x32.png') }}" sizes="32x32" />
+    <link rel="icon" type="img/png" href="{{ asset('front/img/favicon-16x16.png') }}" sizes="16x16" />
     <link rel="icon" type="img/png" href="" sizes="128x128" />
     <meta name="application-name" content="{{ env('COMPANY_NAME', 'Dorneo') }};"/>
     <meta name="msapplication-TileColor" content="#FFFFFF" />
@@ -27,13 +27,13 @@
     <meta name="msapplication-square310x310logo" content="" />
     <meta name="theme-color" content="#000">
 
-    <title>@yield('title', 'Always Ahead') | {{ env('COMPANY_NAME', 'Dorneo' )}} </title>
+    <title>@yield('title', 'Always Ahead') | {{ env('COMPANY_DOMAIN', 'Dorneo.com' )}} </title>
     <link rel="stylesheet" href="{{ asset('front/libs/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
 </head>
 <body class="@yield('body', 'front')">
-<div class="container-fluid">
-    <div class="row img-wrap">
+<div class="header-wrap">
+    <div class="img-wrap">
         @hasSection('img')
             @yield('img')
         @else
@@ -43,6 +43,9 @@
 
             <div class="container">
                 @yield('title', 'Always Ahead')
+                @hasSection('apply')
+                    <div class="subtitle">Job Application</div>
+                @endif
                 @hasSection('page_id')
                 <div class="btn-wrap">
                     <a class="btn" href="">Learn more</a>
@@ -106,7 +109,7 @@
                                 <input type="email" class="form-control req" id="subscribe" placeholder="Your E-mail">
                                 <div class="req-text">The email field is required.</div>
                                 <div class="alert not-empty success">
-                                    Thank you for signing up for Parsendo newsletter!
+                                    Thank you for signing up for {{ env('COMPANY_NAME') }} newsletter!
                                 </div>
                                 <div class="alert empty"></div>
                                 <button type="submit" class="btn btn-2 btn-primary">Submit</button>
@@ -117,10 +120,10 @@
             </div>
         </div>
         <div class="divider"></div>
-        <div class="row">
+        <div class="row info">
             <div class="col-lg-6 col-md-12 br-right pad-top">
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-sm-2 col-12 text-center text-sm-left">
                         <img class="ico-inline" src="{{ asset('front/img/ico-12.png') }}" alt="">
                     </div>
                     <div class="col-10 block-info">
@@ -144,11 +147,11 @@
             </div>
             <div class="col-lg-6 col-md-12 pad-top">
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-sm-2 col-12 text-center text-sm-left">
                         <img class="ico-inline" src="{{ asset('front/img/ico-13.png') }}" alt="">
                     </div>
-                    <div class="col-10 block-info menu">
-                        <a href="">Form 1583 Instruction</a><br>
+                    <div class="col-sm-10 col-12 block-info menu">
+                        <a href="{{ url('/form-1583-instruction') }}">Form 1583 Instruction</a><br>
                         <a href="{{ url('/mail-forwarding-at-a-glance') }}">Mail Forwarding Frequently Asked Questions</a><br>
                         <a href="{{ url('/privacy-and-security') }}">Privacy and Security Measures</a><br>
                     </div>
@@ -162,7 +165,7 @@
 
 <!--Footer-->
 <div class="container footer">
-    <div class="row block">
+    <div class="row block justify-content-center">
         <div class="col-lg-3 col-md-6 col-12">
             <h3 class="title">Company</h3>
             <ul>
@@ -229,9 +232,11 @@
 <script src="{{ asset('front/libs/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('front/libs/popper.min.js') }}"></script>
 <script src="{{ asset('front/libs/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('front/libs/jquery.mask.min.js') }}"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
 <script src="{{ asset('front/js/script.js') }}"></script>
+
 </body>
 </html>
 

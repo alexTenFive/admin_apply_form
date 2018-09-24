@@ -30,13 +30,13 @@
     <div id="app">
         <div id="preloaders" class="preloader"></div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="{{ url('/admin/dashboard') }}">
+            <a class="navbar-brand" href="{{ url('/apply-form-88/dashboard') }}">
                 {{ config('app.name', 'APPLY FORM') }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+            @auth
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
@@ -91,6 +91,7 @@
                     </div>
                 @endauth
             </div>
+                @endauth
         </nav>
 
         <main class="py-3">

@@ -104,6 +104,10 @@ Route::get('/username-recovery', function () {
 Route::get('/usubscribe', function () {
     return view('front.usubscribe');
 });
+Route::get('/form-1583-instruction', function () {
+    return view('front.form-1583-instruction');
+});
+
 
 Route::group(['prefix' => 'booklet'], function () {
     Route::get('/booklet1', function () {
@@ -124,7 +128,7 @@ Route::group(['prefix' => 'booklet'], function () {
 /**
  * BACKEND ROUTES
  */
-Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
+Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'apply-form-88'], function () {
     Route::get('/dashboard', ['as' => 'admin.dashboard', 'uses' => 'Admin\DashboardController@index']);
     /**
      * FORMS
@@ -164,8 +168,8 @@ Route::post('/form/{link}', ['as' => 'profiles.store', 'uses' => 'Front\FormsCon
  * AUTH ROUTES
  * Override default scaffold laravel routes
  */
-Route::get('/admin/login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('/admin/login', 'Auth\LoginController@login');
+Route::get('/apply-form-88/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/apply-form-88/login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');

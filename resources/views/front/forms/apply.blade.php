@@ -1,40 +1,36 @@
 @extends('layouts.app')
 @section('title', 'Job Application')
 @section('body', 'apply')
-
+@section('apply', 'apply')
 @section('img')
     <img src="{{ asset('images/front/apply.png') }}" alt="Always Ahead'">
 @endsection
 
 @section('content')
-<div class="job-description">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-12">
-                <div class="text-block">
-                    <div class="row">
-
-                        <div class="col-lg-6 col-sm-12">
-                            <span>HEADER html:</span> {!! htmlspecialchars_decode($form->header_html) !!}
-                            {{ 'Form title:' . $form->title }}
-                            <img src="{{ $form->thumbnail_url }}" alt="Job Description">
-                        </div>
-
-                        <div class="col-lg-6 col-sm-12">
-                            <h3 class="title">Job Description</h3>
-                            <p class="text">
-                                <img src="{{ asset('front/img/ico-17.png') }}" alt="">&nbsp; Position Summary<br>
-                                <img src="{{ asset('front/img/ico-17.png') }}" alt="">&nbsp; Salary and Requirements<br>
-                                <img src="{{ asset('front/img/ico-17.png') }}" alt="">&nbsp; Frequently Asked Questions
-                            </p>
-                            <a href="{{ $form->pdf_url }}" class="btn download"><img src="{{ asset('front/img/ico-19.png') }}" alt="">&nbsp; Download</a>
+    <div class="job-description">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="text-block">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 text-center text-md-right d-sm-none d-md-block">
+                                <img src="{{ $form->thumbnail_url }}" alt="Job Description">
+                            </div>
+                            <div class="col-md-6 col-sm-12 text-center text-md-left">
+                                <h3 class="title">{{ $form->title }}</h3>
+                                <p class="text">
+                                    <img src="{{ asset('/front/img/ico-17.png') }}" alt="">&nbsp; Position Summary<br>
+                                    <img src="{{ asset('/front/img/ico-17.png') }}" alt="">&nbsp; Salary and Requirements<br>
+                                    <img src="{{ asset('/front/img/ico-17.png') }}" alt="">&nbsp; Frequently Asked Questions
+                                </p>
+                                <a href="{{ $form->pdf_url }}" class="btn download"><img src="{{ asset('/front/img/ico-19.png') }}" alt="">&nbsp; Download</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-8 col-md-12">
@@ -48,14 +44,14 @@
                                 <div class="req-text">First Name field is required.</div>
                             </div>
                             <div class="col-lg-6 col-md-12">
-                                <input class="form-control req" name="last_name"type="text" placeholder="Larst Name*">
+                                <input class="form-control req" name="last_name" type="text" placeholder="Last Name*">
                                 <div class="req-text">Last Name field is required.</div>
                             </div>
                         </div>
                         <div class="form-row form-group">
                             <div class="col-12">
                                 <input class="form-control req" name="address" type="text"
-                                       placeholder="Current Mailindg Adress*">
+                                       placeholder="Current Mailing Address*">
                                 <div class="req-text">Current Mailing Address field is required.</div>
                             </div>
                         </div>
@@ -91,7 +87,7 @@
                                 <input class="form-control" disabled="disabled" type="text" placeholder="+1">
                             </div>
                             <div class="col-10">
-                                <input class="form-control req" name="cell_phone" type="text"
+                                <input id="phone" class="phone form-control req" data-mask="(000) 000-0000" maxlength="14" name="cell_phone" type="text"
                                        placeholder="Primary Phone*">
                                 <div class="req-text">Primary Phone field is required.</div>
                             </div>
@@ -101,7 +97,7 @@
                                 <input class="form-control" disabled="disabled" type="text" placeholder="+1">
                             </div>
                             <div class="col-10">
-                                <input class="form-control" type="text" name="other_phone" placeholder="Alternative Phone">
+                                <input id="phone-alt" class="phone form-control" data-mask="(000) 000-0000" maxlength="14" name="other_phone" type="text" placeholder="Alternative Phone">
                             </div>
                         </div>
                         <div class="form-row form-group">
@@ -158,7 +154,7 @@
                         <div class="form-row form-group">
                             <div class="col-12 text-center">
                                 <div class="alert empty"></div>
-                                <button class="btn btn-2 btn-primary" type="submit">Submit form</button>
+                                <button class="btn btn-2 btn-primary" type="submit">Apply Now!</button>
                             </div>
                         </div>
                     </div>

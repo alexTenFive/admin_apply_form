@@ -116,6 +116,6 @@ class FormsController extends Controller
             ]);
         }
 
-        return back()->with('status', 'Profile is upload to server');
+        return true;
     }
 }

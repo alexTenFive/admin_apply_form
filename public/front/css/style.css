@@ -284,8 +284,13 @@ textarea.textarea.form-control {
     transform: translate(-50%, -50%);
 }
 .front .img-wrap .title {
-    font-size: 120px;
+    font-size: 90px;
     line-height: normal;
+}
+.subtitle {
+    font-size: 48px;
+    line-height: 56px;
+    margin-top: 28px;
 }
 .img-wrap .btn {
     text-transform: none;
@@ -333,7 +338,7 @@ textarea.textarea.form-control {
 .account .modal-content {
     font-size: 14px;
     padding: 25px 23px 10px;
-    width: 292px;
+    width: 300px;
 }
 .modal-content .title {
     font-size: 18px;
@@ -371,9 +376,9 @@ textarea.textarea.form-control {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 .submenu-wrap a {
     width: auto;
@@ -518,6 +523,8 @@ div[class*="col-"] > .text-block:last-child {
 .alert {
     width: 100%;
     text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .alert.empty,
 .alert.not-empty {
@@ -586,7 +593,7 @@ div[class*="col-"] > .text-block:last-child {
 }
 .reviews .text {
     position: relative;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 28px;
     font-weight: 300;
 }
@@ -602,7 +609,7 @@ div[class*="col-"] > .text-block:last-child {
 .reviews .author {
     margin-top: 46px;
     margin-bottom: 65px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
 }
 .reviews .carousel-indicators li {
@@ -724,6 +731,9 @@ div[class*="col-"] > .text-block:last-child {
 .copy a {
     font-weight: 300;
 }
+.copyright {
+    padding: 0;
+}
 .payments {
     line-height: 60px;
 }
@@ -783,6 +793,9 @@ div[class*="col-"] > .text-block:last-child {
         padding-left: 15px;
         padding-right: 15px;
     }
+    .container {
+        max-width: 100%;
+    }
 }
 @media screen and (max-width: 1025px) {
     .img-wrap .title {
@@ -791,6 +804,11 @@ div[class*="col-"] > .text-block:last-child {
     }
     .front .img-wrap .title {
         font-size: 90px;
+    }
+    .subtitle {
+        font-size: 28px;
+        line-height: 46px;
+        margin-top: 10px;
     }
 }
 @media screen and (max-width: 992px) {
@@ -834,6 +852,15 @@ div[class*="col-"] > .text-block:last-child {
         padding-left: 15px;
         padding-right: 15px;
     }
+    .payments {
+        text-align: center;
+    }
+    .copyright br {
+        display: none;
+    }
+    .content .form-row > .col-lg-6:first-child {
+        margin-bottom: 30px;
+    }
 }
 @media screen and (max-width: 769px) {
     .img-wrap .title {
@@ -863,8 +890,27 @@ div[class*="col-"] > .text-block:last-child {
     .block-cells .row > * {
         margin-bottom: 80px;
     }
+    .footer {
+        display: none;
+    }
+    .copy {
+        border-top: none;
+    }
+    .block {
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .submenu {
+        display: none;
+    }
+    .copy {
+        padding-bottom: 40px;
+    }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 576px) {
     .img-wrap .title {
         font-size: 32px;
     }
@@ -890,5 +936,28 @@ div[class*="col-"] > .text-block:last-child {
     }
     .custom-file:before {
         margin-bottom: 59px;
+    }
+    .subtitle {
+        font-size: 21px;
+        line-height: 26px;
+    }
+    .bottom .ico-inline {
+        margin-bottom: 20px;
+    }
+    .bottom .divider {
+        display: none;
+    }
+    .bottom .info > * {
+        border-top: 1px solid rgba(255,255,255,.3);
+        margin-top: 25px;
+        padding-top: 25px;
+    }
+    .subscribe button {
+        position: static;
+        width: 100%;
+        margin-top: 15px;
+    }
+    .all-rights {
+        display: block;
     }
 }

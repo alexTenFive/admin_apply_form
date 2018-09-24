@@ -1,10 +1,10 @@
 jQuery(function ($) {
     var menuWrap = $('#main-nav');
-    var url = window.location.href;
-
+    var url = window.location.pathname;
     menuWrap.find('a[href="' + url + '"]').addClass('active').closest('.nav-item.dropdown').addClass('active-trail');
-
     var submenu = menuWrap.find('a.dropdown-item.active').siblings('a').closest('.dropdown-menu').html();
+    $('.phone').mask('(000) 000-0000');
+    $('.zip').mask('00000');
 
     $('#submenu-wrap').append(submenu);
 
@@ -22,9 +22,9 @@ jQuery(function ($) {
         form.find('.alert.empty').html('').hide();
         form.find('.req').removeClass('err');
         $(this).find('.req').each(function () {
-            if($.trim($(this).val()) === '' || ($(this).prop('type') === 'checkbox' && $(this).prop('checked') === false)) {
+            if($.trim($(this).val()) === '' || ($(this).hasClass('phone') && $(this).val().length !== 14) || ($(this).hasClass('zip') && $(this).val().length !== 5) || ($(this).prop('type') === 'checkbox' && $(this).prop('checked') === false)) {
                 $(this).addClass('err');
-                var errText = $(this).closest('.form-group').find('.req-text').html();
+                var errText = $(this).siblings('.req-text').html();
                 form.find('.alert.empty').show().append(errText+'<br>');
             }
         });
@@ -52,6 +52,20 @@ jQuery(function ($) {
                     data: form_data,
                     success: function () {
 
+                    }
+                });
+            }
+            if(form.attr('id') === 'form-apply'){
+                var action = $(this).attr('action');
+
+                var form_data = form.serialize();
+                console.log(form_data);
+                $.ajax({
+                    type: "POST",
+                    url: action,
+                    data: form_data,
+                    success: function (data) {
+                        console.log(data);
                     }
                 });
             }
