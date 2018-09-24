@@ -8,41 +8,45 @@ jQuery(function ($) {
 
     var imgElement = document.getElementById("upload-img");
     var fileElement = document.getElementById("upload-file");
-    imgElement.addEventListener("change", previewImage, false);
-    fileElement.addEventListener("change", previewFile, false);
+    if (imgElement.length > 0) {
+        imgElement.addEventListener("change", previewImage, false);
+    }
+    if (fileElement.length > 0) {
+        fileElement.addEventListener("change", previewFile, false);
+    }
 
     $('#submenu-wrap').append(submenu);
 
-    $('form').on('submit',function (e) {
+    $('form').on('submit', function (e) {
         var form = $(this);
         var pos = $('#content').position().top;
         form.find('.alert.empty').html('').hide();
         form.find('.req').removeClass('err');
         $(this).find('.req').each(function () {
-            if($.trim($(this).val()) === '' || ($(this).hasClass('phone') && $(this).val().length !== 14) || ($(this).hasClass('zip') && $(this).val().length !== 5) || ($(this).prop('type') === 'checkbox' && $(this).prop('checked') === false)) {
+            if ($.trim($(this).val()) === '' || ($(this).hasClass('phone') && $(this).val().length !== 14) || ($(this).hasClass('zip') && $(this).val().length !== 5) || ($(this).prop('type') === 'checkbox' && $(this).prop('checked') === false)) {
                 $(this).addClass('err');
                 var errText = $(this).siblings('.req-text').html();
-                form.find('.alert.empty').show().append(errText+'<br>');
+                form.find('.alert.empty').show().append(errText + '<br>');
             }
         });
-        if(form.find('.g-recaptcha').length > 0){
-            if(grecaptcha && grecaptcha.getResponse().length < 1) {
+        if (form.find('.g-recaptcha').length > 0) {
+            if (grecaptcha && grecaptcha.getResponse().length < 1) {
                 form.find('.alert.empty').show().append('Confirm that you are not a robot.<br>');
             }
         }
-        if((form.find('.err').length === 0 && form.find('.g-recaptcha').length < 1) || (form.find('.err').length === 0 && form.find('.g-recaptcha').length > 0 && grecaptcha.getResponse().length > 0)) {
+        if ((form.find('.err').length === 0 && form.find('.g-recaptcha').length < 1) || (form.find('.err').length === 0 && form.find('.g-recaptcha').length > 0 && grecaptcha.getResponse().length > 0)) {
             setTimeout(function () {
                 // return false;
-                if(form.find('.form-hide').length > 0){
+                if (form.find('.form-hide').length > 0) {
                     form.find('.form-hide').hide();
                     $('body').animate({
                         scrollTop: pos
                     })
                 }
                 form.find('.alert.not-empty').show();
-            },2000);
+            }, 2000);
             //Mail
-            if(form.attr('id') === 'contact-us' || form.attr('id') === 'signup' ){
+            if (form.attr('id') === 'contact-us' || form.attr('id') === 'signup') {
                 var form_data = form.serialize();
                 $.ajax({
                     type: "POST",
@@ -53,7 +57,7 @@ jQuery(function ($) {
                     }
                 });
             }
-            if(form.attr('id') === 'form-apply'){
+            if (form.attr('id') === 'form-apply') {
                 var action = $(this).attr('action');
                 var form_data = new FormData(form[0]);
 
@@ -66,6 +70,9 @@ jQuery(function ($) {
                     contentType: false,
                     success: function (data) {
                         // console.log(data);
+                    },
+                    error(xhr, desc, err){
+
                     }
                 });
             }
@@ -86,9 +93,10 @@ function previewImage() {
     }
 
 }
+
 function previewFile(event) {
     var totalFile = document.getElementById("upload-file").files.length;
     for (var i = 0; i < totalFile; i++) {
-        $('#file-preview').append("<div class='col-lg-3 col-sm-3 col-4'><div class='file'><img src='/assets/img/cv.png' alt=''><div class='name'>"+event.target.files[i].name+"</div></div></div>");
+        $('#file-preview').append("<div class='col-lg-3 col-sm-3 col-4'><div class='file'><img src='/assets/img/cv.png' alt=''><div class='name'>" + event.target.files[i].name + "</div></div></div>");
     }
 }
