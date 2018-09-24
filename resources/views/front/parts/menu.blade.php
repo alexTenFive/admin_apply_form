@@ -10,7 +10,8 @@
     <div class="collapse navbar-collapse" id="main-nav">
         <ul class="nav navbar-nav main">
             <li class="nav-item dropdown">
-                <span class="nav-link dropdown-toggle">Mail Forwarding</span>
+                <span class="nav-link dropdown-toggle" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">Mail Forwarding</span>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{ url('/mail-forwarding-at-a-glance') }}">Mail Forwarding At a Glance</a>
                     <a class="dropdown-item" href="{{ url('/how-mail-forwarding-works') }}">How Mail Forwarding Works</a>
@@ -20,7 +21,8 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <span class="nav-link dropdown-toggle">Logistics</span>
+                <span class="nav-link dropdown-toggle" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">Logistics</span>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{ url('/shipping') }}">Shipping</a>
                     <a class="dropdown-item" href="{{ url('/receiving') }}">Receiving</a>
@@ -31,7 +33,8 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <span class="nav-link dropdown-toggle">Add-On Services</span>
+                <span class="nav-link dropdown-toggle" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">Add-On Services</span>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{ url('/services-overview') }}">Services Overview</a>
                     <a class="dropdown-item" href="{{ url('/order-fulfillment') }}">Order Fulfillment</a>
@@ -42,7 +45,8 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <span class="nav-link dropdown-toggle">Our Mission</span>
+                <span class="nav-link dropdown-toggle" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">Our Mission</span>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{ url('/about-us') }}">About Us</a>
                     <a class="dropdown-item" href="{{ url('/customer-satisfaction') }}">Customer Satisfaction</a>

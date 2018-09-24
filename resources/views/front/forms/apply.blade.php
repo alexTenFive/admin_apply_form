@@ -13,6 +13,7 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="text-block">
                         <div class="row">
+                            @if ($form->status === 1)
                             <div class="col-md-6 col-sm-12 text-center text-md-right d-sm-none d-md-block">
                                 <img src="{{ $form->thumbnail_url }}" alt="Job Description">
                             </div>
@@ -25,6 +26,11 @@
                                 </p>
                                 <a href="{{ $form->pdf_url }}" class="btn download"><img src="{{ asset('/front/img/ico-19.png') }}" alt="">&nbsp; Download</a>
                             </div>
+                            @else
+                                <div class="col-md-12 col-sm-12 text-center">
+                                    <h3 class="title">{{ $form->title }}</h3>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -35,6 +41,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8 col-md-12">
             <div class="text-block">
+                @if ($form->status == 1)
                 <form id="form-apply" class="form-apply" method="post" action="{{ route('profiles.store', $form->form_unique_part) }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-hide">
@@ -165,6 +172,15 @@
                         interview.
                     </div>
                 </form>
+                @else
+                    <div class="form-row form-group">
+                        <div class="col-12 text-center">
+                            <p>
+                                We are sorry but this vacancy is filled up already
+                            </p>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-<h3 class="title">MY ACCOUNT</h3>
+<h3 class="title">ACCOUNT</h3>
 <form id="login" name="login" action="" method="POST" class="form">
     <div class="form-group">
         <input class="form-control req" name="username" id="username" placeholder="Login" autocomplete="off">

@@ -23,16 +23,6 @@ class FormsController extends Controller
 
         $states = State::all();
 
-        if ($form->status === Form::FORM_STATUSES_KEYS['Inactive'])
-        {
-            $title = $form->title;
-            $link = $form->form_unique_part;
-            $form = new \stdClass();
-            $form->title = $title;
-            $form->form_unique_part = $link;
-
-        }
-
         return view('front.forms.apply', compact('form', 'states'));
     }
 
