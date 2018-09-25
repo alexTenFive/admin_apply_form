@@ -38,7 +38,7 @@ class FormsController extends Controller
             'email' => 'required|email',
             'cell_phone' => ['required', /*'regex:/^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/'*/],
             /*'other_phone' => ['regex:/^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/']*/
-            'photos' => 'required',
+            'photos' => 'nullable',
             'photos.*' => 'image|mimes:jpg,png,jpeg',
             'files' => 'required',
             'files.*' => 'mimes:doc,pdf,docx,txt'
