@@ -55,7 +55,7 @@ class FormsController extends Controller
         $rules = [
             'name' => 'required|string',
             'header' => 'string|nullable',
-            'pdf_url' => 'url|nullalble',
+            'pdf_url' => 'url|nullable',
             'id_project' => 'required|integer',
             'id_referral' => 'required|integer',
             'thumbnail' => 'image|mimes:jpg,png,jpeg,gif,svg'
