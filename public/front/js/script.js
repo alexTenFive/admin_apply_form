@@ -1,10 +1,10 @@
 jQuery(function ($) {
     var menuWrap = $('#main-nav');
-    var url = window.location.pathname;
+    var url = window.location.href;
     menuWrap.find('a[href="' + url + '"]').addClass('active').closest('.nav-item.dropdown').addClass('active-trail');
     var submenu = menuWrap.find('a.dropdown-item.active').siblings('a').closest('.dropdown-menu').html();
     $('.phone').mask('(000) 000-0000');
-    $('.zip').mask('00000');
+    $('.zip, input[name="zip"]').mask('00000');
 
     var imgElement = document.getElementById("upload-img");
     var fileElement = document.getElementById("upload-file");

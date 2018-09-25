@@ -83,7 +83,7 @@
                                 <div class="req-text">State field is required.</div>
                             </div>
                             <div class="col-lg-6 col-md-12">
-                                <input class="form-control req" type="text" name="zip" placeholder="ZIP Code*">
+                                <input class="zip form-control req" type="text" name="zip" placeholder="ZIP Code*">
                                 <div class="req-text">ZIP Code field is required. It must be exact 5 characters long.
                                 </div>
                             </div>

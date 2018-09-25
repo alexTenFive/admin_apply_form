@@ -48,7 +48,7 @@
                 @endif
                 @hasSection('page_id')
                 <div class="btn-wrap">
-                    <a class="btn" href="">Learn more</a>
+                    <a class="btn" href="/about-us">Learn more</a>
                 </div>
                 @endif
             </div>
@@ -218,7 +218,7 @@
                 <img src="{{ asset('front/img/ico-ae.png') }}" alt="">
                 <img src="{{ asset('front/img/ico-amazon.png') }}" alt="">
             </div>
-            <div class="col-lg-4 col-md-12 text-center">
+            <div class="col-lg-4 col-md-12 text-center copyright">
                 © 2018 Powerteam International. All rights reserved.<br>
                 <a href="{{ url('/terms-of-service#policy') }}">Privacy Policy</a> | <a href="{{ url('/terms-of-service#terms') }}">Terms of Service</a>
             </div>
