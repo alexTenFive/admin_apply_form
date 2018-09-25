@@ -132,7 +132,7 @@ function previewFile(event) {
                 },2000);
                 $('#upload-file').val('');
             } else {
-                $('#upload-file').after('<div class="error" style="color: red;padding: 20px 0 5px;position: relative;z-index: 2;text-align: center;">Files, bigger than 1.00 MB is not allowed</div>');
+                $('#upload-file').after('<div class="error" style="color: red;padding: 20px 0 5px;position: relative;z-index: 2;text-align: center;">Files, bigger than 5.00 MB is not allowed</div>');
                 setTimeout(function () {
                     $('#upload-file + div').fadeOut();
                 },2000)
