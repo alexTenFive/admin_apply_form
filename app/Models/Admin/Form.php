@@ -40,10 +40,4 @@ class Form extends Model
         return $this->hasMany(Profile::class);
     }
 
-    public function save(array $options = [])
-    {
-        $this->form_unique_part = sha1(str_random(60));
-
-        return parent::save($options);
-    }
 }

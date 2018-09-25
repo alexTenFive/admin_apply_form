@@ -7,23 +7,27 @@
 @endsection
 
 @section('content')
+
+    @if ($form->status === 1)
     <div class="job-description">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="text-block">
-                        @if ($form->status === 1)
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 text-center">
-                                {!! htmlspecialchars_decode($form->header_html) !!}
-                            </div>
-                        </div>
+                            @if (! empty($form->header_html))
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 text-center">
+                                        {!! htmlspecialchars_decode($form->header_html) !!}
+                                    </div>
+                                </div>
+                            @endif
+                        @if($form->pdf_url)
                         <div class="row">
                             <div class="col-md-6 col-sm-12 text-center text-md-right d-sm-none d-md-block">
                                 <img src="{{ $form->thumbnail_url }}" alt="Job Description">
                             </div>
                             <div class="col-md-6 col-sm-12 text-center text-md-left">
-                                <h3 class="title">{{ $form->title }}</h3>
+                                <h3 class="title">Job Description</h3>
                                 <p class="text">
                                     <img src="{{ asset('/front/img/ico-17.png') }}" alt="">&nbsp; Position Summary<br>
                                     <img src="{{ asset('/front/img/ico-17.png') }}" alt="">&nbsp; Salary and Requirements<br>
@@ -31,17 +35,14 @@
                                 </p>
                                 <a href="{{ $form->pdf_url }}" class="btn download"><img src="{{ asset('/front/img/ico-19.png') }}" alt="">&nbsp; Download</a>
                             </div>
-                            @else
-                                <div class="col-md-12 col-sm-12 text-center">
-                                    <h3 class="title">{{ $form->title }}</h3>
-                                </div>
-                            @endif
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    @endif
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-8 col-md-12">
