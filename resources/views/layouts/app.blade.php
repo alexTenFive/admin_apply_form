@@ -219,7 +219,7 @@
                 <img src="{{ asset('front/img/ico-amazon.png') }}" alt="">
             </div>
             <div class="col-lg-4 col-md-12 text-center copyright">
-                © 2018 Powerteam International. All rights reserved.<br>
+                © 2018 Powerteam International. <span class="all-rights">All rights reserved.</span><br>
                 <a href="{{ url('/terms-of-service#policy') }}">Privacy Policy</a> | <a href="{{ url('/terms-of-service#terms') }}">Terms of Service</a>
             </div>
             <div class="col-lg-4 col-md-12">
