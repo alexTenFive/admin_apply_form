@@ -66,7 +66,7 @@ class TransferController extends Controller
             ];
             if (count($local_profile->profile_phones)) {
                 $query .= " join profiles_phones ON profiles.id = profiles_phones.profile_id";
-                $params[] = implode( ',', $local_profile->profile_phones->map(function ($item) { return $item->phone;})->toArray());
+                $params[] = $local_profile->profile_phones->map(function ($item) { return $item->phone;})->toArray()[0];
                 $query_where .= " OR profiles_phones.phone like ?)";
             } else {
                 $query_where .= ")";
