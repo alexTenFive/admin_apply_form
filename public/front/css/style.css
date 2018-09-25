@@ -816,6 +816,9 @@ div[class*="col-"] > .text-block:last-child {
     .all-rights {
         display: block;
     }
+    .copyright br {
+        display: none;
+    }
 }
 @media screen and (max-width: 992px) {
     .block-cells .row > *:last-child {
@@ -970,7 +973,7 @@ div[class*="col-"] > .text-block:last-child {
         position: relative;
         margin-left: 27px;
         display: inline-block;
-        width: 100%;
+        width: auto;
         line-height: normal;
         margin-bottom: 22px;
     }
