@@ -810,6 +810,9 @@ div[class*="col-"] > .text-block:last-child {
         line-height: 46px;
         margin-top: 10px;
     }
+    .copy {
+        padding-bottom: 40px;
+    }
 }
 @media screen and (max-width: 992px) {
     .block-cells .row > *:last-child {
@@ -905,9 +908,6 @@ div[class*="col-"] > .text-block:last-child {
     }
     .submenu {
         display: none;
-    }
-    .copy {
-        padding-bottom: 40px;
     }
 }
 @media screen and (max-width: 576px) {

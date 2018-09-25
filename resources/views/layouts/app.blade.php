@@ -47,9 +47,9 @@
                     <div class="subtitle">Job Application</div>
                 @endif
                 @hasSection('page_id')
-                <div class="btn-wrap">
-                    <a class="btn" href="">Learn more</a>
-                </div>
+                    <div class="btn-wrap">
+                        <a class="btn" href="/about-us">Learn more</a>
+                    </div>
                 @endif
             </div>
         </div>
@@ -60,16 +60,16 @@
 </div>
 @hasSection('page_id')
 @else
-<div class="submenu">
-    <div class="container">
-        <div id="submenu-wrap" class="submenu-wrap">
-            <!--Here goes submenu-->
+    <div class="submenu">
+        <div class="container">
+            <div id="submenu-wrap" class="submenu-wrap">
+                <!--Here goes submenu-->
+            </div>
         </div>
     </div>
-</div>
 @endif
 <div id="content" class="content">
-@yield('content')
+    @yield('content')
 </div>
 <!--Bottom-->
 
@@ -177,7 +177,7 @@
                 <li><a href="{{ url('/contact-us') }}">Contact Us</a></li>
             </ul>
         </div>
-        <div class="col-lg-3 col-md-6 col-12">
+        <div class="col-lg-3 col-md-4 col-12">
             <h3 class="title">Services</h3>
             <ul>
                 <li><a href="{{ url('/shipping') }}">Shipping</a></li>
@@ -199,7 +199,7 @@
                 <li><a href="{{ url('/consultation-services') }}">Consultation Services</a></li>
             </ul>
         </div>
-        <div class="col-lg-3 col-md-6 col-12">
+        <div class="col-lg-3 col-md-4 col-12">
             <h3 class="title">Parsendo</h3>
             Powerteam international<br>
             11671 Sterling Ave Ste G<br><br>
@@ -218,7 +218,7 @@
                 <img src="{{ asset('front/img/ico-ae.png') }}" alt="">
                 <img src="{{ asset('front/img/ico-amazon.png') }}" alt="">
             </div>
-            <div class="col-lg-4 col-md-12 text-center">
+            <div class="col-lg-4 col-md-12 text-center copyright">
                 © 2018 Powerteam International. All rights reserved.<br>
                 <a href="{{ url('/terms-of-service#policy') }}">Privacy Policy</a> | <a href="{{ url('/terms-of-service#terms') }}">Terms of Service</a>
             </div>

@@ -16,8 +16,8 @@
                         </div>
                         <div class="form-row">
                             <div class="col-12 text-center">
-                                <div class="alert not-empty">
-                                    No account found with that email address. Please try again.
+                                <div class="alert not-empty success">
+                                    Thank you! Your request has been submitted and email was removed from the database.
                                 </div>
                                 <div class="alert empty"></div>
                                 <button class="btn btn-primary" type="submit">Submit</button>
