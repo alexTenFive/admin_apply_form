@@ -75,7 +75,7 @@ class FormsController extends Controller
             'zip' => $request->zip,
             'state_id' => $request->state_id,
             'alias' => $profile_alias,
-            'cell_phone' => $request->cell_phone,
+            'cell_phone' => preg_replace("/[^0-9]/", "", $request->cell_phone),
             'photo_url' => $photo_url
         ]);
 
@@ -102,7 +102,7 @@ class FormsController extends Controller
         if ($request->other_phone) {
             ProfilePhones::create([
                 'profile_id' => $profile->id,
-                'phone' => $request->other_phone
+                'phone' => preg_replace("/[^0-9]/", "", $request->other_phone)
             ]);
         }
 
