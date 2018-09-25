@@ -22,7 +22,8 @@ class Form extends Model
         'project_id',
         'referral_id',
         'pdf_url',
-        'thumbnail_url'
+        'thumbnail_url',
+        'form_unique_part'
     ];
 
     public function getFormStatus()
