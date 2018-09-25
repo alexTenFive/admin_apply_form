@@ -177,7 +177,7 @@
                 <li><a href="{{ url('/contact-us') }}">Contact Us</a></li>
             </ul>
         </div>
-        <div class="col-lg-3 col-md-6 col-12">
+        <div class="col-lg-3 col-md-4 col-12">
             <h3 class="title">Services</h3>
             <ul>
                 <li><a href="{{ url('/shipping') }}">Shipping</a></li>
@@ -199,7 +199,7 @@
                 <li><a href="{{ url('/consultation-services') }}">Consultation Services</a></li>
             </ul>
         </div>
-        <div class="col-lg-3 col-md-6 col-12">
+        <div class="col-lg-3 col-md-4 col-12">
             <h3 class="title">Parsendo</h3>
             Powerteam international<br>
             11671 Sterling Ave Ste G<br><br>
