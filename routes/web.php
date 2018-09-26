@@ -20,17 +20,17 @@ Route::get('/', function () {
 Route::get('/quick-glimpse', function () {
     return view('front.quick-glimpse');
 });
-Route::get('/how-mail-forwarding-works', function () {
-    return view('front.how-mail-forwarding-works');
+Route::get('/how-it-works', function () {
+    return view('front.how-it-works');
 });
-Route::get('/options-that-fit-your-needs', function () {
-    return view('front.options-that-fit-your-needs');
+Route::get('/plans-that-fit-your-needs', function () {
+    return view('front.plans-that-fit-your-needs');
 });
-Route::get('/privacy-and-security', function () {
-    return view('front.privacy-and-security');
+Route::get('/security-and-privacy', function () {
+    return view('front.security-and-privacy');
 });
-Route::get('/mail-forwarding-faq', function () {
-    return view('front.mail-forwarding-faq');
+Route::get('/frequently-asked-questions', function () {
+    return view('front.frequently-asked-questions');
 });
 Route::get('/shipping', function () {
     return view('front.shipping');

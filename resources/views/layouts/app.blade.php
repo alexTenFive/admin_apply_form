@@ -153,7 +153,7 @@
                     <div class="col-sm-10 col-12 block-info menu">
                         <a href="{{ url('/form-1583-instruction') }}">Form 1583 Instruction</a><br>
                         <a href="{{ url('/quick-glimpse') }}">Mail Forwarding Frequently Asked Questions</a><br>
-                        <a href="{{ url('/privacy-and-security') }}">Privacy and Security Measures</a><br>
+                        <a href="{{ url('/security-and-privacy') }}">Security and Privacy Measures</a><br>
                     </div>
                 </div>
             </div>
@@ -185,7 +185,7 @@
                 <li><a href="{{ url('/transportation-management-systems') }}">Transportation Management</a></li>
                 <li><a href="{{ url('/logistics-for-business-customers') }}">Logistics For Business</a></li>
                 <li><a href="{{ url('/quick-glimpse') }}">Mail Forwarding</a></li>
-                <li><a href="{{ url('/privacy-and-security') }}">Privacy and Security</a></li>
+                <li><a href="{{ url('/security-and-privacy') }}">Security and Privacy</a></li>
             </ul>
         </div>
         <div class="col-lg-3 col-md-6 col-12">

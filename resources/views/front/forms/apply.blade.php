@@ -127,13 +127,23 @@
                                 <div class="form-row form-group">
                                     <div class="col-12">
                                         <div class="custom-file">
-                                            <input id="upload-img" type="file" accept="image/*" name="photos[]" class="form-control custom-file-input">
-                                            <label class="custom-file-label" for="upload-img">
-                                        <span class="inner">
-                                            Drop files to upload or
-                                        </span>
-                                            </label>
-                                            <div class="row files-row" id="image-preview"></div>
+                                            {{--<input id="upload-img" type="file" accept="image/*" name="photos[]" class="form-control custom-file-input">--}}
+                                            {{--<label class="custom-file-label" for="upload-img">--}}
+                                                {{--<span class="inner">--}}
+                                                    {{--Drop files to upload or--}}
+                                                {{--</span>--}}
+                                            {{--</label>--}}
+                                            {{--<div class="row files-row" id="image-preview"></div>--}}
+
+
+                                            <button id="uploadBtnImg" class="select-file"><span class="inner">Drop files to upload or</span></button>
+                                            <div id="progressOuterImg" class="progress progress-striped active" style="display:none;">
+                                                <div id="progressBarImg" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                                </div>
+                                            </div>
+                                            <input id="uploadedImgName" type="hidden">
+                                            <div id="msgBoxImg" class="message-box">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -152,13 +162,14 @@
                                 <div class="form-row form-group">
                                     <div class="col-12">
                                         <div class="custom-file">
-                                            <input id="upload-file" type="file" name="files[]" accept=".doc,.docx,.pdf,.txt" class="form-control custom-file-input req">
-                                            <label class="custom-file-label" for="upload-file">
-                                        <span class="inner">
-                                            Drop files to upload or
-                                        </span>
-                                            </label>
-                                            <div class="row files-row" id="file-preview"></div>
+                                            <button id="uploadBtn" class="select-file"><span class="inner">Drop files to upload or</span></button>
+                                            <div id="progressOuter" class="progress progress-striped active" style="display:none;">
+                                                <div id="progressBar" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                                </div>
+                                            </div>
+                                            <input id="uploadedFileName" type="hidden">
+                                            <div id="msgBox" class="message-box">
+                                            </div>
                                             <div class="req-text">Resume needs to be uploaded.</div>
                                         </div>
                                     </div>
@@ -192,27 +203,4 @@
     </div>
 
 
-    <div class="container">
-        <div class="page-header">
-            <h1>Simple Ajax Uploader</h1>
-            <h3>Basic Example</h3>
-        </div>
-        <div class="row" style="padding-top:10px;">
-            <div class="col-xs-2">
-                <button id="uploadBtn" class="btn btn-large btn-primary">Choose File</button>
-            </div>
-            <div class="col-xs-10">
-                <div id="progressOuter" class="progress progress-striped active" style="display:none;">
-                    <div id="progressBar" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="padding-top:10px;">
-            <div class="col-xs-10">
-                <div id="msgBox">
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection

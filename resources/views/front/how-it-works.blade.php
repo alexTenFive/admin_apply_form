@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'How Mail Forwarding Works')
-@section('body', 'how-mail-forwarding-works')
+@section('title', 'How it Works')
+@section('body', 'how-it-works')
 @section('img')
-    <img src="{{ asset('images/front/how-mail-forwarding-works.jpg') }}" alt="How Mail Forwarding Works">
+    <img src="{{ asset('images/front/how-mail-forwarding-works.jpg') }}" alt="How it Works">
 @endsection
 @section('content')
 <div class="container">

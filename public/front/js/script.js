@@ -7,15 +7,6 @@ jQuery(function ($) {
     $('.phone').mask('(000) 000-0000');
     $('.zip, input[name="zip"]').mask('00000');
 
-    var imgElement = document.getElementById("upload-img");
-    var fileElement = document.getElementById("upload-file");
-    if ($('#upload-img').length > 0){
-        imgElement.addEventListener("change", previewImage, false);
-    }
-    if ($('#upload-file').length > 0){
-        fileElement.addEventListener("change", previewFile, false);
-    }
-
     $('#submenu-wrap').append(submenu);
 
     $('form').on('submit', function (e) {
@@ -61,7 +52,9 @@ jQuery(function ($) {
             if (form.attr('id') === 'form-apply') {
                 var action = $(this).attr('action');
                 var form_data = new FormData(form[0]);
-
+                //
+                // form_data.append('key1','val1');
+                // form_data.append('key2','val2');
                 $.ajax({
                     type: "POST",
                     url: action,
@@ -70,7 +63,7 @@ jQuery(function ($) {
                     cache: false,
                     contentType: false,
                     success: function (data) {
-                        // console.log(data);
+                        console.log(data);
                     },
                     error(xhr, desc, err){
 
@@ -94,63 +87,6 @@ $.ajaxSetup({
     }
 });
 
-function previewImage() {
-    var totalFile = document.getElementById("upload-img").files.length;
-
-    $('#image-preview').html('');
-    for (var i = 0; i < totalFile; i++) {
-
-        var numb = event.target.files[i].size/1024/1024;
-        numb = numb.toFixed(2);
-
-        if(numb > 1){
-            if($('#upload-img + .error').length > 0) {
-                $('#upload-img + .error').fadeIn();
-                setTimeout(function () {
-                    $('#upload-img + div').fadeOut();
-                },2000);
-                $('#upload-img').val('');
-            } else {
-                $('#upload-img').after('<div class="error" style="color: red;padding: 20px 0 5px;position: relative;z-index: 2;text-align: center;">Files, bigger than 1.00 MB is not allowed</div>');
-                setTimeout(function () {
-                    $('#upload-img + div').fadeOut();
-                },2000)
-            }
-        } else {
-            $('#image-preview').append("<div class='col-lg-3 col-sm-3 col-4'><img src='" + URL.createObjectURL(event.target.files[i]) + "'></div>");
-        }
-    }
-}
-
-function previewFile(event) {
-    var totalFile = document.getElementById("upload-file").files.length;
-
-    $('#file-preview').html('');
-
-    for (var i = 0; i < totalFile; i++) {
-
-        var numb = event.target.files[i].size/1024/1024;
-        numb = numb.toFixed(2);
-
-        if(numb > 5){
-            if($('#upload-file + .error').length > 0) {
-                $('#upload-file + .error').fadeIn();
-                setTimeout(function () {
-                    $('#upload-file + div').fadeOut();
-                },2000);
-                $('#upload-file').val('');
-            } else {
-                $('#upload-file').after('<div class="error" style="color: red;padding: 20px 0 5px;position: relative;z-index: 2;text-align: center;">Files, bigger than 5.00 MB is not allowed</div>');
-                setTimeout(function () {
-                    $('#upload-file + div').fadeOut();
-                },2000)
-            }
-        } else {
-            $('#file-preview').append("<div class='col-lg-3 col-sm-3 col-4'><div class='file'><img src='/front/img/cv.png' alt=''><div class='name'>" + event.target.files[i].name + "</div></div></div>");
-        }
-    }
-}
-
 function escapeTags( str ) {
     return String( str )
         .replace( /&/g, '&amp;' )
@@ -161,9 +97,13 @@ function escapeTags( str ) {
 }
 window.onload = function() {
     var btn = document.getElementById('uploadBtn'),
+        btnImg = document.getElementById('uploadBtnImg'),
         progressBar = document.getElementById('progressBar'),
+        progressBarImg = document.getElementById('progressBarImg'),
         progressOuter = document.getElementById('progressOuter'),
-        msgBox = document.getElementById('msgBox');
+        progressOuterImg = document.getElementById('progressOuterImg'),
+        msgBox = document.getElementById('msgBox'),
+        msgBoxImg = document.getElementById('msgBoxImg');
     var uploader = new ss.SimpleUpload({
         button: btn,
         url: '/upload-file',
@@ -181,7 +121,7 @@ window.onload = function() {
             btn.innerHTML = 'Uploading...'; // change button text to "Uploading..."
         },
         onComplete: function( filename, response ) {
-            btn.innerHTML = 'Choose Another File';
+            btn.innerHTML = '<span class="inner">Drop files to upload or</span>';
             progressOuter.style.display = 'none'; // hide progress bar when upload is completed
             if ( !response ) {
                 msgBox.innerHTML = 'Unable to upload file';
@@ -200,6 +140,45 @@ window.onload = function() {
         onError: function() {
             progressOuter.style.display = 'none';
             msgBox.innerHTML = 'Unable to upload file';
+        }
+    });
+
+    var uploaderImg = new ss.SimpleUpload({
+        button: btnImg,
+        url: '/upload-img',
+        name: 'uploadfile',
+        multipart: true,
+        hoverClass: 'hover',
+        focusClass: 'focus',
+        responseType: 'json',
+        startXHR: function() {
+            progressOuterImg.style.display = 'block'; // make progress bar visible
+            this.setProgressBar( progressBarImg );
+        },
+        onSubmit: function() {
+            msgBoxImg.innerHTML = ''; // empty the message box
+            btnImg.innerHTML = 'Uploading...'; // change button text to "Uploading..."
+        },
+        onComplete: function( filename, response ) {
+            btnImg.innerHTML = '<span class="inner">Drop files to upload or</span>';
+            progressOuterImg.style.display = 'none'; // hide progress bar when upload is completed
+            if ( !response ) {
+                msgBoxImg.innerHTML = 'Unable to upload file';
+                return;
+            }
+            if ( response.success === true ) {
+                msgBoxImg.innerHTML = '<img src="/uploads/tmp/photos/'+ escapeTags( filename ) +'">';
+            } else {
+                if ( response.msg )  {
+                    msgBoxImg.innerHTML = escapeTags( response.msg );
+                } else {
+                    msgBoxImg.innerHTML = 'An error occurred and the upload failed.';
+                }
+            }
+        },
+        onError: function() {
+            progressOuterImg.style.display = 'none';
+            msgBoxImg.innerHTML = 'Unable to upload file';
         }
     });
 };

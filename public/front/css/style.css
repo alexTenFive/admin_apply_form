@@ -130,9 +130,10 @@ input[type=password] {
 .custom-file {
     height: auto;
     border: dashed 2px #C4C4C4;
-    padding: 25px 25px 38px;
+    padding: 25px 25px 18px;
     position: relative;
     border-radius: 5px;
+    min-height: 208px;
 }
 .custom-file:before {
     content: '';
@@ -145,41 +146,21 @@ input[type=password] {
     z-index: 2;
     pointer-events: none;
 }
-.custom-file .file {
-    position: relative;
-}
-.custom-file .file .name {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-.custom-file-input {
-    height: 50px;
-}
-.custom-file-label {
+.custom-file .inner {
     top: 0;
-    height: auto;
-    bottom: 0;
-    left: 0;
     right: 0;
-    font-size: 18px;
-    font-weight: 300;
+    left: 0;
+    height: 50px;
     line-height: 50px;
-    margin: auto;
-    border: none;
-    box-shadow: none !important;
-    padding: 120px 0 0;
-}
-.custom-file-label .inner {
     max-width: 380px;
     display: block;
-    position: relative;
-    margin: 0 auto;
+    position: absolute;
+    margin: 120px auto 0;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 300;
 }
-.custom-file-label:after {
-    display: none;
-}
-.custom-file-label .inner:after {
+.custom-file .inner:after {
     content: "Browse";
     position: absolute;
     top: 0;
@@ -199,9 +180,24 @@ input[type=password] {
     padding-right: 43px;
     border-radius: 5px;
 }
+.custom-file button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    z-index: 0;
+    background: none;
+    border: none;
+}
 .custom-file img {
     max-width: 100%;
     height: auto;
+    max-height: 250px;
+    margin: 0 auto;
+    display: block;
 }
 .files-row {
     position: relative;
@@ -238,6 +234,20 @@ textarea.textarea.form-control {
     -moz-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
+}
+.progress {
+    min-width: 300px;
+    display: none;
+}
+#progressBar {
+    width: 0;
+}
+.message-box {
+    padding: 15px 0;
+    position: relative;
+    z-index: 1;
+    margin-top: 90px;
+    text-align: center;
 }
 /*End Base styles*/
 
