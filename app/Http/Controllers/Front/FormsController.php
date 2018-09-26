@@ -9,6 +9,7 @@ use App\Models\Admin\State;
 use App\Models\Admin\Profile;
 use App\Models\Admin\ProfileFiles;
 use App\Models\Admin\ProfilePhones;
+use App\Libs\FileUpload;
 
 class FormsController extends Controller
 {
@@ -24,6 +25,30 @@ class FormsController extends Controller
         $states = State::all();
 
         return view('front.forms.apply', compact('form', 'states'));
+    }
+
+    public function uploadFile(Request $request)
+    {
+        $uploader = new FileUpload($request->file('images'));
+        $result = $uploader->handleUpload(public_path('/uploads/tmp/files'));
+
+        if (!$result) {
+            echo json_encode(array(
+                'success' => false,
+                'msg' => $uploader->getErrorMsg()
+            ));
+        } else {
+            echo json_encode(array(
+                'success' => true,
+                'file' => $uploader->getFileName()
+            ));
+        }
+
+    }
+
+    public function uploadImage()
+    {
+
     }
 
     public function store(Request $request, $link)
@@ -78,6 +103,8 @@ class FormsController extends Controller
             'cell_phone' => preg_replace("/[^0-9]/", "", $request->cell_phone),
             'photo_url' => $photo_url
         ]);
+
+
 
         if ($request->hasFile('files')) {
             foreach ($request->file('files') as $file) {
