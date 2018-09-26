@@ -52,7 +52,7 @@ class FormsController extends Controller
     {
         $uploader = new FileUpload($request->file('uploadFile'));
         $uploader->allowedExtensions = ['jpg', 'jpeg', 'png'];
-        $uploader->sizeLimit = 5242880;
+        $uploader->sizeLimit = 1048576;
         $result = $uploader->handleUpload(public_path('/uploads/tmp/photos'));
 
         if (!$result) {
