@@ -29,8 +29,7 @@ class FormsController extends Controller
 
     public function uploadFile(Request $request)
     {
-        dd($request);
-        $uploader = new FileUpload($request->file('images'));
+        $uploader = new FileUpload($request->file('uploadFile'));
         $result = $uploader->handleUpload(public_path('/uploads/tmp/files'));
 
         if (!$result) {
@@ -41,7 +40,7 @@ class FormsController extends Controller
         } else {
             echo json_encode(array(
                 'success' => true,
-                'file' => $uploader->getFileName()
+                'file' => $uploader->getFileName() . time()
             ));
         }
 
