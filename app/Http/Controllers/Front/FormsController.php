@@ -10,6 +10,7 @@ use App\Models\Admin\Profile;
 use App\Models\Admin\ProfileFiles;
 use App\Models\Admin\ProfilePhones;
 use App\Libs\FileUpload;
+use Illuminate\Support\Facades\Storage;
 
 class FormsController extends Controller
 {
@@ -80,14 +81,11 @@ class FormsController extends Controller
             'email' => 'required|email',
             'cell_phone' => ['required', /*'regex:/^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/'*/],
             /*'other_phone' => ['regex:/^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/']*/
-            'photos' => 'nullable',
-            'photos.*' => 'image|mimes:jpg,png,jpeg',
-            'files' => 'required',
-            'files.*' => 'mimes:doc,pdf,docx,txt'
+            'photos' => 'nullable|string',
+            'files_docs' => 'required|string',
         ];
 
         $this->validate($request, $rules);
-
 
         $form = Form::where('form_unique_part', $link)->first();
         $first_name = str_replace(['"', "'", '`', '&laquo;', '&raquo;'], "", $request->first_name);
@@ -96,14 +94,24 @@ class FormsController extends Controller
 
         $profile_alias = $first_name . $last_name . str_random(5);
 
+        $storage_path = '/uploads/tmp/';
         $photo_url = null;
-        if ($request->hasFile('photos')) {
-            foreach ($request->file('photos') as $photo) {
-                $extension = $photo->getClientOriginalName();
-                $destinationPath = public_path('/uploads/profiles/photos/' . $profile_alias . '/');
-                $photo->move($destinationPath, $extension);
+        if ($request->photos) {
+                $photos = explode(', ', substr($request->photos, 0, -1));
+                $photo = array_shift($photos);
+
+                $old_photo_path = $storage_path . 'photos/';
                 $photo_url = '/uploads/profiles/photos/' . $profile_alias . '/';
-            }
+
+                $file = Storage::move($old_photo_path . $photo, $photo_url . $photo);
+
+                if ($file) {
+                    $photo_url .= $photo;
+                    foreach ($photos as $photo) {
+
+                        Storage::delete($old_photo_path . $photo);
+                    }
+                }
         }
 
         $profile = Profile::create([
@@ -122,16 +130,21 @@ class FormsController extends Controller
         ]);
 
 
+        if ($request->files_docs) {
+            $files = explode(', ', substr($request->files_docs, 0, -1));
 
-        if ($request->hasFile('files')) {
-            foreach ($request->file('files') as $file) {
-                $extension = $file->getClientOriginalName();
-                $destinationPath = public_path('/uploads/profiles/files/' . $profile_alias . '/');
-                $file_name = str_replace(['"', "'", '`', '&laquo;', '&raquo;'], "", $extension);
+            $old_file_path = $storage_path . 'files/';
+            $file_url = '/uploads/profiles/files/' . $profile_alias . '/';
 
-                $file->move($destinationPath, $file_name);
+            foreach ($files as $file) {
+                $file_name = $file;
+                $file_resp = Storage::move($old_file_path . $file, $file_url . $file);
 
-                $file_path = '/uploads/profiles/files/' . $profile_alias . '/' . $file_name;
+                if ($file_resp) {
+                    Storage::delete($old_photo_path . $file_name);
+                }
+
+                $file_path = $file_url . $file_name;
                 $host_name = url('/');
 
                 ProfileFiles::create([
@@ -140,6 +153,7 @@ class FormsController extends Controller
                     'file_path' => $file_path,
                     'file_name' => $file_name,
                 ]);
+
             }
         }
 
@@ -152,6 +166,7 @@ class FormsController extends Controller
 
         return json_encode([
             'status' => 'success',
+            'msg' => 'Profile succesfully uploaded'
         ]);
     }
 }
