@@ -15,7 +15,10 @@ jQuery(function ($) {
         form.find('.alert.empty').html('').hide();
         form.find('.req').removeClass('err');
         $(this).find('.req').each(function () {
-            if ($.trim($(this).val()) === '' || ($(this).hasClass('phone') && $(this).val().length !== 14) || ($(this).hasClass('zip') && $(this).val().length !== 5) || ($(this).prop('type') === 'checkbox' && $(this).prop('checked') === false)) {
+            if ($.trim($(this).val()) === '' || ($(this).hasClass('phone') && $(this).val().length !== 14) || ($(this).hasClass('zip') && $(this).val().length !== 5) || ($(this).prop('type') === 'checkbox' && $(this).prop('checked') === false) || ($(this).prop('id') === 'uploadBtn' && $(this).siblings('#files').val() === '' )) {
+                console.log('----------------------------------------');
+                console.log($(this).prop('name') +'= '+$(this).prop('id') === 'uploadBtn');
+                console.log($(this).prop('name') +'= '+$(this).siblings('#files').val() === '');
                 $(this).addClass('err');
                 var errText = $(this).siblings('.req-text').html();
                 form.find('.alert.empty').show().append(errText + '<br>');
@@ -123,20 +126,24 @@ window.onload = function() {
             btn.innerHTML = '<span class="inner">Drop files to upload or</span>';
             progressOuter.style.display = 'none'; // hide progress bar when upload is completed
             if ( !response ) {
+                $('#uploadBtn').addClass('err');
                 msgBox.innerHTML = 'Unable to upload file';
                 return;
             }
             if ( response.success === true ) {
+                $('#uploadBtn').removeClass('err');
                 msgBox.innerHTML = '<strong>' + escapeTags( filename ) + '</strong>' + ' successfully uploaded.';
             } else {
                 if ( response.msg )  {
                     msgBox.innerHTML = escapeTags( response.msg );
                 } else {
+                    $('#uploadBtn').addClass('err');
                     msgBox.innerHTML = 'An error occurred and the upload failed.';
                 }
             }
         },
         onError: function() {
+            $('#uploadBtn').addClass('err');
             progressOuter.style.display = 'none';
             msgBox.innerHTML = 'Unable to upload file';
         }
