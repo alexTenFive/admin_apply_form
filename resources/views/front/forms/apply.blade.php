@@ -159,7 +159,7 @@
                                             </div>
                                             <div id="msgBox" class="message-box"></div>
                                             <div class="req-text">Resume needs to be uploaded.</div>
-                                            <input id="files_docs" name="files" type="hidden">
+                                            <input id="files_docs" name="files_docs" type="hidden">
                                         </div>
                                     </div>
                                 </div>
