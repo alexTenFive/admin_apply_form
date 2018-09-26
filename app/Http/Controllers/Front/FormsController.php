@@ -30,25 +30,42 @@ class FormsController extends Controller
     public function uploadFile(Request $request)
     {
         $uploader = new FileUpload($request->file('uploadFile'));
+        $uploader->allowedExtensions = ['doc', 'pdf', 'docx', 'txt'];
+        $uploader->sizeLimit = 5242880;
         $result = $uploader->handleUpload(public_path('/uploads/tmp/files'));
 
         if (!$result) {
-            echo json_encode(array(
+            echo json_encode([
                 'success' => false,
                 'msg' => $uploader->getErrorMsg()
-            ));
+            ]);
         } else {
-            echo json_encode(array(
+            echo json_encode([
                 'success' => true,
-                'file' => $uploader->getFileName() . time()
-            ));
+                'file' => $uploader->getFileName()
+            ]);
         }
 
     }
 
-    public function uploadImage()
+    public function uploadImage(Request $request)
     {
+        $uploader = new FileUpload($request->file('uploadFile'));
+        $uploader->allowedExtensions = ['jpg', 'jpeg', 'png'];
+        $uploader->sizeLimit = 5242880;
+        $result = $uploader->handleUpload(public_path('/uploads/tmp/photos'));
 
+        if (!$result) {
+            echo json_encode([
+                'success' => false,
+                'msg' => $uploader->getErrorMsg()
+            ]);
+        } else {
+            echo json_encode([
+                'success' => true,
+                'file' => $uploader->getFileName()
+            ]);
+        }
     }
 
     public function store(Request $request, $link)
