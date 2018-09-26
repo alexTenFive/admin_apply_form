@@ -119,7 +119,7 @@ window.onload = function() {
             btn.innerHTML = 'Uploading...'; // change button text to "Uploading..."
         },
         onComplete: function( filename, response ) {
-            $('#files').val(filename);
+            $('#files').val(filename + ', ' + $('#files').val());
             btn.innerHTML = '<span class="inner">Drop files to upload or</span>';
             progressOuter.style.display = 'none'; // hide progress bar when upload is completed
             if ( !response ) {
@@ -159,7 +159,7 @@ window.onload = function() {
             btnImg.innerHTML = 'Uploading...'; // change button text to "Uploading..."
         },
         onComplete: function( filename, response ) {
-            $('#photos').val(filename);
+            $('#photos').val(filename + ', ' + $('#photos').val());
             btnImg.innerHTML = '<span class="inner">Drop files to upload or</span>';
             progressOuterImg.style.display = 'none'; // hide progress bar when upload is completed
             if ( !response ) {
