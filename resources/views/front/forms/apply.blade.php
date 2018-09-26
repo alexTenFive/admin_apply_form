@@ -152,14 +152,14 @@
                                 <div class="form-row form-group">
                                     <div class="col-12">
                                         <div class="custom-file">
-                                            <button id="uploadBtn" class="select-file"><span class="inner">Drop files to upload or</span></button>
+                                            <button id="uploadBtn" class="select-file req err"><span class="inner">Drop files to upload or</span></button>
                                             <div id="progressOuter" class="progress progress-striped active" style="display:none;">
                                                 <div id="progressBar" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                                                 </div>
                                             </div>
                                             <div id="msgBox" class="message-box"></div>
                                             <div class="req-text">Resume needs to be uploaded.</div>
-                                            <input id="files" name="files" type="hidden">
+                                            <input id="files_docs" name="files" type="hidden">
                                         </div>
                                     </div>
                                 </div>
