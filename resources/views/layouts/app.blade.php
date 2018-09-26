@@ -236,6 +236,7 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
 <script src="{{ asset('front/js/script.js') }}"></script>
+<script src="{{ asset('front/js/ajaxUploader/SimpleAjaxUploader.js') }}"></script>
 
 </body>
 </html>
