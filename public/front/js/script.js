@@ -15,20 +15,17 @@ jQuery(function ($) {
         form.find('.alert.empty').html('').hide();
         form.find('.req').removeClass('err');
         $(this).find('.req').each(function () {
-            if ($.trim($(this).val()) === '' || ($(this).hasClass('phone') && $(this).val().length !== 14) || ($(this).hasClass('zip') && $(this).val().length !== 5) || ($(this).attr('type') === 'checkbox' && $(this).prop('checked') === false)) {
-                // console.log('----------------------------------------');
-                // console.log($(this).attr('name'));
-                // console.log($(this).attr('id'));
-                // console.log($(this).attr('id') === 'uploadBtn');
-                // console.log($(this).attr('name') +'= '+$(this).siblings('#files').val() === '');
-                //
-                // console.log($(this).attr('id') !== 'uploadBtn');
-                // console.log($('#files_docs').val() !== '');
-                if($(this).attr('id') === 'uploadBtn' && $('#files_docs').val() !== ''){
-                    $(this).addClass('err');
-                    var errText = $(this).siblings('.req-text').html();
-                    form.find('.alert.empty').show().append(errText + '<br>');
-                }
+            if ($.trim($(this).val()) === '' || ($(this).hasClass('phone') && $(this).val().length !== 14) || ($(this).hasClass('zip') && $(this).val().length !== 5) || ($(this).attr('type') === 'checkbox' && $(this).prop('checked') === false) || ($(this).attr('id') === 'uploadBtn' && $(this).siblings('#files_docs').val() === '')) {
+                console.log('----------------------------------------');
+                console.log($(this).attr('name'));
+                console.log($(this).attr('id'));
+                console.log($(this).attr('id') === 'uploadBtn' && $(this).siblings('#files_docs').val() === '');
+                console.log($(this).attr('id') === 'uploadBtn');
+                console.log($('#files_docs').val() === '');
+
+                $(this).addClass('err');
+                var errText = $(this).siblings('.req-text').html();
+                form.find('.alert.empty').show().append(errText + '<br>');
             }
         });
         if (form.find('.g-recaptcha').length > 0) {
@@ -129,7 +126,7 @@ window.onload = function() {
             btn.innerHTML = 'Uploading...'; // change button text to "Uploading..."
         },
         onComplete: function( filename, response ) {
-            $('#files').val(filename + ', ' + $('#files').val());
+            $('#files_docs').val(filename + ', ' + $('#files_docs').val());
             btn.innerHTML = '<span class="inner">Drop files to upload or</span>';
             progressOuter.style.display = 'none'; // hide progress bar when upload is completed
             if ( !response ) {
