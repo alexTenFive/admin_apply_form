@@ -47,9 +47,9 @@
                     <div class="subtitle">Job Application</div>
                 @endif
                 @hasSection('page_id')
-                <div class="btn-wrap">
-                    <a class="btn" href="/about-us">Learn more</a>
-                </div>
+                    <div class="btn-wrap">
+                        <a class="btn" href="/about-us">Learn more</a>
+                    </div>
                 @endif
             </div>
         </div>
@@ -60,16 +60,16 @@
 </div>
 @hasSection('page_id')
 @else
-<div class="submenu">
-    <div class="container">
-        <div id="submenu-wrap" class="submenu-wrap">
-            <!--Here goes submenu-->
+    <div class="submenu">
+        <div class="container">
+            <div id="submenu-wrap" class="submenu-wrap">
+                <!--Here goes submenu-->
+            </div>
         </div>
     </div>
-</div>
 @endif
 <div id="content" class="content">
-@yield('content')
+    @yield('content')
 </div>
 <!--Bottom-->
 
@@ -219,7 +219,7 @@
                 <img src="{{ asset('front/img/ico-amazon.png') }}" alt="">
             </div>
             <div class="col-lg-4 col-md-12 text-center copyright">
-                © 2018 Powerteam International. All rights reserved.<br>
+                © 2018 Powerteam International. <span class="all-rights">All rights reserved.</span><br>
                 <a href="{{ url('/terms-of-service#policy') }}">Privacy Policy</a> | <a href="{{ url('/terms-of-service#terms') }}">Terms of Service</a>
             </div>
             <div class="col-lg-4 col-md-12">

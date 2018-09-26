@@ -20,6 +20,7 @@ class FormsTableSeeder extends Seeder
             'project_id' => 100,
             'referral_id' => 14,
             'pdf_url' => 'https://google.com',
+            'form_unique_part' => sha1(str_random(60))
         ]);
 
         Form::create([
@@ -51,6 +52,7 @@ class FormsTableSeeder extends Seeder
             'project_id' => 111,
             'referral_id' => 17,
             'pdf_url' => 'https://yahoo.com',
+            'form_unique_part' => sha1(str_random(60))
         ]);
 
         Form::create([
@@ -88,6 +90,7 @@ class FormsTableSeeder extends Seeder
             'project_id' => 113,
             'referral_id' => 15,
             'pdf_url' => 'https://yandex.ru',
+            'form_unique_part' => sha1(str_random(60))
         ]);
     }
 }

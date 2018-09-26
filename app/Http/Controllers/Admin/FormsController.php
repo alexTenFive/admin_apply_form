@@ -54,8 +54,8 @@ class FormsController extends Controller
     {
         $rules = [
             'name' => 'required|string',
-            'header' => 'required|string',
-            'pdf_url' => 'required|url',
+            'header' => 'string|nullable',
+            'pdf_url' => 'url|nullable',
             'id_project' => 'required|integer',
             'id_referral' => 'required|integer',
             'thumbnail' => 'image|mimes:jpg,png,jpeg,gif,svg'
@@ -81,6 +81,7 @@ class FormsController extends Controller
             'pdf_url' => $request->pdf_url,
             'project_id' => $request->id_project,
             'referral_id' => $request->id_referral,
+            'form_unique_part' => sha1(str_random(60)),
             'thumbnail_url' => $thumb_link ?? '/uploads/thumbnails/default.jpg'
         ]);
 
@@ -97,8 +98,8 @@ class FormsController extends Controller
     {
         $rules = [
             'name' => 'required|string',
-            'header' => 'required|string',
-            'pdf_url' => 'required|url',
+            'header' => 'string|nullable',
+            'pdf_url' => 'url|nullable',
             'id_project' => 'required|integer',
             'id_referral' => 'required|integer',
             'thumbnail' => 'image|mimes:jpg,png,jpeg,gif,svg'
@@ -119,11 +120,16 @@ class FormsController extends Controller
 
 
             $form->title = $request->name;
-            $form->header_html = e($request->header);
+            if ($form->header_html != $request->header) {
+                $form->header_html = e($request->header);
+            }
             $form->pdf_url = $request->pdf_url;
             $form->project_id = $request->id_project;
             $form->referral_id = $request->id_referral;
-            $form->thumbnail_url = $thumb_link ?? '/uploads/thumbnails/default.jpg';
+            if (isset($thumb_link)) {
+                $form->thumbnail_url = $thumb_link;
+            }
+
             $form->save();
 
         return redirect()->route('admin.forms', ['type' => $type])->with('status', 'Form with title ' . $form->title . 'succesfully edited!');

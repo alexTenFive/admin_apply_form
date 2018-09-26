@@ -32,7 +32,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-group">
                         <label for="form-header">Form Header</label>
-                        <textarea id="form-header" class="form-control" name="header">{{ $form->header_html }}</textarea>
+                        <textarea id="form-header" class="form-control" name="header">{!! $form->header_html !!}</textarea>
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

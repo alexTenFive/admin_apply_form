@@ -811,7 +811,13 @@ div[class*="col-"] > .text-block:last-child {
         margin-top: 10px;
     }
     .copy {
-        padding-bottom: 40px;
+        padding-bottom: 50px;
+    }
+    .all-rights {
+        display: block;
+    }
+    .copyright br {
+        display: none;
     }
 }
 @media screen and (max-width: 992px) {
@@ -888,6 +894,9 @@ div[class*="col-"] > .text-block:last-child {
         padding-left: 0;
         padding-right: 0;
     }
+    .all-rights {
+        display: inline;
+    }
 }
 @media screen and (max-width: 767px) {
     .block-cells .row > * {
@@ -959,5 +968,16 @@ div[class*="col-"] > .text-block:last-child {
     }
     .all-rights {
         display: block;
+    }
+    .bottom .menu a {
+        position: relative;
+        margin-left: 27px;
+        display: inline-block;
+        width: auto;
+        line-height: normal;
+        margin-bottom: 22px;
+    }
+    .bottom .menu a:last-child {
+        margin-bottom: 0;
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Profile;
 use App\Models\Admin\State;
+use App\Models\Admin\Form;
 
 class ProfilesController extends Controller
 {
@@ -17,7 +18,9 @@ class ProfilesController extends Controller
     public function index($type = null)
     {
         $search_phrase = request('search_phrase');
-
+        $form_id = request('form_id');
+        //->only(['id', 'title'])
+        $forms = Form::all();
         $profiles = Profile::whereIn('status_id', array_keys(Profile::PROFILE_STATUSES));
 
         if (isset($type)) {
@@ -29,9 +32,13 @@ class ProfilesController extends Controller
                      ->orWhere('email', 'like' , '%' . $search_phrase . '%');
         }
 
+        if (isset($form_id)) {
+            $profiles->where('form_id', intval($form_id));
+        }
+
         $profiles = $profiles->get();
 
-        return view('admin.profiles.index', compact('profiles', 'type'));
+        return view('admin.profiles.index', compact('profiles', 'type', 'forms', 'form_id', 'search_phrase'));
     }
 
     public function edit(Profile $profile, $type = null)
@@ -64,7 +71,7 @@ class ProfilesController extends Controller
         $profile->city = $request->city;
         $profile->zip = $request->zip;
         $profile->state_id = $request->state_id;
-        $profile->cell_phone = $request->cell_phone;
+        $profile->cell_phone = preg_replace("/[^0-9]/", "", $request->cell_phone);
         $profile->save();
 
         return redirect()->route('admin.profiles', ['type' => $type])->with('status', 'Profile with ID '. $profile->id . ' successfully updated.');
