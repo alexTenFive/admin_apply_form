@@ -52,9 +52,7 @@ jQuery(function ($) {
             if (form.attr('id') === 'form-apply') {
                 var action = $(this).attr('action');
                 var form_data = new FormData(form[0]);
-                //
-                // form_data.append('key1','val1');
-                // form_data.append('key2','val2');
+
                 $.ajax({
                     type: "POST",
                     url: action,
@@ -121,6 +119,7 @@ window.onload = function() {
             btn.innerHTML = 'Uploading...'; // change button text to "Uploading..."
         },
         onComplete: function( filename, response ) {
+            $('#files').val(filename + ', ' + $('#files').val());
             btn.innerHTML = '<span class="inner">Drop files to upload or</span>';
             progressOuter.style.display = 'none'; // hide progress bar when upload is completed
             if ( !response ) {
@@ -160,6 +159,7 @@ window.onload = function() {
             btnImg.innerHTML = 'Uploading...'; // change button text to "Uploading..."
         },
         onComplete: function( filename, response ) {
+            $('#photos').val(filename + ', ' + $('#photos').val());
             btnImg.innerHTML = '<span class="inner">Drop files to upload or</span>';
             progressOuterImg.style.display = 'none'; // hide progress bar when upload is completed
             if ( !response ) {

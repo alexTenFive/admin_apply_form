@@ -127,23 +127,13 @@
                                 <div class="form-row form-group">
                                     <div class="col-12">
                                         <div class="custom-file">
-                                            {{--<input id="upload-img" type="file" accept="image/*" name="photos[]" class="form-control custom-file-input">--}}
-                                            {{--<label class="custom-file-label" for="upload-img">--}}
-                                                {{--<span class="inner">--}}
-                                                    {{--Drop files to upload or--}}
-                                                {{--</span>--}}
-                                            {{--</label>--}}
-                                            {{--<div class="row files-row" id="image-preview"></div>--}}
-
-
                                             <button id="uploadBtnImg" class="select-file"><span class="inner">Drop files to upload or</span></button>
                                             <div id="progressOuterImg" class="progress progress-striped active" style="display:none;">
                                                 <div id="progressBarImg" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                                                 </div>
                                             </div>
-                                            <input id="uploadedImgName" type="hidden">
-                                            <div id="msgBoxImg" class="message-box">
-                                            </div>
+                                            <div id="msgBoxImg" class="message-box"></div>
+                                            <input id="photos" name="photos" type="hidden">
                                         </div>
                                     </div>
                                 </div>
@@ -167,10 +157,9 @@
                                                 <div id="progressBar" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                                                 </div>
                                             </div>
-                                            <input id="uploadedFileName" type="hidden">
-                                            <div id="msgBox" class="message-box">
-                                            </div>
+                                            <div id="msgBox" class="message-box"></div>
                                             <div class="req-text">Resume needs to be uploaded.</div>
+                                            <input id="files" name="files" type="hidden">
                                         </div>
                                     </div>
                                 </div>
