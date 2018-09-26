@@ -30,7 +30,7 @@
                     service,
                     especially with our overseas...
                 </p>
-                <a href="{{ url('/mail-forwarding-at-a-glance') }}" class="btn more">Learn More</a>
+                <a href="{{ url('/quick-glimpse') }}" class="btn more">Learn More</a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="img">

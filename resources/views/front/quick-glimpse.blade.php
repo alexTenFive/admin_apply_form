@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Mail Forwarding At a Glance')
-@section('body', 'mail-forwarding-at-a-glance')
+@section('title', 'Quick Glimpse')
+@section('body', 'quick-glimpse')
 @section('img')
-    <img src="{{ asset('images/front/mail-forwarding.jpg') }}" alt="Mail Forwarding At a Glance">
+    <img src="{{ asset('images/front/mail-forwarding.jpg') }}" alt="Quick Glimpse">
 @endsection
 @section('content')
 <div class="container">

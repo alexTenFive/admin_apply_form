@@ -17,8 +17,8 @@
 Route::get('/', function () {
     return view('front.front');
 });
-Route::get('/mail-forwarding-at-a-glance', function () {
-    return view('front.mail-forwarding-at-a-glance');
+Route::get('/quick-glimpse', function () {
+    return view('front.quick-glimpse');
 });
 Route::get('/how-mail-forwarding-works', function () {
     return view('front.how-mail-forwarding-works');
