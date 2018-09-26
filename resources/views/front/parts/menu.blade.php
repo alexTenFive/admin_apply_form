@@ -14,10 +14,10 @@
                       aria-haspopup="true" aria-expanded="false">Mail Forwarding</span>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{ url('/quick-glimpse') }}">Mail Forwarding At a Glance</a>
-                    <a class="dropdown-item" href="{{ url('/how-mail-forwarding-works') }}">How Mail Forwarding Works</a>
-                    <a class="dropdown-item" href="{{ url('/options-that-fit-your-needs') }}">Options that Fit Your Needs</a>
-                    <a class="dropdown-item" href="{{ url('/privacy-and-security') }}">Privacy and Security</a>
-                    <a class="dropdown-item" href="{{ url('/mail-forwarding-faq') }}">Mail Forwarding FAQ</a>
+                    <a class="dropdown-item" href="{{ url('/how-it-works') }}">How it Works</a>
+                    <a class="dropdown-item" href="{{ url('/plans-that-fit-your-needs') }}">Plans that Fit Your Needs</a>
+                    <a class="dropdown-item" href="{{ url('/security-and-privacy') }}">Security and Privacy</a>
+                    <a class="dropdown-item" href="{{ url('/frequently-asked-questions') }}">Frequently Asked Questions</a>
                 </div>
             </li>
             <li class="nav-item dropdown">

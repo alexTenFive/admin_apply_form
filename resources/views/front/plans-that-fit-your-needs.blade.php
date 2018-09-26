@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Options that Fit Your Needs')
-@section('body', 'options-that-fit-your-needs')
+@section('title', 'Plans that Fit Your Needs')
+@section('body', 'plans-that-fit-your-needs')
 @section('img')
-    <img src="{{ asset('images/front/options-that-fit-your-needs.jpg') }}" alt="Options that Fit Your Needs">
+    <img src="{{ asset('images/front/options-that-fit-your-needs.jpg') }}" alt="Plans that Fit Your Needs">
 @endsection
 @section('content')
 <div class="container">

@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Privacy and Security')
-@section('body', 'privacy-and-security')
+@section('title', 'Security and Privacy')
+@section('body', 'security-and-privacy')
 @section('img')
-    <img src="{{ asset('images/front/privacy-and-security.jpg') }}" alt="Privacy and Security">
+    <img src="{{ asset('images/front/privacy-and-security.jpg') }}" alt="Security and Privacy">
 @endsection
 @section('content')
     <div class="container">

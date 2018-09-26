@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Mail Forwarding FAQ')
-@section('body', 'mail-forwarding-faq')
+@section('title', 'Frequently Asked Questions')
+@section('body', 'frequently-asked-questions')
 @section('img')
-    <img src="{{ asset('images/front/mail-forwarding.jpg') }}" alt="Mail Forwarding FAQ">
+    <img src="{{ asset('images/front/mail-forwarding.jpg') }}" alt="Frequently Asked Questions">
 @endsection
 @section('content')
     <div class="container">
