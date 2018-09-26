@@ -59,7 +59,7 @@ class TransferController extends Controller
         foreach ($local_profiles as $local_profile) {
 
             $query = "select * from profiles";
-            $query_where = " where email like ? AND (cell_phone like ?";
+            $query_where = " where email like ? OR (cell_phone like ?";
             $params = [
                 $local_profile->email,
                 $local_profile->cell_phone,
