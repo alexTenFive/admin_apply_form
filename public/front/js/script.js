@@ -15,13 +15,20 @@ jQuery(function ($) {
         form.find('.alert.empty').html('').hide();
         form.find('.req').removeClass('err');
         $(this).find('.req').each(function () {
-            if ($.trim($(this).val()) === '' || ($(this).hasClass('phone') && $(this).val().length !== 14) || ($(this).hasClass('zip') && $(this).val().length !== 5) || ($(this).prop('type') === 'checkbox' && $(this).prop('checked') === false) || ($(this).prop('id') === 'uploadBtn' && $(this).siblings('#files').val() === '' )) {
-                console.log('----------------------------------------');
-                console.log($(this).prop('name') +'= '+$(this).prop('id') === 'uploadBtn');
-                console.log($(this).prop('name') +'= '+$(this).siblings('#files').val() === '');
-                $(this).addClass('err');
-                var errText = $(this).siblings('.req-text').html();
-                form.find('.alert.empty').show().append(errText + '<br>');
+            if ($.trim($(this).val()) === '' || ($(this).hasClass('phone') && $(this).val().length !== 14) || ($(this).hasClass('zip') && $(this).val().length !== 5) || ($(this).attr('type') === 'checkbox' && $(this).prop('checked') === false)) {
+                // console.log('----------------------------------------');
+                // console.log($(this).attr('name'));
+                // console.log($(this).attr('id'));
+                // console.log($(this).attr('id') === 'uploadBtn');
+                // console.log($(this).attr('name') +'= '+$(this).siblings('#files').val() === '');
+                //
+                // console.log($(this).attr('id') !== 'uploadBtn');
+                // console.log($('#files_docs').val() !== '');
+                if($(this).attr('id') === 'uploadBtn' && $('#files_docs').val() !== ''){
+                    $(this).addClass('err');
+                    var errText = $(this).siblings('.req-text').html();
+                    form.find('.alert.empty').show().append(errText + '<br>');
+                }
             }
         });
         if (form.find('.g-recaptcha').length > 0) {
