@@ -13,7 +13,7 @@
                 <span class="nav-link dropdown-toggle" data-toggle="dropdown"
                       aria-haspopup="true" aria-expanded="false">Mail Forwarding</span>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ url('/quick-glimpse') }}">Mail Forwarding At a Glance</a>
+                    <a class="dropdown-item" href="{{ url('/quick-glimpse') }}">Quick Glimpse</a>
                     <a class="dropdown-item" href="{{ url('/how-it-works') }}">How it Works</a>
                     <a class="dropdown-item" href="{{ url('/plans-that-fit-your-needs') }}">Plans that Fit Your Needs</a>
                     <a class="dropdown-item" href="{{ url('/security-and-privacy') }}">Security and Privacy</a>
