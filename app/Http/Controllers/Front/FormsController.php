@@ -29,6 +29,7 @@ class FormsController extends Controller
 
     public function uploadFile(Request $request)
     {
+        dd($request);
         $uploader = new FileUpload($request->file('images'));
         $result = $uploader->handleUpload(public_path('/uploads/tmp/files'));
 

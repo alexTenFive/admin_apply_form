@@ -216,7 +216,7 @@ Route::post('/form/{link}', ['as' => 'profiles.store', 'uses' => 'Front\FormsCon
  * BACKEND ROUTES END
  */
 
-Route::post('/file-upload', ['as' => 'upload-file', 'uses' => 'Front\FormsController@uploadFile']);
+Route::post('/upload-file', ['as' => 'upload-file', 'uses' => 'Front\FormsController@uploadFile']);
 /**
  * AUTH ROUTES
  * Override default scaffold laravel routes
