@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Customer Satisfaction')
-@section('body', 'customer-satisfaction')
+@section('title', 'What Our Customers Say')
+@section('body', 'what-our-customers-say')
 @section('img')
-    <img src="{{ asset('images/front/customer-satisfaction.jpg') }}" alt="Customer Satisfaction">
+    <img src="{{ asset('images/front/customer-satisfaction.jpg') }}" alt="What Our Customers Say">
 @endsection
 @section('content')
     <div class="container">

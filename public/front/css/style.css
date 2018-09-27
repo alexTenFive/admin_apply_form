@@ -393,6 +393,8 @@ textarea.textarea.form-control {
 .submenu-wrap a {
     width: auto;
     line-height: 28px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .submenu-wrap a:hover,
 .submenu-wrap a.active {
@@ -421,7 +423,7 @@ textarea.textarea.form-control {
 .block.about-us {
     background: url(../img/bg-about-us.png) no-repeat center center;
 }
-.why-us {
+.block.why-us {
     background: url(../img/bg-why-us.png) no-repeat center center;
 }
 .content-block .title {

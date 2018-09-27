@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Protecting the Environment')
-@section('body', 'protecting-the-enviroment')
+@section('body', 'protecting-the-environment')
 @section('img')
     <img src="{{ asset('images/front/protecting-the-enviroment.jpg') }}" alt="Protecting the Environment">
 @endsection

@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Consultation Services')
-@section('body', 'consultation-services')
+@section('title', 'Receiving Services')
+@section('body', 'receiving-services')
 @section('img')
-    <img src="{{ asset('images/front/consultation-services.jpg') }}" alt="Consultation Services">
+    <img src="{{ asset('images/front/receiving.jpg') }}" alt="Receiving Services">
 @endsection
 @section('content')
     <div class="container">
@@ -99,10 +99,9 @@
             </div>
         </div>
     </div>
-
     <!--Reviews-->
 
-    @include('front.parts.reviews')
+@include('front.parts.reviews')
 
     <!--End Reviews-->
 @endsection

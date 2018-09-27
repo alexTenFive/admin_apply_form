@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Form 1583 Instruction')
+@section('title', 'Instructions for Form 1583')
 @section('body', 'form-1583-instruction')
 @section('img')
-    <img src="{{ asset('images/front/front.jpg') }}" alt="Form 1583 Instruction">
+    <img src="{{ asset('images/front/front.jpg') }}" alt="Instructions for Form 1583">
 @endsection
 @section('content')
     <div class="container">
