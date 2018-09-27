@@ -57,8 +57,7 @@ jQuery(function ($) {
                     type: "POST",
                     url: "/contact-us",
                     data: form_data,
-                    success: function (resp) {
-                        console.log(resp);
+                    success: function () {
                     }
                 });
             }
@@ -68,8 +67,7 @@ jQuery(function ($) {
                     type: "POST",
                     url: "/sign-up",
                     data: form_data,
-                    success: function (resp) {
-                        console.log(resp);
+                    success: function () {
                     }
                 });
             }
