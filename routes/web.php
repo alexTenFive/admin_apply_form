@@ -142,6 +142,8 @@ Route::post('/contact-us', function (Request $request) {
 
 Route::post('/sign-up', function (Request $request) {
     $recipient = env('ADMIN_EMAIL');
+
+    dd($request->all(), $recipient);
     if (isset($request->name) && ($request->email != "")) {
         $to = $recipient;
         $subject = 'Contact request from '.env('COMPANY_NAME');
@@ -178,7 +180,6 @@ Route::post('/sign-up', function (Request $request) {
                 'status' => 'error'
             ]);
         }
-        dd($result, $request->all(), $to);
     }
 })->name('sign-up');
 
