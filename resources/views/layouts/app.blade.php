@@ -42,13 +42,17 @@
         <div class="title">
 
             <div class="container">
-                @yield('title', 'Fueling your logistics chain')
-                @hasSection('apply')
+                @hasSection('banner')
+                    @yield('banner')
+                @else
+                    @yield('title', 'Fueling your logistics chain')
+                @endif
+                    @hasSection('apply')
                     <div class="subtitle">Job Application</div>
                 @endif
                 @hasSection('page_id')
                     <div class="btn-wrap">
-                        <a class="btn" href="/about-us">Learn more</a>
+                        <a class="btn" href="{{ url('/about-us') }}">Learn more</a>
                     </div>
                 @endif
             </div>

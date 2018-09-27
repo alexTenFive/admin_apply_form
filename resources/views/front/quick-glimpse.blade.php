@@ -1,6 +1,13 @@
 @extends('layouts.app')
 @section('title', 'Quick Glimpse')
+
+@section('banner')
+    Mail Forwarding <br>
+    Quick Glimpse
+@endsection
+
 @section('body', 'quick-glimpse')
+
 @section('img')
     <img src="{{ asset('images/front/mail-forwarding.jpg') }}" alt="Quick Glimpse">
 @endsection

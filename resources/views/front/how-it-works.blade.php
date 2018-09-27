@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('title', 'How it Works')
+
+@section('banner')
+    Mail Forwarding <br>
+    How it Works
+@endsection
+
 @section('body', 'how-it-works')
 @section('img')
     <img src="{{ asset('images/front/how-mail-forwarding-works.jpg') }}" alt="How it Works">
