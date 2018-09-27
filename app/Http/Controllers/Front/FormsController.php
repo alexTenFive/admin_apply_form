@@ -141,7 +141,7 @@ class FormsController extends Controller
                 $file_resp = Storage::move($old_file_path . $file, $file_url . $file);
 
                 if ($file_resp) {
-                    Storage::delete($old_photo_path . $file_name);
+                    Storage::delete($old_file_path . $file_name);
                 }
 
                 $file_path = $file_url . $file_name;
