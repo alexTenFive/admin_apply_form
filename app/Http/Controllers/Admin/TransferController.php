@@ -59,7 +59,7 @@ class TransferController extends Controller
         foreach ($local_profiles as $local_profile) {
 
             $query = "select * from profiles";
-            $query_where = " where email like ? OR (cell_phone like ?";
+            $query_where = " where email like '?' OR cell_phone like ?";
             $params = [
                 $local_profile->email,
                 $local_profile->cell_phone,
@@ -67,9 +67,7 @@ class TransferController extends Controller
             if (count($local_profile->profile_phones)) {
                 $query .= " join profiles_phones ON profiles.id = profiles_phones.profile_id";
                 $params[] = $local_profile->profile_phones->map(function ($item) { return $item->phone;})->toArray()[0];
-                $query_where .= " OR profiles_phones.phone like ?)";
-            } else {
-                $query_where .= ")";
+                $query_where .= " OR profiles_phones.phone like ?";
             }
 
             $query .= $query_where;
