@@ -15,7 +15,7 @@ jQuery(function ($) {
     //Forms
     $('form').on('submit', function (e) {
         var form = $(this);
-        var pos = $('#content').position().top;
+        var pos = $('#scrollto').position().top;
         var req = $(this).find('.req');
         req.removeClass('err');
         form.find('.alert.empty').html('').hide();
@@ -51,11 +51,22 @@ jQuery(function ($) {
             }, 2000);
 
             //Mail
-            if (form.attr('id') === 'contact-us' || form.attr('id') === 'signup') {
+            if (form.attr('id') === 'contact-us') {
                 var form_data = form.serialize();
                 $.ajax({
                     type: "POST",
-                    url: "post.php",
+                    url: "/contact-us",
+                    data: form_data,
+                    success: function () {
+
+                    }
+                });
+            }
+            if (form.attr('id') === 'signup') {
+                var form_data = form.serialize();
+                $.ajax({
+                    type: "POST",
+                    url: "/sign-up",
                     data: form_data,
                     success: function () {
 
@@ -113,9 +124,7 @@ if($('#form-apply').length > 0) {
             progressBar = document.getElementById('progressBar'),
             progressBarImg = document.getElementById('progressBarImg'),
             progressOuter = document.getElementById('progressOuter'),
-            progressOuterImg = document.getElementById('progressOuterImg'),
-            msgBox = document.getElementById('msgBox'),
-            msgBoxImg = document.getElementById('msgBoxImg');
+            progressOuterImg = document.getElementById('progressOuterImg');
         var uploader = new ss.SimpleUpload({
             button: btn,
             url: '/upload-file',
@@ -129,34 +138,34 @@ if($('#form-apply').length > 0) {
                 this.setProgressBar( progressBar );
             },
             onSubmit: function() {
-                msgBox.innerHTML = ''; // empty the message box
+                // msgBox.innerHTML = ''; // empty the message box
                 btn.innerHTML = '<span class="inner">Uploading...</span>'; // change button text to "Uploading..."
             },
             onComplete: function( filename, response ) {
                 $('#files_docs').val(filename + ', ' + $('#files_docs').val());
-                btn.innerHTML = '<span class="inner">Drop files to upload or</span>';
+
                 progressOuter.style.display = 'none'; // hide progress bar when upload is completed
                 if ( !response ) {
                     $('#files_docs').addClass('err');
-                    msgBox.innerHTML = 'Unable to upload file';
+                    btn.innerHTML = '<span class="inner">Unable to upload file</span>';
                     return;
                 }
                 if ( response.success === true ) {
                     $('#uploadBtn').removeClass('err');
-                    msgBox.innerHTML = '<strong>' + escapeTags( filename ) + '</strong>' + ' successfully uploaded.';
+                    btn.innerHTML = '<span class="inner succ"><strong>'+ escapeTags( filename ) + '</strong> successfully uploaded.</span>';
                 } else {
                     if ( response.msg )  {
-                        msgBox.innerHTML = escapeTags( response.msg );
+                        btn.innerHTML = '<span class="inner">'+escapeTags( response.msg )+'</span>';
                     } else {
                         $('#files_docs').addClass('err');
-                        msgBox.innerHTML = 'An error occurred and the upload failed.';
+                        btn.innerHTML = '<span class="inner">An error occurred and the upload failed.</span>';
                     }
                 }
             },
             onError: function() {
                 $('#files_docs').addClass('err');
                 progressOuter.style.display = 'none';
-                msgBox.innerHTML = 'Unable to upload file';
+                btn.innerHTML = '<span class="inner">Unable to upload file.</span>';
             }
         });
 
@@ -173,7 +182,6 @@ if($('#form-apply').length > 0) {
                 this.setProgressBar( progressBarImg );
             },
             onSubmit: function() {
-                msgBoxImg.innerHTML = ''; // empty the message box
                 btnImg.innerHTML = '<span class="inner">Uploading...</span>'; // change button text to "Uploading..."
             },
             onComplete: function( filename, response ) {
@@ -181,22 +189,23 @@ if($('#form-apply').length > 0) {
                 btnImg.innerHTML = '<span class="inner">Drop files to upload or</span>';
                 progressOuterImg.style.display = 'none'; // hide progress bar when upload is completed
                 if ( !response ) {
-                    msgBoxImg.innerHTML = 'Unable to upload file';
+                    btnImg.innerHTML = '<span class="inner">Unable to upload file</span>';
                     return;
                 }
                 if ( response.success === true ) {
-                    msgBoxImg.innerHTML = '<img src="/uploads/tmp/photos/'+ escapeTags( filename ) +'">';
+                    // msgBoxImg.innerHTML = '<img src="/uploads/tmp/photos/'+ escapeTags( filename ) +'">';
+                    btnImg.innerHTML = '<span class="inner succ"><strong>' + escapeTags( filename ) + '</strong>' + ' successfully uploaded.</span>';
                 } else {
                     if ( response.msg )  {
-                        msgBoxImg.innerHTML = escapeTags( response.msg );
+                        btnImg.innerHTML = '<span class="inner">'+escapeTags( response.msg )+'</span>';
                     } else {
-                        msgBoxImg.innerHTML = 'An error occurred and the upload failed.';
+                        btnImg.innerHTML = '<span class="inner">An error occurred and the upload failed.</span>';
                     }
                 }
             },
             onError: function() {
                 progressOuterImg.style.display = 'none';
-                msgBoxImg.innerHTML = 'Unable to upload file';
+                btnImg.innerHTML = '<span class="inner">Unable to upload file.</span>';
             }
         });
     };

@@ -9,7 +9,7 @@
 @section('content')
 
     @if ($form->status === 1)
-    <div class="job-description">
+    <div id="scrollto" class="job-description">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12">
@@ -120,19 +120,18 @@
                                             This field is optional. You may upload a front-facing, professional photo
                                             appropriate
                                             for an employee ID badge. Please use a high resolution headshot without any head
-                                            covering. Use JPG or PNG file format. File size should not exceed 1MB.
+                                            covering. Use JPG or PNG file format. File size should not exceed 5MB.
                                         </p>
                                     </div>
                                 </div>
                                 <div class="form-row form-group">
                                     <div class="col-12">
                                         <div class="custom-file">
-                                            <button id="uploadBtnImg" class="select-file"><span class="inner">Drop files to upload or</span></button>
+                                            <button id="uploadBtnImg" class="select-file"><span class="inner">Select file to upload</span></button>
                                             <div id="progressOuterImg" class="progress progress-striped active" style="display:none;">
                                                 <div id="progressBarImg" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                                                 </div>
                                             </div>
-                                            <div id="msgBoxImg" class="message-box"></div>
                                             <input id="photos" name="photos" type="hidden">
                                         </div>
                                     </div>
@@ -152,12 +151,11 @@
                                 <div class="form-row form-group">
                                     <div class="col-12">
                                         <div class="custom-file">
-                                            <button id="uploadBtn" class="select-file"><span class="inner">Drop files to upload or</span></button>
+                                            <button id="uploadBtn" class="select-file"><span class="inner">Select file to upload</span></button>
                                             <div id="progressOuter" class="progress progress-striped active" style="display:none;">
                                                 <div id="progressBar" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                                                 </div>
                                             </div>
-                                            <div id="msgBox" class="message-box"></div>
                                             <div class="req-text">Resume needs to be uploaded.</div>
                                             <input id="files_docs" name="files_docs" type="hidden" class="req">
                                         </div>

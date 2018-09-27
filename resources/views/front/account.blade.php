@@ -5,7 +5,7 @@
     <img src="{{ asset('images/front/account.jpg') }}" alt="My Account">
 @endsection
 @section('content')
-    <div class="container page-account">
+    <div id="scrollto" class="container page-account">
         <div class="row justify-content-center">
             <div class="col-lg-10 col-md-12">
                 <div class="text-block">
@@ -341,7 +341,7 @@
                                 </div>
                                 <div class="alert not-empty success">
                                     Your account has been created and a verification is required to get full access to your
-                                    account at Parsendo.com.<br>
+                                    account at {{env('COMPANY_DOMAIN')}}.<br>
                                     Our customer support team will get in touch with you within 48 hours to verify your
                                     account information.
                                 </div>
