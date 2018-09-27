@@ -131,7 +131,10 @@ class TransferController extends Controller
         $profile_phones = ProfilePhones::where('profile_id', $localProfile->id)->get();
         $profile_params = $this->prepareProfileParams($localProfile);
         try {
-            $connection->table("profiles")->insert($profile_params);
+            $resp = $connection->table("profiles")->insert($profile_params);
+            if ($resp) {
+                $external_profile_id = $connection->table("profiles")->select('id')->where('email', $profile_params['email'])->first();
+            }
         } catch (\Exception $e) {
             Log::error( date(time()) . ' | Error while profile transferring:' . $e->getMessage());
         }
@@ -139,7 +142,7 @@ class TransferController extends Controller
             if (count($profile_files)) {
                 foreach ($profile_files as $file) {
                     $connection->table("profiles_files")->insert([
-                        'profile_id' => $file->profile_id,
+                        'profile_id' => $external_profile_id,
                         'host_name' => $file->host_name,
                         'file_name' => $file->file_path,
                         'file_real_name' => $file->file_name
@@ -154,7 +157,7 @@ class TransferController extends Controller
             if (count($profile_phones)) {
                 foreach ($profile_phones as $phone) {
                     $connection->table("profiles_phones")->insert([
-                        'profile_id' => $phone->profile_id,
+                        'profile_id' => $external_profile_id,
                         'phone' => $phone->phone,
                     ]);
                 }

@@ -71,7 +71,7 @@ class ProfilesController extends Controller
         $profile->city = $request->city;
         $profile->zip = $request->zip;
         $profile->state_id = $request->state_id;
-        $profile->cell_phone = preg_replace("/[^0-9]/", "", $request->cell_phone);
+        $profile->cell_phone = '1' . preg_replace("/[^0-9]/", "", $request->cell_phone);
         $profile->save();
 
         return redirect()->route('admin.profiles', ['type' => $type])->with('status', 'Profile with ID '. $profile->id . ' successfully updated.');
