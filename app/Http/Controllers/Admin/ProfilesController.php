@@ -63,7 +63,7 @@ class ProfilesController extends Controller
 
         $this->validate($request, $rules);
 
-        $full_name = str_replace(['"', "'", '`', ' ', '&laquo;', '&raquo;'], "", $request->full_name);
+        $full_name = str_replace(['"', "'", '`', '&laquo;', '&raquo;'], "", $request->full_name);
 
         $profile->full_name = $full_name;
         $profile->address = $request->address;
