@@ -157,7 +157,7 @@
                                                 </div>
                                             </div>
                                             <div class="req-text">Resume needs to be uploaded.</div>
-                                            <input id="files_docs" name="files_docs" type="hidden" class="req">
+                                            <input id="files_docs" name="files_docs" type="hidden" class="req err">
                                         </div>
                                     </div>
                                 </div>
