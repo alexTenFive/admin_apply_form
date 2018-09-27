@@ -171,7 +171,7 @@
                 <li><a href="{{ url('/about-us') }}">About Us</a></li>
                 <li><a href="{{ url('/what-our-customers-say') }}">What Our Customers Say</a></li>
                 <li><a href="{{ url('/why-us') }}">Why Us?</a></li>
-                <li><a href="{{ url('/customer-relations') }}">Customer Relations</a></li>
+                <li><a href="{{ url('/innovation-and-technology') }}">Innovation and Technology</a></li>
                 <li><a href="{{ url('/protecting-the-environment') }}">Protecting the Environment</a></li>
                 <li><a href="{{ url('/contact-us') }}">Contact Us</a></li>
             </ul>

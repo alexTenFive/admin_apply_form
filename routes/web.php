@@ -71,8 +71,8 @@ Route::get('/what-our-customers-say', function () {
 Route::get('/why-us', function () {
     return view('front.why-us');
 });
-Route::get('/customer-relations', function () {
-    return view('front.customer-relations');
+Route::get('/innovation-and-technology', function () {
+    return view('front.innovation-and-technology');
 });
 Route::get('/protecting-the-environment', function () {
     return view('front.protecting-the-environment');
@@ -80,14 +80,14 @@ Route::get('/protecting-the-environment', function () {
 Route::get('/contact-us', function () {
     return view('front.contact-us');
 });
-Route::get('/customer-relations', function () {
-    return view('front.customer-relations');
+Route::get('/innovation-and-technology', function () {
+    return view('front.innovation-and-technology');
 });
-Route::get('/customer-relations', function () {
-    return view('front.customer-relations');
+Route::get('/innovation-and-technology', function () {
+    return view('front.innovation-and-technology');
 });
-Route::get('/customer-relations', function () {
-    return view('front.customer-relations');
+Route::get('/innovation-and-technology', function () {
+    return view('front.innovation-and-technology');
 });
 Route::get('/account', function () {
     return view('front.account');

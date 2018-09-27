@@ -44,12 +44,12 @@
             </li>
             <li class="nav-item dropdown">
                 <span class="nav-link dropdown-toggle" data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">Our Mission</span>
+                      aria-haspopup="true" aria-expanded="false">About Us</span>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ url('/about-us') }}">About Us</a>
+                    <a class="dropdown-item" href="{{ url('/about-us') }}">About {{env('COMPANY_NAME')}}</a>
                     <a class="dropdown-item" href="{{ url('/what-our-customers-say') }}">What Our Customers Say</a>
                     <a class="dropdown-item" href="{{ url('/why-us') }}">Why Us?</a>
-                    <a class="dropdown-item" href="{{ url('/customer-relations') }}">Customer Relations</a>
+                    <a class="dropdown-item" href="{{ url('/innovation-and-technology') }}">Innovation and Technology</a>
                     <a class="dropdown-item" href="{{ url('/protecting-the-environment') }}">Protecting the Environment</a>
                     <a class="dropdown-item" href="{{ url('/contact-us') }}">Contact Us</a>
                 </div>

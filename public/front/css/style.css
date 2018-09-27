@@ -236,11 +236,20 @@ textarea.textarea.form-control {
     transform: translate(0, -50%);
 }
 .progress {
-    min-width: 300px;
     display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    max-width: 90%;
+    margin: 0 auto;
+    top: 190px;
+}
+.progress-bar {
+    background: #6078de;
 }
 #progressBar {
     width: 0;
+    display: block;
 }
 .message-box {
     padding: 15px 0;
@@ -498,6 +507,7 @@ textarea.textarea.form-control {
     font-size: 24px;
     margin-bottom: 15px;
 }
+.text-block ul,
 .text-block p {
     margin-bottom: 27px;
 }
