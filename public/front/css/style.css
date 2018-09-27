@@ -262,8 +262,6 @@ textarea.textarea.form-control {
 }
 .progress-bar {
     background: #6078de;
-}
-#progressBar {
     width: 0;
     display: block;
     height: 25px;
