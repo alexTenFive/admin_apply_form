@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Shipping')
-@section('body', 'shipping')
+@section('title', 'Why Us?')
+@section('body', 'why-us')
 @section('img')
-    <img src="{{ asset('images/front/shipping.jpg') }}" alt="Shipping">
+    <img src="{{ asset('images/front/why-parsendo.jpg') }}" alt="Why Us?">
 @endsection
 @section('content')
     <div class="container">
@@ -102,7 +102,7 @@
 
     <!--Reviews-->
 
-@include('front.parts.reviews')
+    @include('front.parts.reviews')
 
     <!--End Reviews-->
 @endsection

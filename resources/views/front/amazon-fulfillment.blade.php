@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Amazon Fulfillment')
+@section('title', 'Fulfillement by Amazon (FBA)')
 @section('body', 'amazon-fulfillment')
 @section('img')
-    <img src="{{ asset('images/front/amazon-fulfillment.jpg') }}" alt="Amazon Fulfillment">
+    <img src="{{ asset('images/front/amazon-fulfillment.jpg') }}" alt="Fulfillement by Amazon (FBA)">
 @endsection
 @section('content')
     <div class="container">

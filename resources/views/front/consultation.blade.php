@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Why Parsendo?')
-@section('body', 'why-parsendo')
+@section('title', 'Consultation')
+@section('body', 'consultation')
 @section('img')
-    <img src="{{ asset('images/front/why-parsendo.jpg') }}" alt="Why Parsendo?">
+    <img src="{{ asset('images/front/consultation-services.jpg') }}" alt="Consultation">
 @endsection
 @section('content')
     <div class="container">

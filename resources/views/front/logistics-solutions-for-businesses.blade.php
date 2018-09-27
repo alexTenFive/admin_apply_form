@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Logistics Solutions For Business Customers')
-@section('body', 'logistics-for-business-customers')
+@section('title', 'Logistics Solutions for Businesses')
+@section('body', 'logistics-solutions-for-businesses')
 @section('img')
-    <img src="{{ asset('images/front/logistics-for-business-customers.jpg') }}" alt="Logistics Solutions For Business Customers">
+    <img src="{{ asset('images/front/logistics-for-business-customers.jpg') }}" alt="Logistics Solutions for Businesses">
 @endsection
 @section('content')
     <div class="container">

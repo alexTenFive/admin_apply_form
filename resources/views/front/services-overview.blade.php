@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Services Overview')
+@section('title', 'Overview of Services We Provide')
 @section('body', 'services-overview')
 @section('img')
-    <img src="{{ asset('images/front/services-overview.jpg') }}" alt="Services Overview">
+    <img src="{{ asset('images/front/services-overview.jpg') }}" alt="Overview of Services We Provide">
 @endsection
 @section('content')
     <div class="container">

@@ -375,8 +375,8 @@
                                     <input type="submit" name="submit" class="btn" value="Sign in">
                                 </div>
                                 <div class="form-group form-btns text-center">
-                                    <a href="{{ url('/password-recovery') }}">Forgot your password?</a> or <a href="{{ url('/username-recovery') }}">Forgot
-                                        your username?</a>
+                                    <a href="{{ url('/password-recovery') }}">Forgot your password?</a> or
+                                    <a href="{{ url('/username-recovery') }}">Forgot your username?</a>
                                 </div>
                             </form>
                         </div>

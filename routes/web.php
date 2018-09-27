@@ -32,17 +32,17 @@ Route::get('/security-and-privacy', function () {
 Route::get('/frequently-asked-questions', function () {
     return view('front.frequently-asked-questions');
 });
-Route::get('/shipping', function () {
-    return view('front.shipping');
+Route::get('/shipping-services', function () {
+    return view('front.shipping-services');
 });
-Route::get('/receiving', function () {
-    return view('front.receiving');
+Route::get('/receiving-services', function () {
+    return view('front.receiving-services');
 });
 Route::get('/transportation-management-systems', function () {
     return view('front.transportation-management-systems');
 });
-Route::get('/logistics-for-business-customers', function () {
-    return view('front.logistics-for-business-customers');
+Route::get('/logistics-solutions-for-businesses', function () {
+    return view('front.logistics-solutions-for-businesses');
 });
 Route::get('/services-overview', function () {
     return view('front.services-overview');
@@ -59,23 +59,23 @@ Route::get('/quality-control', function () {
 Route::get('/customization', function () {
     return view('front.customization');
 });
-Route::get('/consultation-services', function () {
-    return view('front.consultation-services');
+Route::get('/consultation', function () {
+    return view('front.consultation');
 });
 Route::get('/about-us', function () {
     return view('front.about-us');
 });
-Route::get('/customer-satisfaction', function () {
-    return view('front.customer-satisfaction');
+Route::get('/what-our-customers-say', function () {
+    return view('front.what-our-customers-say');
 });
-Route::get('/why-parsendo', function () {
-    return view('front.why-parsendo');
+Route::get('/why-us', function () {
+    return view('front.why-us');
 });
 Route::get('/customer-relations', function () {
     return view('front.customer-relations');
 });
-Route::get('/protecting-the-enviroment', function () {
-    return view('front.protecting-the-enviroment');
+Route::get('/protecting-the-environment', function () {
+    return view('front.protecting-the-environment');
 });
 Route::get('/contact-us', function () {
     return view('front.contact-us');
