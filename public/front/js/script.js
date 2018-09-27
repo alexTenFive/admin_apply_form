@@ -12,11 +12,13 @@ jQuery(function ($) {
     $('.phone').mask('(000) 000-0000');
     $('.zip, input[name="zip"]').mask('00000');
 
+    $('#files_docs').val('');
+
     //Forms
     $('form').on('submit', function (e) {
         var form = $(this);
         var pos = $('#scrollto').position().top;
-        var req = $(this).find('.req');
+        var req = form.find('.req');
         req.removeClass('err');
         form.find('.alert.empty').html('').hide();
 
@@ -24,7 +26,6 @@ jQuery(function ($) {
             if (($.trim($(this).val()) === '' || ($(this).hasClass('phone') && $(this).val().length !== 14)) ||
                 ($(this).hasClass('zip') && $(this).val().length !== 5) ||
                 ($(this).attr('type') === 'checkbox' && $(this).prop('checked') === false)) {
-
                 $(this).addClass('err');
                 var errText = $(this).siblings('.req-text').html();
                 form.find('.alert.empty').show().append(errText + '<br>');
@@ -58,7 +59,7 @@ jQuery(function ($) {
                     url: "/contact-us",
                     data: form_data,
                     success: function (resp) {
-                        console.log(resp);
+                        // console.log(resp);
                     }
                 });
             }
@@ -69,7 +70,7 @@ jQuery(function ($) {
                     url: "/sign-up",
                     data: form_data,
                     success: function (resp) {
-                        console.log(resp);
+                        // console.log(resp);
                     }
                 });
             }
