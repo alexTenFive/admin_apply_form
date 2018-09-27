@@ -3,7 +3,7 @@
 @section('body', 'apply')
 @section('apply', 'apply')
 @section('img')
-    <img src="{{ asset('images/front/apply.png') }}" alt="Always Ahead'">
+    <img src="{{ asset('images/front/apply.png') }}" alt="Apply">
 @endsection
 
 @section('content')

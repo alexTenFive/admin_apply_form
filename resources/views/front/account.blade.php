@@ -310,11 +310,11 @@
                                         <div class="req-text">The state field is required.</div>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control req" name="zip" type="text" placeholder="ZIP Code*">
+                                        <input class="zip form-control req" name="zip" type="text" placeholder="ZIP Code*">
                                         <div class="req-text">The zip code field is required.</div>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control req" name="phone" type="text" placeholder="Phone*">
+                                        <input class="phone form-control req" name="phone" type="text" placeholder="Phone*">
                                         <div class="req-text">The phone field is required.</div>
                                     </div>
                                     <div class="form-group">

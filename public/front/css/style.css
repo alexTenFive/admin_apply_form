@@ -250,6 +250,7 @@ textarea.textarea.form-control {
 #progressBar {
     width: 0;
     display: block;
+    height: 25px;
 }
 .message-box {
     padding: 15px 0;
