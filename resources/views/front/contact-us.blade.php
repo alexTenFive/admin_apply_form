@@ -58,7 +58,8 @@
                                 {!! env('ADDRESS_2') !!}
                             </p>
                             <p>
-                                <span class="marked"><span class="phone">{{ env('ADMIN_TEL') }}</span></span>
+                                <span class="marked"><span class="phone"><i class="fa fa-phone" aria-hidden="true"></i>{{ env('ADMIN_TEL') }}</span></span><br>
+                                <span class="marked"><span class="fax"><i class="fa fa-fax" aria-hidden="true"></i>{{ env('ADMIN_FAX') }}</span></span>
                             </p>
                         </div>
                     </div>

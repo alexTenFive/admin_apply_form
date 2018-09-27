@@ -29,6 +29,7 @@
 
     <title>@yield('title', 'Fueling your logistics chain') | {{ env('COMPANY_DOMAIN', 'Dorneo.com' )}} </title>
     <link rel="stylesheet" href="{{ asset('front/libs/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/libs/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
 </head>
 <body class="@yield('body', 'front')">
@@ -155,9 +156,9 @@
                         <img class="ico-inline" src="{{ asset('front/img/ico-13.png') }}" alt="">
                     </div>
                     <div class="col-sm-10 col-12 block-info menu">
-                        <a href="{{ url('/form-1583-instruction') }}">Instructions for Form 1583</a><br>
-                        <a href="{{ url('/frequently-asked-questions') }}">Mail Forwarding Frequently Asked Questions</a><br>
-                        <a href="{{ url('/security-and-privacy') }}">Security and Privacy Measures</a><br>
+                        <a href="{{ url('/form-1583-instruction') }}"><i class="fa fa-check-square-o" aria-hidden="true"></i>Instructions for Form 1583</a><br>
+                        <a href="{{ url('/frequently-asked-questions') }}"><i class="fa fa-check-square-o" aria-hidden="true"></i>Mail Forwarding Frequently Asked Questions</a><br>
+                        <a href="{{ url('/security-and-privacy') }}"><i class="fa fa-check-square-o" aria-hidden="true"></i>Security and Privacy Measures</a><br>
                     </div>
                 </div>
             </div>
@@ -205,9 +206,10 @@
         </div>
         <div class="col-lg-3 col-md-4 col-12">
             <h3 class="title">{{env('COMPANY_NAME')}}</h3>
-            {{env('COMPANY_LEGAL')}}<br><br>
+            {{env('COMPANY_LEGAL')}}<br>
             {!! env('ADDRESS_1') !!}<br><br>
-            <span class="phone">{{ env('ADMIN_TEL') }}</span>
+            <span class="phone"><i class="fa fa-phone" aria-hidden="true"></i>{{ env('ADMIN_TEL') }}</span><br>
+            <span class="fax"><i class="fa fa-fax" aria-hidden="true"></i>{{ env('ADMIN_FAX') }}</span>
         </div>
     </div>
 </div>

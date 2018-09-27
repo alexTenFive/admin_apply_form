@@ -527,6 +527,26 @@ textarea.textarea.form-control {
 .text-block p {
     margin-bottom: 27px;
 }
+.text-block ul {
+    list-style: none;
+    padding-left: 28px;
+}
+.text-block li{
+    position: relative;
+}
+.text-block li:before {
+    content: "\f14a";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    left: -27px;
+    top: 4px;
+    color: #6078de;
+}
 div[class*="col-"] > .text-block:last-child {
     padding-bottom: 62px;
 }
@@ -585,17 +605,8 @@ div[class*="col-"] > .text-block:last-child {
 .contact-info p {
     line-height: 30px;
 }
-.contact-info .phone {
-    position: relative;
-}
-.contact-info .phone:before {
-    content: '';
-    position: relative;
-    display: inline-block;
-    margin: 0 8px 0 0;
-    background: url(../img/ico-15.png) no-repeat 0 0;
-    width: 11px;
-    height: 11px;
+.contact-info i {
+    margin-right: 8px;
 }
 .page-account .title {
     text-transform: uppercase;
@@ -730,17 +741,10 @@ div[class*="col-"] > .text-block:last-child {
 }
 .bottom .menu a {
     position: relative;
-    margin-left: 27px;
 }
-.bottom .menu a:before {
-    content: '';
-    position: absolute;
-    display: block;
-    background: url(../img/check.png) no-repeat 0 0;
-    width: 14px;
-    height: 11px;
-    left: -27px;
-    top: 4px;
+.bottom .menu a i {
+    color: #f64567;
+    margin-right: 15px;
 }
 /*End Bottom*/
 
@@ -783,14 +787,9 @@ div[class*="col-"] > .text-block:last-child {
     position: relative;
     font-weight: 600;
 }
-.footer .phone:before {
-    content: '';
-    position: relative;
-    display: inline-block;
-    margin: 0 8px 0 0;
-    background: url(../img/ico-16.png) no-repeat 0 0;
-    width: 11px;
-    height: 11px;
+.footer .fax i,
+.footer .phone i {
+    color: #f64567;
 }
 /*End Footer*/
 @media screen and (min-width: 992px) {
@@ -1023,7 +1022,7 @@ div[class*="col-"] > .text-block:last-child {
     }
     .bottom .menu a {
         position: relative;
-        margin-left: 27px;
+        margin-left: 0;
         display: inline-block;
         width: auto;
         line-height: normal;

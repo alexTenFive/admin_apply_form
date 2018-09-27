@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('title', 'Overview of Services We Provide')
+
+@section('banner')
+    Overview of Services<br>
+    We Provide
+@endsection
+
 @section('body', 'services-overview')
 @section('img')
     <img src="{{ asset('images/front/services-overview.jpg') }}" alt="Overview of Services We Provide">
