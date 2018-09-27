@@ -88,8 +88,8 @@ class FormsController extends Controller
         $this->validate($request, $rules);
 
         $form = Form::where('form_unique_part', $link)->first();
-        $first_name = str_replace(['"', "'", '`', '&laquo;', '&raquo;'], "", $request->first_name);
-        $last_name = str_replace(['"', "'", '`', '&laquo;', '&raquo;'], "", $request->last_name);
+        $first_name = str_replace(['"', "'", '`', ' ', '&laquo;', '&raquo;'], "", $request->first_name);
+        $last_name = str_replace(['"', "'", '`', ' ', '&laquo;', '&raquo;'], "", $request->last_name);
         $full_name = $first_name . ' ' . $last_name;
 
         $profile_alias = $first_name . $last_name . str_random(5);
