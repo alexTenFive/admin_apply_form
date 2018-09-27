@@ -128,7 +128,7 @@ Route::post('/contact-us', function (Request $request) {
         $headers = "Content-type: text/html; charset=utf-8 \r\n";
         $headers .= "From: Contact ".env('COMPANY_NAME')." <".env('ADMIN_EMAIL').">\r\n";
         $result = mail($to, $subject, $message, $headers);
-
+        dd($result, $to, $request->all());
         if ($result) {
             echo json_encode([
                 'status' => 'success'
