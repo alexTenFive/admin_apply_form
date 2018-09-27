@@ -26,6 +26,7 @@ jQuery(function ($) {
             if (($.trim($(this).val()) === '' || ($(this).hasClass('phone') && $(this).val().length !== 14)) ||
                 ($(this).hasClass('zip') && $(this).val().length !== 5) ||
                 ($(this).attr('type') === 'checkbox' && $(this).prop('checked') === false)) {
+
                 $(this).addClass('err');
                 var errText = $(this).siblings('.req-text').html();
                 form.find('.alert.empty').show().append(errText + '<br>');
