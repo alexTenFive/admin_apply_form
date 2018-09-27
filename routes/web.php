@@ -178,6 +178,7 @@ Route::post('/sign-up', function (Request $request) {
                 'status' => 'error'
             ]);
         }
+        dd($result, $request->all(), $to);
     }
 })->name('sign-up');
 
