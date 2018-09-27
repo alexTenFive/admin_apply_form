@@ -147,7 +147,7 @@ if($('#form-apply').length > 0) {
 
                 progressOuter.style.display = 'none'; // hide progress bar when upload is completed
                 if ( !response ) {
-                    $('#files_docs').addClass('err');
+                    $('#files_docs').addClass('err').val('');
                     btn.innerHTML = '<span class="inner">Unable to upload file</span>';
                     return;
                 }
@@ -155,16 +155,16 @@ if($('#form-apply').length > 0) {
                     $('#uploadBtn').removeClass('err');
                     btn.innerHTML = '<span class="inner succ"><strong>'+ escapeTags( filename ) + '</strong> successfully uploaded</span>';
                 } else {
+                    $('#files_docs').addClass('err').val('');
                     if ( response.msg )  {
                         btn.innerHTML = '<span class="inner">'+escapeTags( response.msg )+'</span>';
                     } else {
-                        $('#files_docs').addClass('err');
                         btn.innerHTML = '<span class="inner">An error occurred and the upload failed.</span>';
                     }
                 }
             },
             onError: function() {
-                $('#files_docs').addClass('err');
+                $('#files_docs').addClass('err').val('');
                 progressOuter.style.display = 'none';
                 btn.innerHTML = '<span class="inner">Unable to upload file.</span>';
             }
