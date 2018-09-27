@@ -13,6 +13,7 @@
                         <div class="col-lg-6 col-md-12">
                             <h3 class="title">Sign Up</h3>
                             <form id="signup" class="form-recovery" method="post" action="{{ route('sign-up') }}">
+                                @csrf
                                 <div class="form-hide">
                                     <div class="form-group">
                                         <input class="form-control req" name="name" type="text" placeholder="Name*">
@@ -351,6 +352,7 @@
                         <div class="col-lg-6 col-md-12 block-login">
                             <h3 class="title">Login</h3>
                             <form id="login-page" name="login" action="" method="POST" class="form">
+                                @csrf
                                 <div class="form-group">
                                     <input class="form-control req" name="username" id="uname" placeholder="Login"
                                            autocomplete="off">
