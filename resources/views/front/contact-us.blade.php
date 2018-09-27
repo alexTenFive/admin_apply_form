@@ -5,9 +5,8 @@
     <img src="{{ asset('images/front/contact-us.jpg') }}" alt="Contact Us">
 @endsection
 @section('content')
-    <iframe class="map-contact-us" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.773829208177!2d-117.48859578478896!3d33.895478280648895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcb76f3dc7e4d1%3A0xd69888fb38ebb746!2s11671+Sterling+Ave+Ste+G%2C+Riverside%2C+CA+92503%2C+%D0%A1%D0%A8%D0%90!5e0!3m2!1sru!2sua!4v1534893405299"
-            frameborder="0" style="border:0" allowfullscreen=""></iframe>
-    <div class="container">
+    <iframe class="map-contact-us" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3320.8769988979443!2d-117.8639635844058!3d33.660348845726894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcde5b0d186603%3A0xf9aa8ce10552a919!2zNDAwMCBNYWNBcnRodXIgQmx2ZCAjNDEwLCBOZXdwb3J0IEJlYWNoLCBDQSA5MjY2MCwg0KHQqNCQ!5e0!3m2!1sru!2sua!4v1538047485839"  frameborder="0" style="border:0" allowfullscreen></iframe>
+    <div id="scrollto" class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 col-md-12 text-block">
                 <div class="text-block">
@@ -24,7 +23,7 @@
                                         <div class="req-text">The email field is required.</div>
                                     </div>
                                     <div class="form-group">
-                                        <input id="phone" name="phone" class="form-control" type="text" placeholder="Phone (Optional)">
+                                        <input id="phone" name="phone" class="phone form-control" type="text" placeholder="Phone (Optional)">
                                     </div>
                                     <div class="form-group">
                                         <textarea id="message" name="message" class="form-control textarea req" placeholder="Message"></textarea>

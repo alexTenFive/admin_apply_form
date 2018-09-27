@@ -36,7 +36,6 @@
                 </div>
                 <div class="text-block">
                     <h2 id="policy">Privacy Policy</h2>
-                    <h3 class="text-center">2. Use License</h3>
                     <p>Your privacy is important to us. It is {{env('COMPANY_LEGAL')}}'s policy to respect your privacy regarding
                         any information we may collect from you across our website, {{env('COMPANY_DOMAIN')}}.</p>
                     <p>We don’t ask for your personal information unless we truly need it. When we do, we’ll only

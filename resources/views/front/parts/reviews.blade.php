@@ -28,7 +28,7 @@
                                 I got. The company offered a complete report of my business’ situation and provided the
                                 exact solutions I needed at the time. More than that, the flexible schedule was very
                                 convenient, since I wasn’t available at all times to accept the parcels I was about to
-                                receive. Uptime Plus is my go-to logistics company at the moment and I’m not going to
+                                receive. {{env('COMPANY_NAME')}} is my go-to logistics company at the moment and I’m not going to
                                 change my mind soon.
                                 <div class="author">Asif Lenters</div>
                             </div>
@@ -49,7 +49,7 @@
                                 Plus a chance. I was so pleased with the customer experience they offered that I am now
                                 contacting them whenever I have an issue that needs to be solved professionally and on
                                 time. I previously spent considerable amounts of time on services that didn’t prove to
-                                be as useful as the ones at Uptime Plus, which are much cheaper too.
+                                be as useful as the ones at {{env('COMPANY_NAME')}}, which are much cheaper too.
                                 <div class="author">Berra Miedema</div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                             <div class="text">
                                 I found {{env('COMPANY_NAME')}} after many trials and failures with other logistics companies in my
                                 area. I needed my business mail delivered promptly and in a time frame that I
-                                specifically selected according to my daily routine. Luckily, I found Uptime Plus and
+                                specifically selected according to my daily routine. Luckily, I found {{env('COMPANY_NAME')}} and
                                 they were able to offer the consultancy services I needed, along with professional mail
                                 forwarding services. I would recommend them to anyone who asks.
                                 <div class="author">Marino Klaren</div>
@@ -67,7 +67,7 @@
                             <div class="text">
                                 My expectations were pretty low when I contacted {{env('COMPANY_NAME')}} for the first time, but once
                                 I tried their services I couldn’t be more pleased with the results. The professionalism
-                                and promptness they showed were the factors that convinced me to use Uptime Plus for any
+                                and promptness they showed were the factors that convinced me to use {{env('COMPANY_NAME')}} for any
                                 logistics task I have to handle. The biggest benefit of them all is that I can set up
                                 delivery times the way I want, without extra charges.
                                 <div class="author">NicolaasJoosen</div>
@@ -87,7 +87,7 @@
                             <div class="text">
                                 I chose {{env('COMPANY_NAME')}} for the freight brokerage services. Since I have large loads to
                                 deliver internationally each month, I needed a company which is flexible and offers the
-                                best customer experience. I took advantage of the fact that Uptime Plus comes with an
+                                best customer experience. I took advantage of the fact that {{env('COMPANY_NAME')}} comes with an
                                 EDI interface, that makes tracking products easy. Moreover, the services are very
                                 affordable and help me save some money at the end of the month. The carriers always
                                 complete orders on time. Highly recommend!
@@ -96,7 +96,7 @@
                         </div>
                         <div class="carousel-item">
                             <div class="text">
-                                Uptime Plus just draw my attention because of the impressive shipping network it has. I
+                                {{env('COMPANY_NAME')}} just draw my attention because of the impressive shipping network it has. I
                                 chose to work with them immediately, since they collaborate with the best carriers out
                                 there. The staff is very friendly and can solve any issue that you may encounter during
                                 the process. I enjoyed the low shipping rates and the quality of services I received. I
@@ -110,7 +110,7 @@
                                 sent. {{env('COMPANY_NAME')}} seemed to be able to follow instructions clearly. I was lucky to find
                                 them as I was able to reduce my company’s down time and keep my customers happy. The
                                 team is there to assess any problem immediately and help with all delivery processes. I
-                                would be pleased to work with Uptime Plus again soon.
+                                would be pleased to work with {{env('COMPANY_NAME')}} again soon.
                                 <div class="author">Hedda Lind</div>
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                                 scheduled pick-up times. I found out that they work with TMS, which proved to be
                                 extremely useful for logistics purposes. Depending on my preferences, the team could
                                 notify the carriers when my packages should be delivered. Communication was very
-                                efficient with Uptime Plus, so I highly recommend them to anyone who struggles with
+                                efficient with {{env('COMPANY_NAME')}}, so I highly recommend them to anyone who struggles with
                                 logistics.
                                 <div class="author">Leila Manna</div>
                             </div>

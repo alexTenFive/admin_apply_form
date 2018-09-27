@@ -132,7 +132,8 @@
                                 Phone:
                             </div>
                             <div class="col-8">
-                                Monday through Friday; 09:00 AM – 5:00 PM (Pacific Standard Time)<br>
+                                Monday through Friday<br>
+                                09:00 AM – 5:00 PM<br>
                                 <span class="phone">{{env('ADMIN_TEL')}}</span>
                             </div>
                         </div>
@@ -151,7 +152,7 @@
                     </div>
                     <div class="col-sm-10 col-12 block-info menu">
                         <a href="{{ url('/form-1583-instruction') }}">Instructions for Form 1583</a><br>
-                        <a href="{{ url('/quick-glimpse') }}">Mail Forwarding Frequently Asked Questions</a><br>
+                        <a href="{{ url('/frequently-asked-questions') }}">Mail Forwarding Frequently Asked Questions</a><br>
                         <a href="{{ url('/security-and-privacy') }}">Security and Privacy Measures</a><br>
                     </div>
                 </div>
@@ -180,7 +181,7 @@
             <h3 class="title">Services</h3>
             <ul>
                 <li><a href="{{ url('/shipping-services') }}">Shipping Services</a></li>
-                <li><a href="{{ url('/receiving-service') }}">Receiving Services</a></li>
+                <li><a href="{{ url('/receiving-services') }}">Receiving Services</a></li>
                 <li><a href="{{ url('/transportation-management-systems') }}">Transportation Management</a></li>
                 <li><a href="{{ url('/logistics-solutions-for-businesses') }}">Logistics For Business</a></li>
                 <li><a href="{{ url('/quick-glimpse') }}">Mail Forwarding</a></li>
@@ -199,10 +200,9 @@
             </ul>
         </div>
         <div class="col-lg-3 col-md-4 col-12">
-            <h3 class="title">Parsendo</h3>
-            Powerteam international<br>
-            11671 Sterling Ave Ste G<br><br>
-            Riverside, CA 92503<br><br>
+            <h3 class="title">{{env('COMPANY_NAME')}}</h3>
+            {{env('COMPANY_LEGAL')}}<br><br>
+            {!! env('ADDRESS_1') !!}<br><br>
             <span class="phone">{{ env('ADMIN_TEL') }}</span>
         </div>
     </div>
@@ -218,7 +218,7 @@
                 <img src="{{ asset('front/img/ico-amazon.png') }}" alt="">
             </div>
             <div class="col-lg-4 col-md-12 text-center copyright">
-                © 2018 Powerteam International. <span class="all-rights">All rights reserved.</span><br>
+                © 2018 {{env('COMPANY_LEGAL')}}. <span class="all-rights">All rights reserved.</span><br>
                 <a href="{{ url('/terms-of-service#policy') }}">Privacy Policy</a> | <a href="{{ url('/terms-of-service#terms') }}">Terms of Service</a>
             </div>
             <div class="col-lg-4 col-md-12">
