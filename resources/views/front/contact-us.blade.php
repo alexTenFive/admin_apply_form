@@ -48,20 +48,18 @@
                             </form>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 contact-info">
-                            <h3>Parsendo</h3>
-                            <h4>Powerteam International</h4>
+                            <h3>{{env('COMPANY_NAME')}}</h3>
+                            <h4>{{env('COMPANY_LEGAL')}}</h4>
                             <p>
                                 <span class="marked">BBB® registered at:</span><br>
-                                2971 Everwood Drive<br>
-                                Riverside, CA 92503<br>
+                                {!! env('ADDRESS_1') !!}
                             </p>
                             <p>
                                 <span class="marked">BBB® registered at:</span><br>
-                                2971 Everwood Drive<br>
-                                Riverside, CA 92503
+                                {!! env('ADDRESS_2') !!}
                             </p>
                             <p>
-                                <span class="marked"><span class="phone">(800) 695-2287</span></span>
+                                <span class="marked"><span class="phone">{{ env('ADMIN_TEL') }}</span></span>
                             </p>
                         </div>
                     </div>

@@ -9,92 +9,102 @@
         <div class="row justify-content-center">
             <div class="col-lg-10 col-md-12">
                 <div class="text-block">
+                    <p>Most online business owners have heard or considered Fulfillment by Amazon or FBA program by now.
+                        Before you make your decision, let us lay out the pros and cons of FBA program so you can make
+                        an informed decision.</p>
+                    <p>You can leverage Amazon’s enormous customer base to your benefit. The FBA program also allows you
+                        to take advantage of their workforce. Amazon can store your inventory in their warehouses across
+                        the nation or even overseas. Their staff will prepare your package and ship them out when an
+                        order is placed. They will also process payment on your behalf. Furthermore, they will even
+                        process return on your behalf. You can use Amazon’s expertise, experience, workforce, huge
+                        market, trusted payment gateway and more to your advantage with FBA program.</p>
+                    <p>However, FBA program comes with strings attached. Amazon has strict standards and certain
+                        regulations for businesses that use FBA program. Complying with all the complicated and often
+                        convoluted rules can be daunting by itself. Even the simplest of honest mistake can cost you
+                        hefty penalty or even bar you from the program. Don’t let this discourage you. We can help you
+                        with the challenging portion of FBA so you can enjoy the benefits of this great program. Let
+                        {{env('COMPANY_NAME')}} do the heavy lifting; we’ll make sure you play by Amazon’s rule while participating in
+                        the FBA program.</p>
+                    <p>{{env('COMPANY_NAME')}} essentially started the order fulfillment revolution that we have today in the
+                        logistics industry. That means we have both the expertise and experience to engage with FBA with
+                        full confidence. In this case, you’ll participate in FBA and {{env('COMPANY_NAME')}} will take care of
+                        compliance, listing, product sourcing and more so all you do is lift a finger and tell us what
+                        you’d like us to do. We also offer other add-on services that complements FBA program well and
+                        you can add these services to your subscription at any time.</p>
+
+                </div>
+                <div class="text-block">
+                    <h2>QUALITY CONTROL</h2>
+                    <p>We specialize in quality control for inventories of any size, shape or color. We deploy both
+                        advanced technology and highly skilled staff to enforce strict quality control mechanism to
+                        ensure inventory quality. We have been providing this service for many years with dependability
+                        that our clients can trust. Our pricing is lower than anyone else while our services is of the
+                        highest quality.</p>
+                    <p>Our quality control and inspection process starts with visual inspection as soon as the product
+                        is delivered. Our state of the art tracking and monitoring system then takes over. Our staff
+                        complements the automatic monitoring system by physically inspecting all inventories
+                        periodically. In addition to quality control, we monitor low stock levels, upcoming expiration
+                        date, etc., and report any findings promptly so proper steps can be taken to resolve any
+                        potential issue.</p>
+                    <p>While Amazon perform a quick, visual inspection, we provide a comprehensive inspection that
+                        eliminates loss of revenue due to bad inventory. Our service also reduces the number of return
+                        you’ll have to process, as a result, you’ll enjoy better margin, better customer experience,
+                        potentially more returning customers and business reputation that you can be proud of. By
+                        partnering with us, you will receive customized service that is second to none and you’ll also
+                        get to leverage Amazon’s popularity to reach a larger audience to sell your product.</p>
+                    <p>Quality is never compromised when you partner with us. Our near perfect order processing history
+                        is something like a fable to our competitions. You’ll enjoy 24-hour access to your online portal
+                        and receive real-time status update on all your products so you know what’s happening with your
+                        business.</p>
+
+                </div>
+                <div class="text-block">
+                    <h2>ITEM REGISTRATION</h2>
+                    <p>Amazon requires that every single item they handle must be registered with them with 100%
+                        accuracy. This registration process can be more complex than it seems at first glance. You have
+                        to account for ASIN numbers, UPCs, serial numbers, model numbers, batch, ISBN numbers, correct
+                        product dimensions, weight, shipment package dimension and weight, categories and subcategories
+                        for accurate listing and more. This process can quickly become overwhelming when you’re handling
+                        a large number of products.</p>
+                    <p>By partnering with us, you can rest assured, we’ll handle product registration on your behalf and
+                        we guarantee accuracy. Our staff and technology streamlines this process and can almost always
+                        do this quicker than anyone else while maintaining accuracy. If we need to contact vendor or
+                        manufacturer for any reason, we’ll happily do it so you don’t have to.</p>
+
+                </div>
+                <div class="text-block">
+                    <h2>ITEM PREPARATION AND PACKAGING</h2>
+                    <p>Often time bulk products will require repackaging for retail sale. You will also have to prep
+                        each individual item as each order is placed. This can soon become a chore by itself. However,
+                        with {{env('COMPANY_NAME')}} by your side, you can make this process a breeze. We can receive bulk packaging
+                        directly from your vendor or manufacturer. If necessary, we will repackage your product for
+                        retail sale and individually prepare each shipment with 100% accuracy guarantee.</p>
+                    <p>Amazon enforces proper packaging standard and we are well aware of their standards. Our expert
+                        staff will match or surpass any standard Amazon has set forth so you can continue to enjoy your
+                        FBA benefits.</p>
+
+                </div>
+                <div class="text-block">
+                    <h2>SHIPPING CARRIER</h2>
                     <p>
-                        Mail Forwarding is one of the oldest services that we started to provide to our client base. Our
-                        clients,
-                        all over the world enjoy this service and they entrust us with their valuable package knowing that
-                        we’d
-                        be
-                        able to provide the privacy and security that’s second to none.
-                    </p>
-                    <p>
-                        It’s as simple as it can get to sign up for an online account and we’ll provide you with a U.S.
-                        address
-                        that
-                        you can use to receive any shipment, mail or regular correspondence.
-                    </p>
-                    <p>
-                        Our international clients appreciate this service as there are not a lot of sellers or e-commerce
-                        sites
-                        out
-                        there that offer international shipping. With our Mail Forwarding service, they get to buy from
-                        wherever
-                        they want. This opens up new opportunity for overseas businesses.
-                    </p>
-                    <p>
-                        Also, overseas businesses that want to maintain a U.S. address can chose to do so for merely a few
-                        dollars a
-                        month. We’ll receive all your mails and forward them as you request.
-                    </p>
-                    <p>
-                        We serve both long and short term customers. Some overseas customers entrust us with all their
-                        packages
-                        and
-                        mails while we have short term customers who trust us to handle their mail during busier times of
-                        the
-                        year
-                        or during vacations.
-                    </p>
-                    <p>
-                        We also discard any junk mail, advertisement etc. so you can enjoy a clutter free mail delivery no
-                        matter
-                        where you live.
+                        {{env('COMPANY_NAME')}} does more than order fulfillment. If you’re struggling to negotiate price with
+                        shipping partners, we can help. Over the years, we established great relationship with multiple
+                        shipping carriers and we enjoy low rates that are otherwise not available to public. By
+                        partnering with us, you can unlock this lower rates and you’ll soon discover your subscription
+                        fee with {{env('COMPANY_NAME')}} pays for itself and some more in no time.
                     </p>
                 </div>
                 <div class="text-block">
-                    <h2>SIMPLE AND EASY</h2>
-                    <p>
-                        It cannot be any simpler. You’ll have an online portal; and you’ll be able to check your account and
-                        all
-                        mails right from your portal. You have access to your online portal 24/7. You can pay you bill, add
-                        funds, check mails in transit and change your settings right from here.
-                    </p>
-                    <p>
-                        You can also add, remove or customize your services as needed. If you choose to put your account on
-                        hold
-                        or close your account altogether – you can do everything right from your portal without ever needing
-                        to
-                        call anyone.
-                    </p>
-                    <p>
-                        We will always respect your privacy and make sure your information is safe with multiple layers of
-                        security in our infrastructure.
-                    </p>
-                </div>
-                <div class="text-block">
-                    <h2>UNINTERRUPTED ACCESS</h2>
-                    <p>
-                        As outlined above, you can access your account from virtually anywhere at any time with a mere mouse
-                        click. As long as you have access to Internet, you can manage your account.
-                    </p>
-                </div>
-                <div class="text-block">
-                    <h2>OPTIONS</h2>
-                    <p>
-                        Our Mail Forwarding Services are flexible and completely customizable. You have several plans and
-                        options to choose from. Our base plan starts at just $19.95/month.
-                    </p>
-                </div>
-                <div class="text-block">
-                    <h2>PRIVACY AND SECURITY</h2>
-                    <p>
-                        We offer complete discretion and the privacy of our customers is of utmost importance to us. Our IT
-                        folks also ensure your data is safe with us by continuously monitoring our system from external
-                        intrusion and make necessary steps in case of a data breach. Along with external threat detection
-                        system, our facility is well-equipped with cameras, controlled access and more to prevent
-                        unauthorized
-                        access.
-                    </p>
+                    <h2>INELIGIBLE PRODUCTS</h2>
+                    <p>While most products are eligible for FBA program, there are several items that are ineligible for
+                        FBA program yet you can sell them on Amazon. If you’re selling any items that fall in this
+                        category, we can handle order fulfillment on your behalf that Amazon won’t. Our fulfillment is
+                        superior to Amazon’s or any other logistics company by miles. Our personal touch, flexibility,
+                        larger savings and better services make our order fulfillment service a no brainer.</p>
+                    <p>You have many options when you partner with {{env('COMPANY_NAME')}}: participate in FBA program and let us
+                        handle products and registration for you; or you can sell on amazon and let us fulfill all your
+                        orders. Call us today to find out what we can do to streamline your business.</p>
+
                 </div>
             </div>
         </div>

@@ -9,84 +9,73 @@
         <div class="row justify-content-center">
             <div class="col-lg-10 col-md-12">
                 <div class="text-block">
-                    <h2>Form 1583 – OVERVIEW</h2>
-                    <p>
-                        Any entity that offers a third party mail services is required by law to follow the rules set forth
-                        by
-                        USPS. These rules and guidelines must always be followed when acting as a mailing agent.
-                    </p>
-                    <p>
-                        Parsendo is a third party mail service provider which is also known as Commercial Mail Receiving
-                        Agent
-                        (CMRA). Parsendo and its clients must follow USPS regulations and customs law. The client must also
-                        complete and sign the USPS form 1583 that allows us to act as your mailing agent.
-                    </p>
+                    <h2>USPS FORM 1583</h2>
+                    <p>All third party mail service providers are required to have USPS Form 1583 filled by their client
+                        before they can act on their before and receive or send mail pieces for them.</p>
+                    <p>As a third party mail servicer, {{env('COMPANY_NAME')}} is known as Commercial Mail Receiving Agent or CMRA and
+                        we are required by the law to have our customer fill this form before we can service any mail
+                        pieces for them. This is a requirement set forth by USPS and Form 1583 essentially authorizes us
+                        to act as your mailing agent.</p>
                 </div>
                 <div class="text-block">
                     <h2>WHO SHOULD COMPLETE FORM 1583?</h2>
                     <p>
-                        Anyone who utilizes the services of any Commercial Mail Receiving Agent (CMRA) must complete this
-                        form regardless if they are an individual or a business entity.
-                    </p>
-                    <h2>WHERE CAN I GET A COPY OF FORM 1583?</h2>
-                    <p>
-                        You can download a copy of Form 1583 here: USPS FORM 1583. You can also obtain a hard copy from any
-                        local USPS office.
+                        Anyone who intends to leverage the services of a CMRA must complete USPS Form 1583.
                     </p>
                 </div>
                 <div class="text-block">
-                    <h2>STEP-BY-STEP INSTRUCTIONS:</h2>
+                    <h2>WHERE CAN I FIND A COPY OF THE USPS FORM 1583?</h2>
                     <p>
-                        Form 1583 has three sections: Sections 1 and 2 must be completed by the client. Section 3 will be
-                        completed by the CMRA.
-                    </p>
-                    <p>
-                        Box 1 – Enter date of your application
-                    </p>
-                    <p>
-                        Box 2 – Enter your name (use business name if you’re a business client)
-                    </p>
-                    <p>
-                        Box 3 – Enter the address that you were provided by Parsendo during account setup
-                    </p>
-                    <p>
-                        Box 4 – Leave blank
-                    </p>
-                    <p>
-                        Box 5 – Either sign it or have it signed by an authorized party
-                    </p>
-                    <p>
-                        Box 6 & 7 – Enter information requested for any other entity who will be sharing the address with
-                        you
-                    </p>
-                    <p>
-                        Box 8 – Choose from one of the acceptable photo IDs
-                    </p>
-                    <p>
-                        Box 9 – Leave this section blank unless you’re a business client. Business client, fill this section
-                        as
-                        appropriate.
-                    </p>
-                    <p>
-                        Box 10a-10e – Provide information about CMRA
-                    </p>
-                    <p>
-                        Box 11 – Indicate the industry of your business
-                    </p>
-                    <p>
-                        Box 12 – You can authorize any number of individuals to use this address, however you’re required to
-                        provide their information in this section.
+                        You can download a copy here: <a href="https://about.usps.com/forms/ps1583.pdf">USPS 1583</a>.
+                        You can also pick up a hardcopy from any USPS location.
                     </p>
                 </div>
                 <div class="text-block">
-                    <h2>SUBMITTING FORM 1583</h2>
+                    <h2>INSTRUCTIONS TO FILL UP USPS FORM 1583:</h2>
+                    <p>Among the three sections you will see on USPS Form 1583, section 1 and 2 must be completed by you
+                        and the CMRA (us) will complete the third and final section.</p>
+                    <p>Box 1: Enter the date when you’re completing the form</p>
+                    <p>Box 2: Enter your name or company name if you’re a business</p>
+                    <p>Box 3: Enter the address that we provided you when you signed up for this service</p>
+                    <p>Box 4: Leave blank</p>
+                    <p>Box 5: Sign if you’re individual; have it signed by authorized personnel if you’re a business</p>
+                    <p>Box 6 & 7: Enter information about anyone else sharing this address</p>
+                    <p>Box 8: Select from available ID options you intend to submit as part of the verification process.
+                        One of these IDs must be a valid photo ID of the customer/authorized personnel from the
+                        company.</p>
+                    <p>Box 9: Only complete this box if you’re a business</p>
+                    <p>Box 10a-10e: For businesses, this box should be filled with information for the authorized
+                        personnel from the business</p>
+                    <p>Box 11: Specify the industry of your business</p>
+                    <p>Box 12: You can have any number of individual share this address with you but you are required to
+                        provide their information here (use extra page if needed).</p>
+
+                </div>
+                <div class="text-block">
+                    <h2>SUBMISSION RULE FOR USPS FORM 1583:</h2>
                     <p>
-                        Form 1583 must be signed by either the customer or their authorized agent and should be notarized. U.S.
-                        or overseas notary are both acceptable depending where the customer resides.
+                        Form 1583 must be signed by the individual client or authorized personnel from the business. All
+                        signature must also be notarized. Once you have completed, signed and notarized Form 1583, scan
+                        it and send it along with your IDs to us so we can complete our portion and submit the form to
+                        USPS for processing.
                     </p>
+                </div>
+                <div class="text-block">
+                    <h2>ACCEPTABLE FORMS OF IDS:</h2>
+                    <ul>
+                        <li>Driver’s license, state ID or any other state or federal government issued photo ID</li>
+                        <li>Vehicle registration card</li>
+                        <li>Copy of mortgage, rental lease or utility bill</li>
+                        <li>Naturalization card</li>
+                        <li>Voter ID</li>
+                        <li>Passport or passport card</li>
+                        <li>Declaration page of current insurance policy in your name or your business</li>
+                    </ul>
+                </div>
+                <div class="text-block">
+                    <h2>EXCLUSIONS:</h2>
                     <p>
-                        Once you have completed the form, scan the form and your IDs and mail them to us. We’ll complete our
-                        portion and submit Form 1583 to USPS on your behalf.
+                        Birth certificate and social security cards will not be accepted as valid ID(s).
                     </p>
                 </div>
             </div>
