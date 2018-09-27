@@ -726,7 +726,6 @@ div[class*="col-"] > .text-block:last-child {
     color: #fff;
     text-decoration: underline;
 }
-.bottom .phone,
 .bottom .email-us,
 .block-info a:hover {
     color: #f64567;
@@ -740,6 +739,7 @@ div[class*="col-"] > .text-block:last-child {
 .bottom .menu a {
     position: relative;
 }
+.bottom .phone,
 .bottom .menu a i {
     color: #f64567;
     margin-right: 15px;

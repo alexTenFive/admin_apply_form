@@ -139,7 +139,7 @@
                             <div class="col-8">
                                 Monday through Friday<br>
                                 09:00 AM – 5:00 PM<br>
-                                <span class="phone">{{env('ADMIN_TEL')}}</span>
+                                <span class="phone"><i class="fa fa-phone" aria-hidden="true"></i>{{env('ADMIN_TEL')}}</span>
                             </div>
                         </div>
                         <div class="row">
