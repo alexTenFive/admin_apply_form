@@ -130,7 +130,7 @@ if($('#form-apply').length > 0) {
             },
             onSubmit: function() {
                 msgBox.innerHTML = ''; // empty the message box
-                btn.innerHTML = 'Uploading...'; // change button text to "Uploading..."
+                btn.innerHTML = '<span class="inner">Uploading...</span>'; // change button text to "Uploading..."
             },
             onComplete: function( filename, response ) {
                 $('#files_docs').val(filename + ', ' + $('#files_docs').val());
@@ -174,7 +174,7 @@ if($('#form-apply').length > 0) {
             },
             onSubmit: function() {
                 msgBoxImg.innerHTML = ''; // empty the message box
-                btnImg.innerHTML = 'Uploading...'; // change button text to "Uploading..."
+                btnImg.innerHTML = '<span class="inner">Uploading...</span>'; // change button text to "Uploading..."
             },
             onComplete: function( filename, response ) {
                 $('#photos').val(filename + ', ' + $('#photos').val());
