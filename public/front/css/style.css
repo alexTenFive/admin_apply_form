@@ -739,7 +739,7 @@ div[class*="col-"] > .text-block:last-child {
 .bottom .menu a {
     position: relative;
 }
-.bottom .phone,
+.bottom .phone i,
 .bottom .menu a i {
     color: #f64567;
     margin-right: 15px;

@@ -152,7 +152,7 @@ if($('#form-apply').length > 0) {
                 }
                 if ( response.success === true ) {
                     $('#uploadBtn').removeClass('err');
-                    btn.innerHTML = '<span class="inner succ"><strong>'+ escapeTags( filename ) + '</strong> successfully uploaded.</span>';
+                    btn.innerHTML = '<span class="inner succ"><strong>'+ escapeTags( filename ) + '</strong> successfully uploaded</span>';
                 } else {
                     if ( response.msg )  {
                         btn.innerHTML = '<span class="inner">'+escapeTags( response.msg )+'</span>';
@@ -194,7 +194,7 @@ if($('#form-apply').length > 0) {
                 }
                 if ( response.success === true ) {
                     // msgBoxImg.innerHTML = '<img src="/uploads/tmp/photos/'+ escapeTags( filename ) +'">';
-                    btnImg.innerHTML = '<span class="inner succ"><strong>' + escapeTags( filename ) + '</strong>' + ' successfully uploaded.</span>';
+                    btnImg.innerHTML = '<span class="inner succ"><strong>' + escapeTags( filename ) + '</strong>' + ' successfully uploaded</span>';
                 } else {
                     if ( response.msg )  {
                         btnImg.innerHTML = '<span class="inner">'+escapeTags( response.msg )+'</span>';
