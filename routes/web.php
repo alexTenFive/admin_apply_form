@@ -110,7 +110,7 @@ Route::get('/form-1583-instruction', function () {
 
 Route::post('/contact-us', function (Request $request) {
     $recipient = env('ADMIN_EMAIL');
-    if (isset($request->name) && isset($request->message) && !empty($request->email)) {
+    if (isset($request->name) && isset($request->mes) && !empty($request->email)) {
         $to = $recipient;
         $subject = 'Contact request from '.env('COMPANY_NAME');
         $message = '
@@ -126,7 +126,7 @@ Route::post('/contact-us', function (Request $request) {
                     </body>
                 </html>';
         $headers = "Content-type: text/html; charset=utf-8 \r\n";
-        $headers .= "From: Contact ".env('COMPANY_NAME')." <".env('ADMIN_EMAIL').">\r\n";
+        $headers .= "From: Contact ".env('COMPANY_NAME')." <".$request->email.">\r\n";
         $result = mail($to, $subject, $message, $headers);
         if ($result) {
             echo json_encode([
@@ -144,7 +144,7 @@ Route::post('/sign-up', function (Request $request) {
     $recipient = env('ADMIN_EMAIL');
     if (isset($request->name) && ($request->email != "")) {
         $to = $recipient;
-        $subject = 'Contact request from '.env('COMPANY_NAME');
+        $subject = 'SignUp request from '.env('COMPANY_NAME');
         $message = '
                 <html>
                     <head>
@@ -166,7 +166,7 @@ Route::post('/sign-up', function (Request $request) {
                     </body>
                 </html>';
         $headers = "Content-type: text/html; charset=utf-8 \r\n";
-        $headers .= "From: Contact ".env('COMPANY_NAME')." <".env('ADMIN_EMAIL').">\r\n";
+        $headers .= "From: Contact ".env('COMPANY_NAME')." <".$request->email.">\r\n";
         $result = mail($to, $subject, $message, $headers);
 
         if ($result) {
