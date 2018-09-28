@@ -107,11 +107,14 @@ class FormsController extends Controller
 
                 if ($file) {
                     $photo_url .= $photo;
+                    $photo_url = url('/') . $photo_url;
+
                     foreach ($photos as $photo) {
 
                         Storage::delete($old_photo_path . $photo);
                     }
                 }
+
         }
 
         $profile = Profile::create([
