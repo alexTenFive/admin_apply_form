@@ -36,6 +36,7 @@ class Profile extends Model
         'state_id',
         'zip',
         'cell_phone',
+        'photo_url'
 
     ];
 
