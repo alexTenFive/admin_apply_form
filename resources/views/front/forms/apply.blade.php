@@ -3,13 +3,13 @@
 @section('body', 'apply')
 @section('apply', 'apply')
 @section('img')
-    <img src="{{ asset('images/front/apply.png') }}" alt="Always Ahead'">
+    <img src="{{ asset('images/front/apply.png') }}" alt="Apply">
 @endsection
 
 @section('content')
 
     @if ($form->status === 1)
-    <div class="job-description">
+    <div id="scrollto" class="job-description">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12">
@@ -120,20 +120,19 @@
                                             This field is optional. You may upload a front-facing, professional photo
                                             appropriate
                                             for an employee ID badge. Please use a high resolution headshot without any head
-                                            covering. Use JPG or PNG file format. File size should not exceed 1MB.
+                                            covering. Use JPG or PNG file format. File size should not exceed 5MB.
                                         </p>
                                     </div>
                                 </div>
                                 <div class="form-row form-group">
                                     <div class="col-12">
                                         <div class="custom-file">
-                                            <input id="upload-img" type="file" accept="image/*" name="photos[]" class="form-control custom-file-input">
-                                            <label class="custom-file-label" for="upload-img">
-                                        <span class="inner">
-                                            Drop files to upload or
-                                        </span>
-                                            </label>
-                                            <div class="row files-row" id="image-preview"></div>
+                                            <button id="uploadBtnImg" class="select-file"><span class="inner">Select file to upload</span></button>
+                                            <div id="progressOuterImg" class="progress progress-striped active" style="display:none;">
+                                                <div id="progressBarImg" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                                </div>
+                                            </div>
+                                            <input id="photos" name="photos" type="hidden">
                                         </div>
                                     </div>
                                 </div>
@@ -152,14 +151,13 @@
                                 <div class="form-row form-group">
                                     <div class="col-12">
                                         <div class="custom-file">
-                                            <input id="upload-file" type="file" name="files[]" accept=".doc,.docx,.pdf,.txt" class="form-control custom-file-input req">
-                                            <label class="custom-file-label" for="upload-file">
-                                        <span class="inner">
-                                            Drop files to upload or
-                                        </span>
-                                            </label>
-                                            <div class="row files-row" id="file-preview"></div>
+                                            <button id="uploadBtn" class="select-file"><span class="inner">Select file to upload</span></button>
+                                            <div id="progressOuter" class="progress progress-striped active" style="display:none;">
+                                                <div id="progressBar" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                                </div>
+                                            </div>
                                             <div class="req-text">Resume needs to be uploaded.</div>
+                                            <input id="files_docs" name="files_docs" type="hidden" class="req err">
                                         </div>
                                     </div>
                                 </div>
@@ -186,31 +184,6 @@
                             </div>
                         </div>
                     @endif
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container">
-        <div class="page-header">
-            <h1>Simple Ajax Uploader</h1>
-            <h3>Basic Example</h3>
-        </div>
-        <div class="row" style="padding-top:10px;">
-            <div class="col-xs-2">
-                <button id="uploadBtn" class="btn btn-large btn-primary">Choose File</button>
-            </div>
-            <div class="col-xs-10">
-                <div id="progressOuter" class="progress progress-striped active" style="display:none;">
-                    <div id="progressBar" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="padding-top:10px;">
-            <div class="col-xs-10">
-                <div id="msgBox">
                 </div>
             </div>
         </div>

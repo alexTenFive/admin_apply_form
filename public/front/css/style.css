@@ -130,58 +130,43 @@ input[type=password] {
 .custom-file {
     height: auto;
     border: dashed 2px #C4C4C4;
-    padding: 25px 25px 38px;
+    padding: 25px 25px 18px;
     position: relative;
     border-radius: 5px;
+    min-height: 102px;
 }
-.custom-file:before {
+.custom-file .select-file:before {
     content: '';
-    position: relative;
+    position: absolute;
+    top: 34px;
+    left: 0;
     display: block;
     background: url(../img/ico-18.png) no-repeat 0 0;
     width: 34px;
     height: 31px;
-    margin: 25px auto 39px;
+    margin: 0 0 0 23px;
     z-index: 2;
     pointer-events: none;
 }
-.custom-file .file {
-    position: relative;
-}
-.custom-file .file .name {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-.custom-file-input {
-    height: 50px;
-}
-.custom-file-label {
+.custom-file .inner {
     top: 0;
-    height: auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    right: 25px;
+    left: 80px;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    position: absolute;
+    margin: 25px auto 0;
+    text-align: left;
     font-size: 18px;
     font-weight: 300;
-    line-height: 50px;
-    margin: auto;
-    border: none;
-    box-shadow: none !important;
-    padding: 120px 0 0;
+    white-space: nowrap;
+    overflow: hidden;
 }
-.custom-file-label .inner {
-    max-width: 380px;
-    display: block;
-    position: relative;
-    margin: 0 auto;
-}
-.custom-file-label:after {
-    display: none;
-}
-.custom-file-label .inner:after {
+.custom-file .inner:before {
     content: "Browse";
-    position: absolute;
+    position: relative;
+    float: right;
     top: 0;
     right: 0;
     bottom: 0;
@@ -199,9 +184,35 @@ input[type=password] {
     padding-right: 43px;
     border-radius: 5px;
 }
+.custom-file .inner strong {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 150px;
+    text-align: right;
+    text-overflow: ellipsis;
+    float: left;
+    margin: 0 10px 0 0;
+}
+.custom-file button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    z-index: 0;
+    background: none;
+    border: none;
+    padding: 0;
+}
 .custom-file img {
     max-width: 100%;
     height: auto;
+    max-height: 250px;
+    margin: 0 auto;
+    display: block;
 }
 .files-row {
     position: relative;
@@ -238,6 +249,25 @@ textarea.textarea.form-control {
     -moz-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
+}
+.progress {
+    display: none;
+    position: absolute;
+    left: 80px;
+    right: 184px;
+    max-width: 100%;
+    margin: 0 auto;
+    top: 39px;
+    height: 22px;
+}
+.progress-bar {
+    background: #6078de;
+    width: 0;
+    display: block;
+    height: 25px;
+}
+.succ {
+    color: #00b200;
 }
 /*End Base styles*/
 
@@ -286,6 +316,9 @@ textarea.textarea.form-control {
 .front .img-wrap .title {
     font-size: 90px;
     line-height: normal;
+}
+.front .title .btn-wrap {
+    padding-top: 35px;
 }
 .subtitle {
     font-size: 48px;
@@ -383,6 +416,8 @@ textarea.textarea.form-control {
 .submenu-wrap a {
     width: auto;
     line-height: 28px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .submenu-wrap a:hover,
 .submenu-wrap a.active {
@@ -411,7 +446,7 @@ textarea.textarea.form-control {
 .block.about-us {
     background: url(../img/bg-about-us.png) no-repeat center center;
 }
-.why-us {
+.block.why-us {
     background: url(../img/bg-why-us.png) no-repeat center center;
 }
 .content-block .title {
@@ -486,8 +521,29 @@ textarea.textarea.form-control {
     font-size: 24px;
     margin-bottom: 15px;
 }
+.text-block ul,
 .text-block p {
     margin-bottom: 27px;
+}
+.text-block ul {
+    list-style: none;
+    padding-left: 28px;
+}
+.text-block li{
+    position: relative;
+}
+.text-block li:before {
+    content: "\f14a";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    left: -27px;
+    top: 4px;
+    color: #6078de;
 }
 div[class*="col-"] > .text-block:last-child {
     padding-bottom: 62px;
@@ -547,17 +603,8 @@ div[class*="col-"] > .text-block:last-child {
 .contact-info p {
     line-height: 30px;
 }
-.contact-info .phone {
-    position: relative;
-}
-.contact-info .phone:before {
-    content: '';
-    position: relative;
-    display: inline-block;
-    margin: 0 8px 0 0;
-    background: url(../img/ico-15.png) no-repeat 0 0;
-    width: 11px;
-    height: 11px;
+.contact-info i {
+    margin-right: 8px;
 }
 .page-account .title {
     text-transform: uppercase;
@@ -637,6 +684,7 @@ div[class*="col-"] > .text-block:last-child {
 .bottom .text {
     font-weight: 300;
     line-height: 24px;
+    padding-bottom: 15px;
 }
 .subscribe {
     position: relative;
@@ -678,7 +726,6 @@ div[class*="col-"] > .text-block:last-child {
     color: #fff;
     text-decoration: underline;
 }
-.bottom .phone,
 .bottom .email-us,
 .block-info a:hover {
     color: #f64567;
@@ -691,17 +738,17 @@ div[class*="col-"] > .text-block:last-child {
 }
 .bottom .menu a {
     position: relative;
-    margin-left: 27px;
+    padding-left: 27px;
 }
-.bottom .menu a:before {
-    content: '';
+.bottom .phone i,
+.bottom .menu a i {
+    color: #f64567;
+    margin-right: 15px;
+}
+.bottom .menu a i {
     position: absolute;
-    display: block;
-    background: url(../img/check.png) no-repeat 0 0;
-    width: 14px;
-    height: 11px;
-    left: -27px;
-    top: 4px;
+    left: 0;
+    top: 3px;
 }
 /*End Bottom*/
 
@@ -744,14 +791,9 @@ div[class*="col-"] > .text-block:last-child {
     position: relative;
     font-weight: 600;
 }
-.footer .phone:before {
-    content: '';
-    position: relative;
-    display: inline-block;
-    margin: 0 8px 0 0;
-    background: url(../img/ico-16.png) no-repeat 0 0;
-    width: 11px;
-    height: 11px;
+.footer .fax i,
+.footer .phone i {
+    color: #f64567;
 }
 /*End Footer*/
 @media screen and (min-width: 992px) {
@@ -918,6 +960,22 @@ div[class*="col-"] > .text-block:last-child {
     .submenu {
         display: none;
     }
+    .custom-file {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .custom-file .inner:before {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .custom-file .inner {
+        font-size: 14px;
+        right: 15px;
+        left: 55px;
+    }
+    .custom-file .select-file:before {
+        margin-left: 16px;
+    }
 }
 @media screen and (max-width: 576px) {
     .img-wrap .title {
@@ -942,9 +1000,6 @@ div[class*="col-"] > .text-block:last-child {
     }
     .custom-file-label .inner:after {
         position: relative;
-    }
-    .custom-file:before {
-        margin-bottom: 59px;
     }
     .subtitle {
         font-size: 21px;
@@ -971,7 +1026,7 @@ div[class*="col-"] > .text-block:last-child {
     }
     .bottom .menu a {
         position: relative;
-        margin-left: 27px;
+        margin-left: 0;
         display: inline-block;
         width: auto;
         line-height: normal;
@@ -979,5 +1034,30 @@ div[class*="col-"] > .text-block:last-child {
     }
     .bottom .menu a:last-child {
         margin-bottom: 0;
+    }
+    .progress {
+        position: relative;
+        left: 0;
+        margin: 20px auto 40px;
+    }
+    .custom-file .inner.succ {
+        font-size: 0;
+    }
+    .custom-file .inner.succ:after {
+        content: 'Upload Completed';
+        display: -webkit-box;
+        position: absolute;
+        float: left;
+        color: #00b200;
+        font-size: 14px;
+        left: 0;
+        top: 0;
+    }
+    .custom-file .inner:before {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .custom-file .inner strong {
+        margin: 0;
     }
 }

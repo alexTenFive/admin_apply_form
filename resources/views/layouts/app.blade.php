@@ -27,8 +27,9 @@
     <meta name="msapplication-square310x310logo" content="" />
     <meta name="theme-color" content="#000">
 
-    <title>@yield('title', 'Always Ahead') | {{ env('COMPANY_DOMAIN', 'Dorneo.com' )}} </title>
+    <title>@yield('title', 'Fueling your logistics chain') | {{ env('COMPANY_DOMAIN', 'Dorneo.com' )}} </title>
     <link rel="stylesheet" href="{{ asset('front/libs/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/libs/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
 </head>
 <body class="@yield('body', 'front')">
@@ -37,18 +38,22 @@
         @hasSection('img')
             @yield('img')
         @else
-            <img src="{{ asset('images/front/front.png') }}" alt="@yield('title', 'Always Ahead')">
+            <img src="{{ asset('images/front/front.png') }}" alt="@yield('title', 'Fueling your logistics chain')">
         @endif
         <div class="title">
 
             <div class="container">
-                @yield('title', 'Always Ahead')
-                @hasSection('apply')
+                @hasSection('banner')
+                    @yield('banner')
+                @else
+                    @yield('title', 'Fueling your logistics chain')
+                @endif
+                    @hasSection('apply')
                     <div class="subtitle">Job Application</div>
                 @endif
                 @hasSection('page_id')
                     <div class="btn-wrap">
-                        <a class="btn" href="/about-us">Learn more</a>
+                        <a class="btn" href="{{ url('/about-us') }}">Learn more</a>
                     </div>
                 @endif
             </div>
@@ -81,13 +86,13 @@
                     <img src="{{ asset('front/img/ico-10.png') }}" alt="">
                 </div>
                 <div class="text">
-                    Our highly trained staff of customer service representatives are always on hand to help you out.
-                    Have a question? Need help selecting a plan? Have a problem? No sweat, they have you covered. We
-                    have a professional team in place whose main job is to make you, the customer, happy. And our
-                    customer service doesn’t just stop with that department. Our customer service extends throughout our
-                    whole operation. It’s everybody’s job as far as we are concerned. Each and every customer gets
-                    top-notch attention and service regardless of what services they receive from us. You can reach us
-                    by phone, fax, email or chat. So give us a holler when you need us!
+                    Our highly trained, friendly customer service representatives are always ready to lend you a helping
+                    hand when you need them. Whether you have a question or need help selecting a plan or experiencing a
+                    problem – our customer service representatives got your back. To us, customer service is not just
+                    another department, it’s an attitude and every single member of our team embodies this attitude. All
+                    our customers receive the same level of attention and treatment: doesn’t matter if you’re on a $20
+                    plan or a multi-million-dollar client. We are always approachable and can be reached by phone, fax,
+                    email or online chat.
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 block-newsletter">
@@ -95,11 +100,10 @@
                     <img src="{{ asset('front/img/ico-11.png') }}" alt="">
                 </div>
                 <div class="text">
-                    Logistics is an evolving industry and some of our clients are genuinely interested to learn what’s
-                    happening in the industry and staying on top of latest developments. We have dedicated a newsletter
-                    for these clients so they can be in the know. If you are interested, please feel free to sign up for
-                    the newsletter with your email address and we will deliver all the latest developments right to your
-                    inbox.
+                    Logistics is an evolving industry and there’s always something new and exciting is happening. If you
+                    are interested on the latest breakthrough and other news in the field of logistics, consider
+                    subscribing to our newsletter. We’ll deliver all the latest and greatest news from our industry to
+                    your inbox diligently.
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -129,17 +133,18 @@
                     <div class="col-10 block-info">
                         <div class="row">
                             <div class="col-4">
-                                Business Hours:<br>
+                                Business Hours:<br><br>
                                 Phone:
                             </div>
                             <div class="col-8">
-                                Monday through Friday, 9am-5pm (PST)<br>
-                                <span class="phone">(800) 695-2287</span>
+                                Monday through Friday<br>
+                                09:00 AM – 5:00 PM<br>
+                                <span class="phone"><i class="fa fa-phone" aria-hidden="true"></i>{{env('ADMIN_TEL')}}</span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 contact-us">
-                                Please call us or you can also email us at <a class="email-us" href="{{ url('/contact-us') }}">email us</a> with any questions.
+                                Please call or <a class="email-us" href="{{ url('/contact-us') }}">email us</a>  with any question that you may have.
                             </div>
                         </div>
                     </div>
@@ -151,9 +156,9 @@
                         <img class="ico-inline" src="{{ asset('front/img/ico-13.png') }}" alt="">
                     </div>
                     <div class="col-sm-10 col-12 block-info menu">
-                        <a href="{{ url('/form-1583-instruction') }}">Form 1583 Instruction</a><br>
-                        <a href="{{ url('/mail-forwarding-at-a-glance') }}">Mail Forwarding Frequently Asked Questions</a><br>
-                        <a href="{{ url('/privacy-and-security') }}">Privacy and Security Measures</a><br>
+                        <a href="{{ url('/form-1583-instruction') }}"><i class="fa fa-check-square-o" aria-hidden="true"></i>Instructions for Form 1583</a><br>
+                        <a href="{{ url('/frequently-asked-questions') }}"><i class="fa fa-check-square-o" aria-hidden="true"></i>Mail Forwarding Frequently Asked Questions</a><br>
+                        <a href="{{ url('/security-and-privacy') }}"><i class="fa fa-check-square-o" aria-hidden="true"></i>Security and Privacy Measures</a><br>
                     </div>
                 </div>
             </div>
@@ -170,41 +175,41 @@
             <h3 class="title">Company</h3>
             <ul>
                 <li><a href="{{ url('/about-us') }}">About Us</a></li>
-                <li><a href="{{ url('/customer-satisfaction') }}">Customer Satisfaction</a></li>
-                <li><a href="{{ url('/why-parsendo') }}">Why Parsendo?</a></li>
-                <li><a href="{{ url('/customer-relations') }}">Customer Relations</a></li>
-                <li><a href="{{ url('/protecting-the-enviroment') }}">Protecting the Enviroment</a></li>
+                <li><a href="{{ url('/what-our-customers-say') }}">What Our Customers Say</a></li>
+                <li><a href="{{ url('/why-us') }}">Why Us?</a></li>
+                <li><a href="{{ url('/innovation-and-technology') }}">Innovation and Technology</a></li>
+                <li><a href="{{ url('/protecting-the-environment') }}">Protecting the Environment</a></li>
                 <li><a href="{{ url('/contact-us') }}">Contact Us</a></li>
             </ul>
         </div>
         <div class="col-lg-3 col-md-4 col-12">
             <h3 class="title">Services</h3>
             <ul>
-                <li><a href="{{ url('/shipping') }}">Shipping</a></li>
-                <li><a href="{{ url('/receiving') }}">Receiving</a></li>
+                <li><a href="{{ url('/shipping-services') }}">Shipping Services</a></li>
+                <li><a href="{{ url('/receiving-services') }}">Receiving Services</a></li>
                 <li><a href="{{ url('/transportation-management-systems') }}">Transportation Management</a></li>
-                <li><a href="{{ url('/logistics-for-business-customers') }}">Logistics For Business</a></li>
-                <li><a href="{{ url('/mail-forwarding-at-a-glance') }}">Mail Forwarding</a></li>
-                <li><a href="{{ url('/privacy-and-security') }}">Privacy and Security</a></li>
+                <li><a href="{{ url('/logistics-solutions-for-businesses') }}">Logistics For Business</a></li>
+                <li><a href="{{ url('/quick-glimpse') }}">Mail Forwarding</a></li>
+                <li><a href="{{ url('/security-and-privacy') }}">Security and Privacy</a></li>
             </ul>
         </div>
         <div class="col-lg-3 col-md-6 col-12">
             <h3 class="title">Add-On</h3>
             <ul>
-                <li><a href="{{ url('/services-overview') }}">Services Overview</a></li>
+                <li><a href="{{ url('/services-overview') }}">Overview of Services We Provide</a></li>
                 <li><a href="{{ url('/order-fulfillment') }}">Order Fulfillment</a></li>
-                <li><a href="{{ url('/amazon-fulfillment') }}">Amazon Fulfillment</a></li>
+                <li><a href="{{ url('/amazon-fulfillment') }}">Fulfillement by Amazon (FBA)</a></li>
                 <li><a href="{{ url('/quality-control') }}">Quality Control</a></li>
                 <li><a href="{{ url('/customization') }}">Customization</a></li>
-                <li><a href="{{ url('/consultation-services') }}">Consultation Services</a></li>
+                <li><a href="{{ url('/consultation') }}">Consultation</a></li>
             </ul>
         </div>
         <div class="col-lg-3 col-md-4 col-12">
-            <h3 class="title">Parsendo</h3>
-            Powerteam international<br>
-            11671 Sterling Ave Ste G<br><br>
-            Riverside, CA 92503<br><br>
-            <span class="phone">{{ env('ADMIN_TEL') }}</span>
+            <h3 class="title">{{env('COMPANY_NAME')}}</h3>
+            {{env('COMPANY_LEGAL')}}<br>
+            {!! env('ADDRESS_1') !!}<br><br>
+            <span class="phone"><i class="fa fa-phone" aria-hidden="true"></i>{{ env('ADMIN_TEL') }}</span><br>
+            <span class="fax"><i class="fa fa-fax" aria-hidden="true"></i>{{ env('ADMIN_FAX') }}</span>
         </div>
     </div>
 </div>
@@ -219,7 +224,7 @@
                 <img src="{{ asset('front/img/ico-amazon.png') }}" alt="">
             </div>
             <div class="col-lg-4 col-md-12 text-center copyright">
-                © 2018 Powerteam International. <span class="all-rights">All rights reserved.</span><br>
+                © 2018 {{env('COMPANY_LEGAL')}}. <span class="all-rights">All rights reserved.</span><br>
                 <a href="{{ url('/terms-of-service#policy') }}">Privacy Policy</a> | <a href="{{ url('/terms-of-service#terms') }}">Terms of Service</a>
             </div>
             <div class="col-lg-4 col-md-12">
@@ -235,8 +240,8 @@
 <script src="{{ asset('front/libs/jquery.mask.min.js') }}"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
-<script src="{{ asset('front/js/script.js') }}"></script>
 <script src="{{ asset('front/js/ajaxUploader/SimpleAjaxUploader.js') }}"></script>
+<script src="{{ asset('front/js/script.js') }}"></script>
 
 </body>
 </html>

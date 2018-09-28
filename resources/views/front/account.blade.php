@@ -5,7 +5,7 @@
     <img src="{{ asset('images/front/account.jpg') }}" alt="My Account">
 @endsection
 @section('content')
-    <div class="container page-account">
+    <div id="scrollto" class="container page-account">
         <div class="row justify-content-center">
             <div class="col-lg-10 col-md-12">
                 <div class="text-block">
@@ -13,6 +13,7 @@
                         <div class="col-lg-6 col-md-12">
                             <h3 class="title">Sign Up</h3>
                             <form id="signup" class="form-recovery" method="post" action="{{ route('sign-up') }}">
+                                @csrf
                                 <div class="form-hide">
                                     <div class="form-group">
                                         <input class="form-control req" name="name" type="text" placeholder="Name*">
@@ -310,11 +311,11 @@
                                         <div class="req-text">The state field is required.</div>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control req" name="zip" type="text" placeholder="ZIP Code*">
+                                        <input class="zip form-control req" name="zip" type="text" placeholder="ZIP Code*">
                                         <div class="req-text">The zip code field is required.</div>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control req" name="phone" type="text" placeholder="Phone*">
+                                        <input class="phone form-control req" name="phone" type="text" placeholder="Phone*">
                                         <div class="req-text">The phone field is required.</div>
                                     </div>
                                     <div class="form-group">
@@ -341,7 +342,7 @@
                                 </div>
                                 <div class="alert not-empty success">
                                     Your account has been created and a verification is required to get full access to your
-                                    account at Parsendo.com.<br>
+                                    account at {{env('COMPANY_DOMAIN')}}.<br>
                                     Our customer support team will get in touch with you within 48 hours to verify your
                                     account information.
                                 </div>
@@ -351,6 +352,7 @@
                         <div class="col-lg-6 col-md-12 block-login">
                             <h3 class="title">Login</h3>
                             <form id="login-page" name="login" action="" method="POST" class="form">
+                                @csrf
                                 <div class="form-group">
                                     <input class="form-control req" name="username" id="uname" placeholder="Login"
                                            autocomplete="off">
@@ -375,8 +377,8 @@
                                     <input type="submit" name="submit" class="btn" value="Sign in">
                                 </div>
                                 <div class="form-group form-btns text-center">
-                                    <a href="{{ url('/password-recovery') }}">Forgot your password?</a> or <a href="{{ url('/username-recovery') }}">Forgot
-                                        your username?</a>
+                                    <a href="{{ url('/password-recovery') }}">Forgot your password?</a> or
+                                    <a href="{{ url('/username-recovery') }}">Forgot your username?</a>
                                 </div>
                             </form>
                         </div>

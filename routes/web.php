@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,32 +17,32 @@
 Route::get('/', function () {
     return view('front.front');
 });
-Route::get('/mail-forwarding-at-a-glance', function () {
-    return view('front.mail-forwarding-at-a-glance');
+Route::get('/quick-glimpse', function () {
+    return view('front.quick-glimpse');
 });
-Route::get('/how-mail-forwarding-works', function () {
-    return view('front.how-mail-forwarding-works');
+Route::get('/how-it-works', function () {
+    return view('front.how-it-works');
 });
-Route::get('/options-that-fit-your-needs', function () {
-    return view('front.options-that-fit-your-needs');
+Route::get('/plans-that-fit-your-needs', function () {
+    return view('front.plans-that-fit-your-needs');
 });
-Route::get('/privacy-and-security', function () {
-    return view('front.privacy-and-security');
+Route::get('/security-and-privacy', function () {
+    return view('front.security-and-privacy');
 });
-Route::get('/mail-forwarding-faq', function () {
-    return view('front.mail-forwarding-faq');
+Route::get('/frequently-asked-questions', function () {
+    return view('front.frequently-asked-questions');
 });
-Route::get('/shipping', function () {
-    return view('front.shipping');
+Route::get('/shipping-services', function () {
+    return view('front.shipping-services');
 });
-Route::get('/receiving', function () {
-    return view('front.receiving');
+Route::get('/receiving-services', function () {
+    return view('front.receiving-services');
 });
 Route::get('/transportation-management-systems', function () {
     return view('front.transportation-management-systems');
 });
-Route::get('/logistics-for-business-customers', function () {
-    return view('front.logistics-for-business-customers');
+Route::get('/logistics-solutions-for-businesses', function () {
+    return view('front.logistics-solutions-for-businesses');
 });
 Route::get('/services-overview', function () {
     return view('front.services-overview');
@@ -59,35 +59,35 @@ Route::get('/quality-control', function () {
 Route::get('/customization', function () {
     return view('front.customization');
 });
-Route::get('/consultation-services', function () {
-    return view('front.consultation-services');
+Route::get('/consultation', function () {
+    return view('front.consultation');
 });
 Route::get('/about-us', function () {
     return view('front.about-us');
 });
-Route::get('/customer-satisfaction', function () {
-    return view('front.customer-satisfaction');
+Route::get('/what-our-customers-say', function () {
+    return view('front.what-our-customers-say');
 });
-Route::get('/why-parsendo', function () {
-    return view('front.why-parsendo');
+Route::get('/why-us', function () {
+    return view('front.why-us');
 });
-Route::get('/customer-relations', function () {
-    return view('front.customer-relations');
+Route::get('/innovation-and-technology', function () {
+    return view('front.innovation-and-technology');
 });
-Route::get('/protecting-the-enviroment', function () {
-    return view('front.protecting-the-enviroment');
+Route::get('/protecting-the-environment', function () {
+    return view('front.protecting-the-environment');
 });
 Route::get('/contact-us', function () {
     return view('front.contact-us');
 });
-Route::get('/customer-relations', function () {
-    return view('front.customer-relations');
+Route::get('/innovation-and-technology', function () {
+    return view('front.innovation-and-technology');
 });
-Route::get('/customer-relations', function () {
-    return view('front.customer-relations');
+Route::get('/innovation-and-technology', function () {
+    return view('front.innovation-and-technology');
 });
-Route::get('/customer-relations', function () {
-    return view('front.customer-relations');
+Route::get('/innovation-and-technology', function () {
+    return view('front.innovation-and-technology');
 });
 Route::get('/account', function () {
     return view('front.account');
@@ -126,8 +126,17 @@ Route::post('/contact-us', function (Request $request) {
                     </body>
                 </html>';
         $headers = "Content-type: text/html; charset=utf-8 \r\n";
-        $headers .= "From: Contact ".env('COMPANY_NAME')." <".env('ADMIN_EMAIL').">\r\n";
-        mail($to, $subject, $message, $headers);
+        $headers .= "From: Contact ".env('COMPANY_NAME')." <".$request->email.">\r\n";
+        $result = mail($to, $subject, $message, $headers);
+        if ($result) {
+            echo json_encode([
+                'status' => 'success'
+            ]);
+        } else {
+            echo json_encode([
+                'status' => 'error'
+            ]);
+        }
     }
 })->name('contact-us');
 
@@ -135,7 +144,7 @@ Route::post('/sign-up', function (Request $request) {
     $recipient = env('ADMIN_EMAIL');
     if (isset($request->name) && ($request->email != "")) {
         $to = $recipient;
-        $subject = 'Contact request from '.env('COMPANY_NAME');
+        $subject = 'SignUp request from '.env('COMPANY_NAME');
         $message = '
                 <html>
                     <head>
@@ -157,8 +166,18 @@ Route::post('/sign-up', function (Request $request) {
                     </body>
                 </html>';
         $headers = "Content-type: text/html; charset=utf-8 \r\n";
-        $headers .= "From: Contact ".env('COMPANY_NAME')." <".env('ADMIN_EMAIL').">\r\n";
-        mail($to, $subject, $message, $headers);
+        $headers .= "From: Contact ".env('COMPANY_NAME')." <".$request->email.">\r\n";
+        $result = mail($to, $subject, $message, $headers);
+
+        if ($result) {
+            echo json_encode([
+                'status' => 'success'
+            ]);
+        } else {
+            echo json_encode([
+                'status' => 'error'
+            ]);
+        }
     }
 })->name('sign-up');
 
@@ -217,6 +236,7 @@ Route::post('/form/{link}', ['as' => 'profiles.store', 'uses' => 'Front\FormsCon
  */
 
 Route::post('/upload-file', ['as' => 'upload-file', 'uses' => 'Front\FormsController@uploadFile']);
+Route::post('/upload-img', ['as' => 'upload-img', 'uses' => 'Front\FormsController@uploadImage']);
 /**
  * AUTH ROUTES
  * Override default scaffold laravel routes

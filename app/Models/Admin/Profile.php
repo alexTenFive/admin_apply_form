@@ -36,6 +36,7 @@ class Profile extends Model
         'state_id',
         'zip',
         'cell_phone',
+        'photo_url'
 
     ];
 
@@ -73,4 +74,13 @@ class Profile extends Model
     {
         return $this->status_id == self::PROFILE_STATUSES_KEYS['Transfered'];
     }
+
+   /* protected static function boot() {
+        parent::boot();
+        static::deleting(function($profile) {
+            // $book->comments()->delete();
+            $profile->profile_phones()->delete();
+            $profile->profile_files()->delete();
+        });
+    }*/
 }

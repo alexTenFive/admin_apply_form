@@ -25,7 +25,7 @@ class CreateProfilesTable extends Migration
             $table->string('city');
             $table->unsignedInteger('state_id');
             $table->string('zip');
-            $table->string('photo_url')->default('/public/uploads/profiles/photos/default.jpg');
+            $table->string('photo_url')->default(url('/') . '/uploads/profiles/photos/default.jpg');
             $table->string('alias')->unique();
             $table->string('password')->default('tinyapply');
             $table->string('comments')->default('tinyapply');
