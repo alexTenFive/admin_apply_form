@@ -27,7 +27,7 @@
                                         <input id="phone" name="phone" class="phone form-control" type="text" placeholder="Phone (Optional)">
                                     </div>
                                     <div class="form-group">
-                                        <textarea id="message" name="message" class="form-control textarea req" placeholder="Message"></textarea>
+                                        <textarea id="message" name="mes" class="form-control textarea req" placeholder="Message"></textarea>
                                         <div class="req-text">The message field is required.</div>
                                     </div>
                                     <div class="form-group">
