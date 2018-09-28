@@ -110,7 +110,7 @@ Route::get('/form-1583-instruction', function () {
 
 Route::post('/contact-us', function (Request $request) {
     $recipient = env('ADMIN_EMAIL');
-    if (isset($request->name) && isset($request->message) && !empty($request->email)) {
+    if (isset($request->name) && isset($request->mes) && !empty($request->email)) {
         $to = $recipient;
         $subject = 'Contact request from '.env('COMPANY_NAME');
         $message = '
