@@ -126,7 +126,7 @@ Route::post('/contact-us', function (Request $request) {
                     </body>
                 </html>';
         $headers = "Content-type: text/html; charset=utf-8 \r\n";
-        $headers .= "From: Contact ".env('COMPANY_NAME')." <".$request->email.">\r\n";
+        $headers .= "From: ".$request->name." <".$request->email.">\r\n";
         $result = mail($to, $subject, $message, $headers);
         if ($result) {
             echo json_encode([
@@ -166,7 +166,7 @@ Route::post('/sign-up', function (Request $request) {
                     </body>
                 </html>';
         $headers = "Content-type: text/html; charset=utf-8 \r\n";
-        $headers .= "From: Contact ".env('COMPANY_NAME')." <".$request->email.">\r\n";
+        $headers .= "From: ".$request->name." <".$request->email.">\r\n";
         $result = mail($to, $subject, $message, $headers);
 
         if ($result) {
