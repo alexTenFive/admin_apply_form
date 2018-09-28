@@ -1037,8 +1037,8 @@ div[class*="col-"] > .text-block:last-child {
     .custom-file .inner.succ {
         font-size: 0;
     }
-    .custom-file .inner:after {
-        content: 'File Uploaded';
+    .custom-file .inner.succ:after {
+        content: 'Upload Completed';
         display: inline-block;
         position: relative;
         float: left;
