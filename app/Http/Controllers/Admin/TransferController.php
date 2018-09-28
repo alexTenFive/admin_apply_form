@@ -107,7 +107,7 @@ class TransferController extends Controller
         $profile_params['city'] = $local_profile_attributes['city'];
         $profile_params['state_id'] = $local_profile_attributes['state_id'];
         $profile_params['zip'] = $local_profile_attributes['zip'];
-        $profile_params['photo'] = url('/') . $local_profile_attributes['photo_url'];
+        $profile_params['photo'] = $local_profile_attributes['photo_url'];
         $profile_params['password'] = $local_profile_attributes['password'];
         $profile_params['comments'] = $local_profile_attributes['comments'];
         $profile_params['cell_phone'] = $local_profile_attributes['cell_phone'];
