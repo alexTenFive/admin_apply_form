@@ -738,11 +738,17 @@ div[class*="col-"] > .text-block:last-child {
 }
 .bottom .menu a {
     position: relative;
+    padding-left: 27px;
 }
 .bottom .phone i,
 .bottom .menu a i {
     color: #f64567;
     margin-right: 15px;
+}
+.bottom .menu a i {
+    position: absolute;
+    left: 0;
+    top: 3px;
 }
 /*End Bottom*/
 
@@ -1039,10 +1045,19 @@ div[class*="col-"] > .text-block:last-child {
     }
     .custom-file .inner.succ:after {
         content: 'Upload Completed';
-        display: inline-block;
-        position: relative;
+        display: -webkit-box;
+        position: absolute;
         float: left;
         color: #00b200;
         font-size: 14px;
+        left: 0;
+        top: 0;
+    }
+    .custom-file .inner:before {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .custom-file .inner strong {
+        margin: 0;
     }
 }
